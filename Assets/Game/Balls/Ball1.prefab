@@ -72,7 +72,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119932}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -161,12 +161,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainTexturePhysics:
-  - drag: 1
-    angularDrag: 1
+  - drag: 0
+    angularDrag: .5
   - drag: 2
-    angularDrag: 10
-  - drag: 3
-    angularDrag: 100
+    angularDrag: 2
+  - drag: 5
+    angularDrag: 5
   currentTextureLevel: []
 --- !u!114 &11400692
 MonoBehaviour:
