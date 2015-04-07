@@ -1,0 +1,3 @@
+[submodule "wiidevicelibrary"]
+	path = wiidevicelibrary
+	url = https://github.com/ludo6577/wiidevicelibrary

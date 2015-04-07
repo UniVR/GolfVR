@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ballScript : MonoBehaviour {
+public class BallScript : MonoBehaviour {
 
-	public Collider club;
-	public AudioSource audio;
-
-	public float yVelocity;
+	public GameObject club;
 
 	// Use this for initialization
 	void Start () {
@@ -15,20 +12,17 @@ public class ballScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Transform transform = club.GetComponent<Transform> ();
+		transform.Rotate(0, 0, Time.deltaTime*10f, Space.World);
 	}
 
-	
-	void OnCollisionEnter(Collision collision) {
-		if (collision.collider != club)
-			return;
+	public void OnPointerEnter(){
+		Transform transform = club.GetComponent<Transform> ();
+		Quaternion q = transform.localRotation;
+		transform.Rotate(q.x, q.y, q.z+100f);
+	}
 
-		float velocity = yVelocity * collision.relativeVelocity.z;
-		var ball = GetComponent<Rigidbody> ();
-		ball.AddForce (0, velocity, 0);
-
-		// Play a sound if the coliding objects had a big impact.		
-		if (collision.relativeVelocity.magnitude > 2)
-			audio.Play();
+	public void OnPointerExit(){
+		
 	}
 }
