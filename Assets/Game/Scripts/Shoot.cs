@@ -2,12 +2,13 @@
 using System.Collections;
 
 public class Shoot : MonoBehaviour {
-
-	public GameObject Pivot;
 	public float velocity;
 
 	public float minAngle;
 	public float maxAngle;
+
+	public string Information = "Don't modify next values... !";
+	public Quaternion Rotation;
 
 	public enum State{
 		Idle,
@@ -17,25 +18,24 @@ public class Shoot : MonoBehaviour {
 		Fired
 	}
 	public State currentState;
-	private Transform pivot;
 	private Transform clubTransf;
 	private Rigidbody clubBody;
 
 	// Use this for initialization
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
-		pivot = Pivot.GetComponent<Transform> ();
 		currentState = State.Idle;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (currentState == State.Loading && isRotationInRange (pivot.eulerAngles)) {
-			pivot.RotateAround (pivot.position, pivot.eulerAngles, Time.deltaTime * velocity);
-		} else if (currentState == State.Loading) {
+		Rotation = clubTransf.rotation;
+		if (currentState == State.Loading && isRotationInRange (clubTransf.rotation)) {
+			clubTransf.Rotate (Vector3.down * Time.deltaTime * velocity);
+		}else if (currentState == State.Firing && isRotationInRange (clubTransf.rotation)) {
+			clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocity);
+		}else if (currentState == State.Loading) {
 			currentState = State.Loaded;
-		} else if (currentState == State.Firing && isRotationInRange (pivot.eulerAngles)) {
-			pivot.RotateAround (pivot.position, pivot.eulerAngles, Time.deltaTime * velocity);
 		} else if (currentState == State.Firing) {
 			currentState = State.Fired;
 		}
@@ -52,7 +52,7 @@ public class Shoot : MonoBehaviour {
 	}
 
 
-	private bool isRotationInRange(Vector3 quat){
+	private bool isRotationInRange(Quaternion quat){
 		return quat.z > minAngle && quat.z < maxAngle;
 			//&& quat.y > minAngle && quat.y < maxAngle
 			//&& quat.z > minAngle && quat.z < maxAngle
