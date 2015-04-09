@@ -1,96 +1,96 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &119932
+--- !u!1 &184196
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 473044}
-  - 33: {fileID: 3306298}
-  - 135: {fileID: 13564264}
-  - 54: {fileID: 5457222}
-  - 23: {fileID: 2308114}
-  - 82: {fileID: 8206250}
-  - 114: {fileID: 11400692}
-  - 114: {fileID: 11400470}
+  - 4: {fileID: 438220}
+  - 33: {fileID: 3378762}
+  - 23: {fileID: 2319002}
+  - 135: {fileID: 13513206}
+  - 54: {fileID: 5468268}
+  - 82: {fileID: 8222596}
+  - 114: {fileID: 11448408}
+  - 114: {fileID: 11441736}
   m_Layer: 0
-  m_Name: Ball1
+  m_Name: ballPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &473044
+--- !u!4 &438220
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9530163, y: 4.55642891, z: 25.2952042}
+  m_GameObject: {fileID: 184196}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalPosition: {x: 22.7339783, y: -.87727356, z: 30.3585815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2308114
+--- !u!23 &2319002
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 54ee8e39b634b6d45aae528b6b24e879, type: 2}
+  - {fileID: 2100000, guid: ac49fdb4aa4d58a4981b299655c0d6fc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3306298
+--- !u!33 &3378762
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5457222
+  m_GameObject: {fileID: 184196}
+  m_Mesh: {fileID: 4300000, guid: 96317bb30bd3c8746b45517f018b53cd, type: 3}
+--- !u!54 &5468268
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
---- !u!82 &8206250
+  m_CollisionDetection: 0
+--- !u!82 &8222596
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f07fa0ad01f02842a23047f0b6a767c, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -149,51 +149,45 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11400470
+--- !u!114 &11441736
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53687ec594bca8f4eaff22be74665732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainTexturePhysics:
-  - drag: 0
-    angularDrag: .5
-  - drag: 2
-    angularDrag: 2
-  - drag: 5
-    angularDrag: 5
+  TerrainTexturePhysics: []
   currentTextureLevel: []
---- !u!114 &11400692
+--- !u!114 &11448408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aadedc8ee5029d04ead47d5b5677bea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   club: {fileID: 0}
-  audio: {fileID: 8206250}
+  audio: {fileID: 0}
   yVelocity: 0
---- !u!135 &13564264
+--- !u!135 &13513206
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119932}
+  m_GameObject: {fileID: 184196}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: .100000001
+  m_Center: {x: 0, y: 0, z: .0999999866}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -203,5 +197,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 119932}
+  m_RootGameObject: {fileID: 184196}
   m_IsPrefabParent: 1
