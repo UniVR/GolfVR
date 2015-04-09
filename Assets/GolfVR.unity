@@ -132,7 +132,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163700443}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 12
   m_Drag: 100
   m_AngularDrag: 100
   m_UseGravity: 0
@@ -253,6 +253,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.19414234
       objectReference: {fileID: 0}
+    - target: {fileID: 3369070, guid: fb71dccd096a84a4da5ad103e4e8bc76, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 23c3c1914c807294b880c943c1fd1289, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb71dccd096a84a4da5ad103e4e8bc76, type: 2}
   m_IsPrefabParent: 0

@@ -6,8 +6,8 @@ PhysicMaterial:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ClubPhysic
-  dynamicFriction: .600000024
-  staticFriction: .600000024
+  dynamicFriction: 2
+  staticFriction: 2
   bounciness: 1
   frictionCombine: 0
   bounceCombine: 0
