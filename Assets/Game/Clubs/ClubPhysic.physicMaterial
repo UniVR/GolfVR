@@ -8,7 +8,7 @@ PhysicMaterial:
   m_Name: ClubPhysic
   dynamicFriction: .600000024
   staticFriction: .600000024
-  bounciness: 0
+  bounciness: 1
   frictionCombine: 0
   bounceCombine: 0
   frictionDirection2: {x: 0, y: 0, z: 0}
