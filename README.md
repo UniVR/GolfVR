@@ -15,7 +15,7 @@ For the moment only the scene GolfVR.unity is working and show the game. This sc
 
 **# Ball Scripts**
 * DetectTerrainType.cs: Detect the terrain under the ball and adapt the physics of the ball depending on it (grass, sand, ...). It is paremetred by layer of texture in the terrain.
-* BallScript.cs: (Non parametrable) this script detect when the club hit the ball and take the Porperties of the club to handle the physics resulting (see below) 
+* BallScript.cs: (Non parametrable) this script detect when the club hit the ball and take the Properties of the club to handle the physics resulting (see below). This script handle the particule of the ball too.
 
 
 **# Club Scripts**
