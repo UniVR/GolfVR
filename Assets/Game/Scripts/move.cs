@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// *** Move ***
+/// Unused: deplace an object depending on the mouse moves
+/// </summary>
 public class move : MonoBehaviour {
 
 	GameObject ball;
@@ -24,6 +29,9 @@ public class move : MonoBehaviour {
 		//transform.Translate (h, 0, v);
 		var rigidBody = GetComponent<Rigidbody> ();
 		rigidBody.AddForce(h-h1, 0, v1-v);
+
+		//var transform = GetComponent<Transform> ();
+		//transform.Translate(h, 0, v1);
 
 		h1 = h;
 		v1 = v;

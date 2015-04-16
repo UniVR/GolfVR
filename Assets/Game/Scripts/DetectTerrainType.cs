@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-/* 
- * Based on this answer: How can I perform some action based on the terrain texture currently under my player?
- * http://answers.unity3d.com/questions/14998/how-can-i-perform-some-action-based-on-the-terrain.html
- */
-
+/// <summary>
+/// *** Texture physics ***
+/// Detect the terrain under the ball and adapt the physic of the ball.
+/// 
+/// Based on this answer: How can I perform some action based on the terrain texture currently under my player?
+/// http://answers.unity3d.com/questions/14998/how-can-i-perform-some-action-based-on-the-terrain.html
+/// </summary>
 [Serializable]
 public class TexturePhysics{
 	[SerializeField] public float drag;

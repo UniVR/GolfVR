@@ -6,11 +6,11 @@ PhysicMaterial:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ClubPhysic
-  dynamicFriction: 10000
-  staticFriction: 10000
+  dynamicFriction: 1
+  staticFriction: 1
   bounciness: 1
   frictionCombine: 0
-  bounceCombine: 3
+  bounceCombine: 2
   frictionDirection2: {x: 0, y: 0, z: 0}
   dynamicFriction2: 0
   staticFriction2: 0

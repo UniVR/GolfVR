@@ -5,12 +5,12 @@ PhysicMaterial:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TerrainPhysics
-  dynamicFriction: 1
-  staticFriction: 1
-  bounciness: .5
+  m_Name: DefaultPhysic
+  dynamicFriction: .600000024
+  staticFriction: .600000024
+  bounciness: 0
   frictionCombine: 0
-  bounceCombine: 2
+  bounceCombine: 0
   frictionDirection2: {x: 0, y: 0, z: 0}
   dynamicFriction2: 0
   staticFriction2: 0

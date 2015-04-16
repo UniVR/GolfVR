@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// *** Shoot ***
+/// Control the club. Load/Release the shoot
+/// </summary>
 public class Shoot : MonoBehaviour {
 	public enum State{
 		Idle,

@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// *** Button script ***
+/// Control how the GUI will react 
+/// </summary>
 public class ButtonScript : MonoBehaviour {
 
 	private bool isViewed = false;
