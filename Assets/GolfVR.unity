@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf4b9ea8a4a68d49b24f16c7deb6d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceCoef: 50
+  forceCoef: 10
   angle: 45
 --- !u!1001 &360297378
 Prefab:
@@ -141,7 +141,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 30.5
+      value: 29.9400005
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -207,15 +207,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.5970001
+      value: 22.6000004
       objectReference: {fileID: 0}
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.836000025
+      value: -.839999974
       objectReference: {fileID: 0}
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 31.2299995
+      value: 30.7299995
       objectReference: {fileID: 0}
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalRotation.x
@@ -251,7 +251,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: InitialModule.startColor.maxColor.rgba
-      value: 4278190335
+      value: 603997550
       objectReference: {fileID: 0}
     - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: EmissionModule.rate.scalar
@@ -409,7 +409,109 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: SizeBySpeedModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key0.rgba
+      value: 4294951040
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key1.rgba
+      value: 4280934833
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key2.rgba
+      value: 2582493
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.ctime1
+      value: 30262
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorBySpeedModule.range.y
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: SizeBySpeedModule.range.y
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: InitialModule.startColor.maxGradient.key1.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: InitialModule.startColor.maxGradient.key0.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[0].angularDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[1].angularDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[2].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[0].drag
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[1].drag
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+    - {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1452231270
@@ -553,6 +655,51 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1415543280}
   m_Script: {fileID: 11500000, guid: 2a2529a30262ff8439bb8c9a95509d4e, type: 3}
+--- !u!96 &1598460211
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598460200}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 77d08210df254d845885518314593544, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 3
+  m_StartWidth: .200000003
+  m_EndWidth: .5
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 1862270975
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 1241513983
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 1124073471
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 671088639
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: .300000012
+  m_Autodestruct: 0
 --- !u!1 &1599321898
 GameObject:
   m_ObjectHideFlags: 0
