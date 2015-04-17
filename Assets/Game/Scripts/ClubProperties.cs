@@ -9,4 +9,5 @@ using System.Collections;
 public class ClubProperties : MonoBehaviour {
 
 	public float forceCoef;
+	public float angle;
 }

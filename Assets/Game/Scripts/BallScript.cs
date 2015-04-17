@@ -28,14 +28,10 @@ public class BallScript : MonoBehaviour {
 		particle.startSize = magnitude/20;
 	}
 
-	void OnCollisionEnter (Collision col)
+	public void Shoot (float magnitude, float orientation, ClubProperties prop)
 	{
-		ClubProperties prop = col.gameObject.GetComponent<ClubProperties> ();
-		if (prop == null)
-			return;
-		Vector3 normal = col.contacts[0].normal;
-		float magnitude = col.relativeVelocity.magnitude;
-		ball.AddForce (prop.forceCoef *  normal, ForceMode.Impulse);
+		Vector3 direction = Quaternion.Euler(0, orientation, -prop.angle) * new Vector3 (-1, 0, 0);
+		ball.AddForce(direction * magnitude * prop.forceCoef, ForceMode.Impulse);
 
 		particle.Play();
 	}

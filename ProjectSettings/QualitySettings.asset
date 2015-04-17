@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 6
   m_QualitySettings:
   - serializedVersion: 2
     name: Fastest
@@ -144,9 +144,32 @@ QualitySettings:
     maximumLODLevel: 0
     particleRaycastBudget: 4096
     excludedTargetPlatforms: []
+  - serializedVersion: 2
+    name: Custom
+    pixelLightCount: 1
+    shadows: 1
+    shadowResolution: 0
+    shadowProjection: 1
+    shadowCascades: 1
+    shadowDistance: 20
+    shadowCascade2Split: .333333343
+    shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
+    blendWeights: 2
+    textureQuality: 0
+    anisotropicTextures: 1
+    antiAliasing: 0
+    softParticles: 0
+    softVegetation: 1
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 0
+    vSyncCount: 0
+    lodBias: .699999988
+    maximumLODLevel: 0
+    particleRaycastBudget: 64
+    excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 2
-    BlackBerry: 2
+    Android: 6
+    BlackBerry: 6
     GLES Emulation: 5
     PS3: 5
     PS4: 5
@@ -161,4 +184,4 @@ QualitySettings:
     Windows Store Apps: 5
     XBOX360: 5
     XboxOne: 5
-    iPhone: 2
+    iPhone: 6

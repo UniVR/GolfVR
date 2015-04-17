@@ -8,7 +8,7 @@ PhysicMaterial:
   m_Name: BallPhysic
   dynamicFriction: 1
   staticFriction: 1
-  bounciness: .5
+  bounciness: .100000001
   frictionCombine: 0
   bounceCombine: 2
   frictionDirection2: {x: 1, y: 1, z: 1}

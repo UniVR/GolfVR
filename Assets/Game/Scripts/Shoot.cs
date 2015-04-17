@@ -14,11 +14,14 @@ public class Shoot : MonoBehaviour {
 		Fired
 	}	
 
+	public BallScript ball;
+
 	public float velocityLoading;
 	private float timeLoading;
 	public float coefShooting;
 
 	public float minAngle;
+	public float midAngle;
 	public float maxAngle;
 
 	public string Information = "Don't modify next values... !";
@@ -26,11 +29,16 @@ public class Shoot : MonoBehaviour {
 	
 	public State currentState;
 	private Transform clubTransf;
-		
+
+	private bool ballShooted;
+	private ClubProperties prop;	
+
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
+		prop = GetComponent<ClubProperties> ();
 		currentState = State.Idle;
 		timeLoading = 0;
+		ballShooted = false;
 	}
 
 
@@ -42,6 +50,10 @@ public class Shoot : MonoBehaviour {
 			clubTransf.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
 		}else if (currentState == State.Firing && clubTransf.rotation.z > minAngle ) { 	//Shooting
 			clubTransf.Rotate (-Vector3.down * Time.deltaTime * coefShooting * timeLoading);
+			if(!ballShooted && clubTransf.rotation.z < midAngle){
+				ball.Shoot(timeLoading, clubTransf.rotation.y, prop);
+				ballShooted = true;
+			}
 		}else if (currentState == State.Loading) {										//Loaded
 			currentState = State.Loaded;
 		} else if (currentState == State.Firing) {										//Fired

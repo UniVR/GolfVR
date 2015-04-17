@@ -102,9 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84595adeaf26a4badbe39d776114f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 1598460201}
   velocityLoading: 50
   coefShooting: 200
   minAngle: -.699999988
+  midAngle: 0
   maxAngle: .699999988
   Information: Don't modify next values
   Rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -121,33 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceCoef: 50
---- !u!64 &163700446
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 163700443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: b1f33177de257c046beab9e9dbf7310c, type: 3}
---- !u!54 &163700450
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 163700443}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  angle: 45
 --- !u!1001 &360297378
 Prefab:
   m_ObjectHideFlags: 0
@@ -425,6 +401,14 @@ Prefab:
       propertyPath: delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 5429280, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429280, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_IsPrefabParent: 0
@@ -563,6 +547,12 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_PrefabInternal: {fileID: 1415543280}
+--- !u!114 &1598460201
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445830, guid: 682f1ec973a717e4a8a5390ec43da632,
+    type: 2}
+  m_PrefabInternal: {fileID: 1415543280}
+  m_Script: {fileID: 11500000, guid: 2a2529a30262ff8439bb8c9a95509d4e, type: 3}
 --- !u!1 &1599321898
 GameObject:
   m_ObjectHideFlags: 0
