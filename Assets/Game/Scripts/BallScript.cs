@@ -16,23 +16,20 @@ using System.Collections;
 public class BallScript : MonoBehaviour {
 
 	Rigidbody ball;
-	ParticleSystem particle;
+
 
 	void Start () {
 		ball = GetComponent<Rigidbody> ();
-		particle = GetComponent<ParticleSystem> ();
+		
 	}
 
-	void Update(){
-		float magnitude = ball.velocity.magnitude;
-		particle.startSize = magnitude/20;
-	}
+	
 
 	public void Shoot (float magnitude, float orientation, ClubProperties prop)
 	{
 		Vector3 direction = Quaternion.Euler(0, orientation, -prop.angle) * new Vector3 (-1, 0, 0);
 		ball.AddForce(direction * magnitude * prop.forceCoef, ForceMode.Impulse);
 
-		particle.Play();
+	
 	}
 }
