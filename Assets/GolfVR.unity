@@ -333,7 +333,6 @@ GameObject:
   - 223: {fileID: 663271065}
   - 114: {fileID: 663271064}
   - 114: {fileID: 663271063}
-  - 114: {fileID: 663271066}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -414,17 +413,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!114 &663271066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 663271061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd5d7ffd0e12f34d9ad75e2455df24b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &737823013
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,16 +438,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737823013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .516251206, y: 0, z: 0, w: .856437266}
+  m_LocalPosition: {x: 0, y: 0, z: -133.679993}
+  m_LocalScale: {x: .0299999993, y: .0299999993, z: .0299999993}
   m_Children:
   - {fileID: 294138364}
   m_Father: {fileID: 663271062}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 45.9000015, y: 0}
+  m_AnchoredPosition: {x: 2.05999994, y: -59.2000008}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &737823015
@@ -548,6 +536,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1563345031}
           m_MethodName: TurnRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1563345031}
+          m_MethodName: StopTurn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1065,6 +1071,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd5d7ffd0e12f34d9ad75e2455df24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateAround: {fileID: 1598460200}
+  buttonLeft: {fileID: 2077730842}
+  buttonRight: {fileID: 737823015}
 --- !u!1 &1598460200
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -1334,16 +1343,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077730840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .516251206, y: 0, z: 0, w: .856437266}
+  m_LocalPosition: {x: 0, y: 0, z: -133.679993}
+  m_LocalScale: {x: .0299999993, y: .0299999993, z: .0299999993}
   m_Children:
   - {fileID: 246601745}
   m_Father: {fileID: 663271062}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -56.0999985, y: 0}
+  m_AnchoredPosition: {x: -1.64999998, y: -59.2000008}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2077730842
@@ -1426,12 +1435,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: 3
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1563345031}
           m_MethodName: TurnLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1563345031}
+          m_MethodName: StopTurn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
