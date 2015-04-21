@@ -14,7 +14,11 @@ public class Shoot : MonoBehaviour {
 		Fired
 	}	
 
-	public BallScript ball;
+	public GameObject ball;
+	private BallScript ballScript;
+	private Rigidbody ballRigidBody;
+	public GameObject player;
+	private MovePlayer movePlayerScript;
 
 	public float velocityLoading;
 	private float timeLoading;
@@ -23,6 +27,8 @@ public class Shoot : MonoBehaviour {
 	public float minAngle;
 	public float midAngle;
 	public float maxAngle;
+
+	public float yAngleCorrection;
 
 	public string Information = "Don't modify next values... !";
 	public Quaternion Rotation;
@@ -36,6 +42,9 @@ public class Shoot : MonoBehaviour {
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
 		prop = GetComponent<ClubProperties> ();
+		ballRigidBody = ball.GetComponent<Rigidbody> ();
+		ballScript = ball.GetComponent<BallScript> ();
+		movePlayerScript = player.GetComponent<MovePlayer> ();
 		currentState = State.Idle;
 		timeLoading = 0;
 		ballShooted = false;
@@ -43,22 +52,39 @@ public class Shoot : MonoBehaviour {
 
 
 	void FixedUpdate () {
-		Rotation = clubTransf.rotation;
+		Rotation = player.transform.rotation; //Informations
 
-		if (currentState == State.Loading && clubTransf.rotation.z < maxAngle ) { 		//Loading
+		/*
+		 * 	Shooting process
+		 */
+		if (currentState == State.Loading &&  clubTransf.localRotation.z < maxAngle ) 			//Loading
+		{ 		
 			timeLoading += Time.deltaTime;
 			clubTransf.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
-		}else if (currentState == State.Firing && clubTransf.rotation.z > minAngle ) { 	//Shooting
+		}
+		else if (currentState == State.Firing && clubTransf.localRotation.z > minAngle )		//Shooting
+		{ 	
 			clubTransf.Rotate (-Vector3.down * Time.deltaTime * coefShooting * timeLoading);
-			if(!ballShooted && clubTransf.rotation.z < midAngle){
-				ball.Shoot(timeLoading, clubTransf.rotation.y, prop);
+			if(!ballShooted && clubTransf.localRotation.z < midAngle)								//Shoot now
+			{
+				ballScript.Shoot(timeLoading, player.transform.eulerAngles.y, prop);
 				ballShooted = true;
 			}
-		}else if (currentState == State.Loading) {										//Loaded
+		}else if (currentState == State.Loading) 												//Loaded
+		{										
 			currentState = State.Loaded;
-		} else if (currentState == State.Firing) {										//Fired
+		} 
+		else if (currentState == State.Firing) {												//Fired									
 			currentState = State.Fired;
 		}
+		else if(currentState == State.Fired && ballRigidBody.velocity.magnitude < 0.1f){										//Fired and velocity small
+			movePlayerScript.MovePlayerTo(ball);
+			this.currentState = State.Idle;
+			var old = clubTransf.localRotation;
+			clubTransf.localRotation = new Quaternion(old.x, old.y, 0f, old.w);
+		}
+
+
 	}
 
 

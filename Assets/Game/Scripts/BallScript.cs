@@ -20,7 +20,6 @@ public class BallScript : MonoBehaviour {
 
 	void Start () {
 		ball = GetComponent<Rigidbody> ();
-		
 	}
 
 	
@@ -28,8 +27,6 @@ public class BallScript : MonoBehaviour {
 	public void Shoot (float magnitude, float orientation, ClubProperties prop)
 	{
 		Vector3 direction = Quaternion.Euler(0, orientation, -prop.angle) * new Vector3 (-1, 0, 0);
-		ball.AddForce(direction * magnitude * prop.forceCoef, ForceMode.Impulse);
-
-	
+		ball.AddForce(direction * magnitude * prop.forceCoef, ForceMode.Impulse);	
 	}
 }

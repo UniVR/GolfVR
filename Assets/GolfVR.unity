@@ -102,12 +102,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84595adeaf26a4badbe39d776114f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 1598460201}
+  ball: {fileID: 1598460200}
+  player: {fileID: 1563345029}
   velocityLoading: 50
   coefShooting: 200
   minAngle: -.699999988
   midAngle: 0
   maxAngle: .699999988
+  yAngleCorrection: -.0338224694
   Information: Don't modify next values
   Rotation: {x: 0, y: 0, z: 0, w: 0}
   currentState: 0
@@ -273,31 +275,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .25999999
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .649999976
+      value: .709999979
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.74000001
+      value: 1.83800006
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.706297457
+      value: -.706032813
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.0338224731
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .0338223763
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .706297398
+      value: .708179176
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_RootOrder
@@ -305,11 +307,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.23892927
+      value: 1.23892939
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.23892963
+      value: 1.23892975
       objectReference: {fileID: 0}
     - target: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
       propertyPath: m_LocalScale.z
@@ -875,11 +877,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: TerrainTexturePhysics.Array.data[0].drag
-      value: .100000001
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: TerrainTexturePhysics.Array.data[1].drag
-      value: .300000012
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalScale.x
@@ -892,6 +894,10 @@ Prefab:
     - target: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.20000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[2].drag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -1038,6 +1044,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1563345030}
   - 114: {fileID: 1563345031}
+  - 114: {fileID: 1563345032}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1071,19 +1078,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd5d7ffd0e12f34d9ad75e2455df24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateAround: {fileID: 1598460200}
-  buttonLeft: {fileID: 2077730842}
-  buttonRight: {fileID: 737823015}
+  ball: {fileID: 1598460200}
+  buttonLeft: {fileID: 2077730840}
+  buttonRight: {fileID: 737823013}
+--- !u!114 &1563345032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563345029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc553115e008cb4bb12164113ce72b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &1598460200
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_PrefabInternal: {fileID: 1415543280}
---- !u!114 &1598460201
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11445830, guid: 682f1ec973a717e4a8a5390ec43da632,
-    type: 2}
-  m_PrefabInternal: {fileID: 1415543280}
-  m_Script: {fileID: 11500000, guid: 2a2529a30262ff8439bb8c9a95509d4e, type: 3}
 --- !u!96 &1598460211
 TrailRenderer:
   m_ObjectHideFlags: 0
