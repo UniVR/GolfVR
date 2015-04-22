@@ -1,37 +1,15 @@
 fileFormatVersion: 2
-guid: 84185d1103368794d9b094ff70570b6c
-timeCreated: 1429560677
+guid: 95444ff6056f3824aa7af0ea7545ce22
+timeCreated: 1429708707
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Parameters
-    100002: Pause
-    100004: Play
-    100006: Quit
-    100008: Return
-    100010: //RootNode
-    400000: Parameters
-    400002: Pause
-    400004: Play
-    400006: Quit
-    400008: Return
-    400010: //RootNode
-    2300000: Parameters
-    2300002: Pause
-    2300004: Play
-    2300006: Quit
-    2300008: Return
-    3300000: Parameters
-    3300002: Pause
-    3300004: Play
-    3300006: Quit
-    3300008: Return
-    4300000: Pause
-    4300002: Quit
-    4300004: Parameters
-    4300006: Return
-    4300008: Play
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Return
   materials:
     importMaterials: 1
     materialName: 0
