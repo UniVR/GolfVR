@@ -4,8 +4,8 @@ using System.Collections;
 public class MovePlayer : MonoBehaviour {
 	
 	public float moveSpeed;
-	
-	private GameObject destination;
+	public GameObject ballDestination;
+	public Vector3 offset;
 	private bool isMoving;
 
 
@@ -18,13 +18,18 @@ public class MovePlayer : MonoBehaviour {
 	void Update () {
 		if (isMoving) {
 			float step = moveSpeed * Time.deltaTime;
-			transform.position = Vector3.MoveTowards (transform.position, destination.transform.position, step);
+			transform.position = Vector3.MoveTowards (transform.position, ballDestination.transform.position + offset, step);
+			if(transform.position == ballDestination.transform.position + offset)
+				isMoving = false;
 		}
 	}
 
-	public void MovePlayerTo(GameObject ball){
-		destination = ball;
+	public void MovePlayerToBall(){
 		isMoving = true;
+	}
+
+	public void StopPlayer(){
+		isMoving = false;
 	}
 
 }

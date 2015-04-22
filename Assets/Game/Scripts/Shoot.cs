@@ -35,12 +35,14 @@ public class Shoot : MonoBehaviour {
 	
 	public State currentState;
 	private Transform clubTransf;
+	private Quaternion clubDefaultRotation;
 
 	private bool ballShooted;
 	private ClubProperties prop;	
 
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
+		clubDefaultRotation = new Quaternion(clubTransf.localRotation.x, clubTransf.localRotation.y, clubTransf.localRotation.z, clubTransf.localRotation.w);
 		prop = GetComponent<ClubProperties> ();
 		ballRigidBody = ball.GetComponent<Rigidbody> ();
 		ballScript = ball.GetComponent<BallScript> ();
@@ -62,29 +64,30 @@ public class Shoot : MonoBehaviour {
 			timeLoading += Time.deltaTime;
 			clubTransf.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
 		}
+		else if (currentState == State.Loading) 												//Loaded
+		{										
+			currentState = State.Loaded;
+		} 
 		else if (currentState == State.Firing && clubTransf.localRotation.z > minAngle )		//Shooting
 		{ 	
 			clubTransf.Rotate (-Vector3.down * Time.deltaTime * coefShooting * timeLoading);
-			if(!ballShooted && clubTransf.localRotation.z < midAngle)								//Shoot now
+			if(!ballShooted && clubTransf.localRotation.z < midAngle)							//Shoot now
 			{
 				ballScript.Shoot(timeLoading, player.transform.eulerAngles.y, prop);
 				ballShooted = true;
 			}
-		}else if (currentState == State.Loading) 												//Loaded
-		{										
-			currentState = State.Loaded;
-		} 
+		}
 		else if (currentState == State.Firing) {												//Fired									
 			currentState = State.Fired;
 		}
-		else if(currentState == State.Fired && ballRigidBody.velocity.magnitude < 0.1f){										//Fired and velocity small
-			movePlayerScript.MovePlayerTo(ball);
-			this.currentState = State.Idle;
-			var old = clubTransf.localRotation;
-			clubTransf.localRotation = new Quaternion(old.x, old.y, 0f, old.w);
+		else if(currentState == State.Fired && ballRigidBody.velocity.magnitude < 0.1f){		//Fired and velocity small
+			movePlayerScript.MovePlayerToBall();
+			clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
+			if(clubTransf.localRotation.z > midAngle){
+				this.currentState = State.Idle;
+				ballShooted = false;
+			}
 		}
-
-
 	}
 
 
