@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 442786}
   - 33: {fileID: 3383678}
   - 23: {fileID: 2345022}
+  - 114: {fileID: 11479140}
+  - 114: {fileID: 11492074}
   m_Layer: 0
   m_Name: VLP.Wood
   m_TagString: Untagged
@@ -60,6 +62,41 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197256}
   m_Mesh: {fileID: 4300000, guid: d67584ff71983c54d8a83b49ad5f8401, type: 3}
+--- !u!114 &11479140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf4b9ea8a4a68d49b24f16c7deb6d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceCoef: 25
+  angle: 12
+--- !u!114 &11492074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c84595adeaf26a4badbe39d776114f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 0}
+  player: {fileID: 0}
+  velocityLoading: 50
+  coefShooting: 200
+  minAngle: -.699999988
+  midAngle: 0
+  maxAngle: .699999988
+  yAngleCorrection: -.0338224694
+  Information: Don't modify next values... !
+  Rotation: {x: 0, y: 0, z: 0, w: 0}
+  currentState: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
