@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf4b9ea8a4a68d49b24f16c7deb6d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceCoef: 10
-  angle: 45
+  forceCoef: 120
+  angle: 0
 --- !u!4 &163700446
 Transform:
   m_PrefabParentObject: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 7d8d2e926fb16214d83e0810f97b9aa7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: aa47e456b7a9adb449f8521fe8279333, type: 3}
   m_Type: 0
@@ -442,6 +442,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
       value: 1
@@ -765,6 +769,326 @@ Prefab:
     - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: TerrainTexturePhysics.Array.data[2].drag
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[3].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[3].angularDrag
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[4].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[4].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[5].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[5].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[6].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[6].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[7].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[7].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[8].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[8].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[9].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[9].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[10].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[10].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[11].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[11].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[12].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[12].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[13].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[13].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[14].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[14].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[15].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[15].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[16].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[16].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[17].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[17].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[18].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[18].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[19].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[19].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[20].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[20].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[21].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[21].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[22].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[22].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[23].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[23].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[24].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[24].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[25].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[25].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[26].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[26].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[27].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[27].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[28].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[28].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[29].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[29].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[30].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[30].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[31].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[31].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[32].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[32].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[33].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[33].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[34].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[34].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[35].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[35].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[36].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[36].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[37].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[37].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[38].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[38].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[39].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[39].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[40].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[40].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[41].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[41].angularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[42].drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: TerrainTexturePhysics.Array.data[42].angularDrag
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -1140,7 +1464,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -.0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1148,7 +1472,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .850000024
+      value: .589999974
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1287,7 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: df0ab80e97782ab4982849832c4ce481, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 5fca324452b5999448f7574b32cd1419, type: 3}
   m_Type: 0
