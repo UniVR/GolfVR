@@ -86,6 +86,7 @@ public class Shoot : MonoBehaviour {
 			if(clubTransf.localRotation.z > midAngle){
 				this.currentState = State.Idle;
 				ballShooted = false;
+				timeLoading = 0;
 			}
 		}
 	}
