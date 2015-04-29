@@ -35,6 +35,7 @@ public class DetectTerrainType : MonoBehaviour {
 	private TerrainData terrainData;
 	private Vector3 terrainPos;
 
+	private Vector3 OldPosition;
 
 	void Start () {
 		ballTransf = GetComponent<Transform>();
@@ -61,6 +62,13 @@ public class DetectTerrainType : MonoBehaviour {
 			currentTextureLevel[i] = splatmapData[0,0,i];
 			drag += TerrainTexturePhysics[i].drag * currentTextureLevel[i];
 			angularDrag += TerrainTexturePhysics[i].angularDrag * currentTextureLevel[i];
+		}
+
+		if (currentTextureLevel [textureSize - 1] > 0.1) { //Out of bound
+			ballTransf.position = OldPosition;
+			ballRigidBody.velocity = Vector3.zero;
+		} else if (ballRigidBody.velocity.magnitude < 0.1) { //Save old position
+			OldPosition = ballPos;
 		}
 
 		ballRigidBody.drag = drag;

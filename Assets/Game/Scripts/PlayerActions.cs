@@ -7,7 +7,7 @@ public class PlayerActions : MonoBehaviour {
 	public GameObject ball;
 	private Rigidbody ballRigidBody;
 
-	public Shoot shootScript;
+	public ClubScript clubScript;
 
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
@@ -44,7 +44,7 @@ public class PlayerActions : MonoBehaviour {
 		else if(action==ActionRotation.TurnRight)
 			playerPos.RotateAround(ball.transform.position, Vector3.up, 1);
 
-		if (shootScript.currentState != Shoot.State.Idle || ballRigidBody.velocity.magnitude > 0.5f) 
+		if (clubScript.currentState != ClubScript.State.Idle || ballRigidBody.velocity.magnitude > 0.5f) 
 		{
 			action = ActionRotation.None;
 			hideGui = false;

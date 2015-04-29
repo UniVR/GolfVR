@@ -5,7 +5,7 @@ using System.Collections;
 /// *** Shoot ***
 /// Control the club. Load/Release the shoot
 /// </summary>
-public class Shoot : MonoBehaviour {
+public class ClubScript : MonoBehaviour {
 	public enum State{
 		Idle,
 		Loading,
@@ -14,38 +14,49 @@ public class Shoot : MonoBehaviour {
 		Fired
 	}	
 
+	/*
+	 * 	Ball and player
+	 */
 	public GameObject ball;
-	private BallScript ballScript;
-	private Rigidbody ballRigidBody;
 	public GameObject player;
+
+	private Rigidbody ballRigidBody;
 	private MovePlayer movePlayerScript;
 
+	/*
+	 * 	Club properties
+	 */
+	public float clubForceCoef;
+	public float clubAngle;
+
 	public float velocityLoading;
-	private float timeLoading;
-	public float coefShooting;
+	public float velocityShooting;
 
 	public float minAngle;
 	public float midAngle;
 	public float maxAngle;
 
-	public float yAngleCorrection;
-
+	/*
+	 * 	Visual informations (debug purpose)
+	 */
 	public string Information = "Don't modify next values... !";
 	public Quaternion Rotation;
 	
 	public State currentState;
+
+	/*
+	 * 	Runtime variables
+	 */
+	private float timeLoading;
 	private Transform clubTransf;
 	private Quaternion clubDefaultRotation;
 
 	private bool ballShooted;
-	private ClubProperties prop;	
 
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
 		clubDefaultRotation = new Quaternion(clubTransf.localRotation.x, clubTransf.localRotation.y, clubTransf.localRotation.z, clubTransf.localRotation.w);
-		prop = GetComponent<ClubProperties> ();
 		ballRigidBody = ball.GetComponent<Rigidbody> ();
-		ballScript = ball.GetComponent<BallScript> ();
 		movePlayerScript = player.GetComponent<MovePlayer> ();
 		currentState = State.Idle;
 		timeLoading = 0;
@@ -70,10 +81,10 @@ public class Shoot : MonoBehaviour {
 		} 
 		else if (currentState == State.Firing && clubTransf.localRotation.z > minAngle )		//Shooting
 		{ 	
-			clubTransf.Rotate (-Vector3.down * Time.deltaTime * coefShooting * timeLoading);
+			clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * timeLoading);
 			if(!ballShooted && clubTransf.localRotation.z < midAngle)							//Shoot now
 			{
-				ballScript.Shoot(timeLoading, player.transform.eulerAngles.y, prop);
+				ShootBall(timeLoading, player.transform.eulerAngles.y);
 				ballShooted = true;
 			}
 		}
@@ -97,10 +108,15 @@ public class Shoot : MonoBehaviour {
 			currentState = State.Loading;
 	}
 
-
 	public void ReleaseShot(){
 		if (currentState == State.Loading || currentState == State.Loaded)
 			currentState = State.Firing;
+	}
+
+	public void ShootBall (float magnitude, float orientation)
+	{
+		Vector3 direction = Quaternion.Euler(0, orientation, -clubAngle) * new Vector3 (-1, 0, 0);
+		ballRigidBody.AddForce(direction * magnitude * clubForceCoef, ForceMode.Impulse);	
 	}
 
 
