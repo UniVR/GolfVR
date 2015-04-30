@@ -142,8 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf4b9ea8a4a68d49b24f16c7deb6d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceCoef: 10
-  angle: 45
 --- !u!4 &163700446
 Transform:
   m_ObjectHideFlags: 0
@@ -822,7 +820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: TerrainTexturePhysics.Array.data[0].drag
-      value: .200000003
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11433554, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
       propertyPath: TerrainTexturePhysics.Array.data[1].drag
@@ -1297,7 +1295,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1563345030}
   - 114: {fileID: 1563345031}
-  - 114: {fileID: 1563345032}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1336,20 +1333,7 @@ MonoBehaviour:
   clubScript: {fileID: 163700444}
   buttonLeft: {fileID: 2077730840}
   buttonRight: {fileID: 737823013}
---- !u!114 &1563345032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563345029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc553115e008cb4bb12164113ce72b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 50
-  ballDestination: {fileID: 1598460200}
-  offset: {x: .0799999982, y: 1.34000003, z: -2.5999999}
+  PlayerToBallSpeed: 50
 --- !u!1 &1598460200
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}

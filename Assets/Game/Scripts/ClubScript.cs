@@ -15,13 +15,16 @@ public class ClubScript : MonoBehaviour {
 	}	
 
 	/*
-	 * 	Ball and player
+	 * 	Ball
 	 */
 	public GameObject ball;
-	public GameObject player;
-
 	private Rigidbody ballRigidBody;
-	private MovePlayer movePlayerScript;
+
+	/*
+	 * 	Player
+	 */
+	public GameObject player;
+	private PlayerActions playerScript;
 
 	/*
 	 * 	Club properties
@@ -50,17 +53,18 @@ public class ClubScript : MonoBehaviour {
 	private float timeLoading;
 	private Transform clubTransf;
 	private Quaternion clubDefaultRotation;
-
 	private bool ballShooted;
+	private bool playerMoved;
 
 	void Start () {
 		clubTransf = GetComponent<Transform> ();
 		clubDefaultRotation = new Quaternion(clubTransf.localRotation.x, clubTransf.localRotation.y, clubTransf.localRotation.z, clubTransf.localRotation.w);
 		ballRigidBody = ball.GetComponent<Rigidbody> ();
-		movePlayerScript = player.GetComponent<MovePlayer> ();
+		playerScript = player.GetComponent<PlayerActions> ();
 		currentState = State.Idle;
 		timeLoading = 0;
 		ballShooted = false;
+		playerMoved = false;
 	}
 
 
@@ -92,11 +96,15 @@ public class ClubScript : MonoBehaviour {
 			currentState = State.Fired;
 		}
 		else if(currentState == State.Fired && ballRigidBody.velocity.magnitude < 0.1f){		//Fired and velocity small
-			movePlayerScript.MovePlayerToBall();
 			clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
+			if(!playerMoved){
+				playerScript.MovePlayerToBall();
+				playerMoved = true;
+			}
 			if(clubTransf.localRotation.z > midAngle){
 				this.currentState = State.Idle;
 				ballShooted = false;
+				playerMoved = false;
 				timeLoading = 0;
 			}
 		}
