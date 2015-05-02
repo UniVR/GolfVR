@@ -1,8 +1,10 @@
 # GolfVR #
 
-**The first Golf Game for Virtual Reality !**
+**The first Golf Game for Virtual Reality Headsets !**
 
 This game should be played with a **VR headset** and a **Wii Controller** (wii controller not yet supported).
+
+Tons of outdated things in that readme !
 
 ## Discussion ##
 
