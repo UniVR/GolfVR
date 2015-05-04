@@ -1,4 +1,4 @@
-Sound files naming convention
+Files naming convention
 
 
 [prefix]_[snd]_[suffix].format
@@ -24,4 +24,3 @@ Is for menu cancel action
 ./Assets/Game/Sounds/environment
 ./Assets/Game/Sounds/interactions
 ./Assets/Game/Sounds/menus
-
