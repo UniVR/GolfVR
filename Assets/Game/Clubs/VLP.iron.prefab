@@ -41,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: c8e7471e43a08834bb5003c64cc0639d, type: 2}
+  - {fileID: 2100000, guid: 0ddc506a6e8e6ee4db3468210972bcae, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -88,12 +88,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
   player: {fileID: 0}
+  clubForceCoef: 0
+  clubAngle: 0
   velocityLoading: 50
-  coefShooting: 200
+  velocityShooting: 0
   minAngle: -.699999988
   midAngle: 0
   maxAngle: .699999988
-  yAngleCorrection: -.0338224694
   Information: Don't modify next values... !
   Rotation: {x: 0, y: 0, z: 0, w: 0}
   currentState: 0
