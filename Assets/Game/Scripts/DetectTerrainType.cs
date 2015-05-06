@@ -16,8 +16,6 @@ public class TexturePhysics{
 	[SerializeField] public float angularDrag;
 }
 
-[RequireComponent(typeof (Rigidbody))]
-[RequireComponent(typeof (Transform))]
 public class DetectTerrainType : MonoBehaviour {
 	
 	private int textureSize;
@@ -38,8 +36,10 @@ public class DetectTerrainType : MonoBehaviour {
 	private Vector3 OldPosition;
 
 	void Start () {
-		ballTransf = GetComponent<Transform>();
-		ballRigidBody = GetComponent<Rigidbody> ();
+		var MainScript = GetComponent<MainScript> ();
+
+		ballTransf = MainScript.Ball.transform;
+		ballRigidBody = MainScript.Ball.GetComponent<Rigidbody>();
 
 		Terrain terrain = Terrain.activeTerrain;
 		terrainData = terrain.terrainData;
