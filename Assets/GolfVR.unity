@@ -136,18 +136,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496065652}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c84595adeaf26a4badbe39d776114f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityLoading: 50
-  velocityShooting: 200
-  minAngle: -.699999988
-  midAngle: 0
-  maxAngle: .699999988
-  Information: Don't modify next values
-  Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &496065655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,9 +157,14 @@ MonoBehaviour:
   Player: {fileID: 1563345029}
   Club: {fileID: 501213725}
   Ball: {fileID: 1598460200}
+  velocityLoading: 50
+  velocityShooting: 200
+  minAngle: -.699999988
+  midAngle: 0
+  maxAngle: .699999988
   buttonLeft: {fileID: 2077730840}
   buttonRight: {fileID: 737823013}
-  moveVelocity: 50
+  moveToBallVelocity: 50
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
