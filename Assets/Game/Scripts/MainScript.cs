@@ -60,10 +60,12 @@ public class MainScript : MonoBehaviour {
 	//Ball
 	private Rigidbody ballRigidBody;
 	private MeshRenderer ballRenderer;
+	private AudioSource ballAudioSource;
 	private Color ballOriginalColor;
 	private Color ballCurrentColor;
 	private bool ballIsWatched;
 	private bool ballIsShooted;
+
 
 	//GUI
 	private Button buttonLeftBtn;
@@ -97,9 +99,11 @@ public class MainScript : MonoBehaviour {
 		 */
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
 		ballRenderer = Ball.GetComponent<MeshRenderer> ();
+		ballAudioSource = Ball.GetComponent<AudioSource> ();
 		ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
 		ballIsWatched = false;
 		ballIsShooted = false;
+
 
 		/*
 		 * GUI
@@ -167,6 +171,7 @@ public class MainScript : MonoBehaviour {
 			case ActionState.Firing:
 				if(clubTransf.localRotation.z > minAngle)
 				{
+				ballAudioSource.Play();
 					clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * timeLoading);
 					if(!ballIsShooted && clubTransf.localRotation.z < midAngle)							//Shoot now
 					{

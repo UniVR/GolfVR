@@ -10,8 +10,7 @@ GameObject:
   - 4: {fileID: 464992}
   - 33: {fileID: 3374644}
   - 23: {fileID: 2346092}
-  - 114: {fileID: 11473898}
-  - 114: {fileID: 11416842}
+  - 114: {fileID: 11431758}
   m_Layer: 0
   m_Name: VLP.putter
   m_TagString: Untagged
@@ -62,7 +61,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167052}
   m_Mesh: {fileID: 4300000, guid: 5b523c42d8e47bb4f8280731f146a7b5, type: 3}
---- !u!114 &11416842
+--- !u!114 &11431758
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,33 +69,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 167052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c84595adeaf26a4badbe39d776114f1, type: 3}
+  m_Script: {fileID: 11500000, guid: b863a989eb0fca543950fecf1ccc64af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  player: {fileID: 0}
-  velocityLoading: 50
-  coefShooting: 200
-  minAngle: -.699999988
-  midAngle: 0
-  maxAngle: 0
-  yAngleCorrection: -.0338224694
-  Information: Don't modify next values... !
-  Rotation: {x: 0, y: 0, z: 0, w: 0}
-  currentState: 0
---- !u!114 &11473898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bf4b9ea8a4a68d49b24f16c7deb6d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceCoef: 30
-  angle: 0
+  clubForceCoef: 30
+  clubAngle: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
