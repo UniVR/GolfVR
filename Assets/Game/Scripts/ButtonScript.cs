@@ -36,6 +36,7 @@ public class ButtonScript : MonoBehaviour {
 			isViewed = false;
 			Button button = GetComponent<Button>();
 			button.image.color = Color.white;
+			time = 0f;
 		}
 	}
 }
