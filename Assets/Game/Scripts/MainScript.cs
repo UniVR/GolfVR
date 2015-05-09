@@ -138,7 +138,10 @@ public class MainScript : MonoBehaviour {
 			 * Idle
 			 */
 			case ActionState.Idle:
-				if(!isGuiVisible)
+				if(!isGuiVisible 
+			   		&& currentMovement!=MovementState.FadeIn
+			   		&& currentMovement!=MovementState.FadeOut
+			   		&& currentMovement!=MovementState.MoveToTheBall)
 				{
 					isGuiVisible = true;
 					buttonLeft.SetActive(true);
@@ -209,7 +212,7 @@ public class MainScript : MonoBehaviour {
 				if(ballRigidBody.velocity.magnitude < 0.1f)
 				{
 					clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
-					if(currentMovement != MovementState.MoveToTheBall)
+					if(currentMovement != MovementState.FadeOut)
 					{
 						fadeAlphaValue = 0;
 						FadePlane.SetActive (true);
