@@ -125,13 +125,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainTexturePhysics:
-  - drag: .5
+  - drag: 1
     angularDrag: 5
-  - drag: .200000003
+  - drag: 2
     angularDrag: 10
-  - drag: .200000003
+  - drag: 3
     angularDrag: 30
-  - drag: .200000003
+  - drag: 4
     angularDrag: 160
   currentTextureLevel: []
 --- !u!114 &496065655
@@ -1956,7 +1956,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077730840}
-  m_LocalRotation: {x: -.258537352, y: .681155205, z: -.282143861, w: -.624164104}
+  m_LocalRotation: {x: -.258537382, y: .681155264, z: -.282143891, w: -.624164164}
   m_LocalPosition: {x: 0, y: 0, z: -137.630005}
   m_LocalScale: {x: .0299999993, y: .0299999993, z: .0299999993}
   m_Children: []
