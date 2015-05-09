@@ -11,9 +11,11 @@ public enum ActionState{
 }
 
 public enum MovementState{
-	MoveToTheBall,
 	TurnLeft,
 	TurnRight,
+	FadeIn,
+	FadeOut,
+	MoveToTheBall,
 	None
 }
 
@@ -39,9 +41,12 @@ public class MainScript : MonoBehaviour {
 	public float midAngle;
 	public float maxAngle;
 
-	//GUI
+	//GUI	
+	public GameObject FadePlane;
+	public float FadeSpeed;	
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
+	public float rotateAroundBallVelocity;
 	public float moveToBallVelocity;
 
 	/*
@@ -65,9 +70,10 @@ public class MainScript : MonoBehaviour {
 	private Color ballCurrentColor;
 	private bool ballIsWatched;
 	private bool ballIsShooted;
-
-
+	
 	//GUI
+	private Material fadePlaneMaterial;
+	private float fadeAlphaValue;
 	private Button buttonLeftBtn;
 	private Button buttonRightBtn;
 	private Color buttonsColor;
@@ -104,10 +110,11 @@ public class MainScript : MonoBehaviour {
 		ballIsWatched = false;
 		ballIsShooted = false;
 
-
 		/*
 		 * GUI
 		 */
+		FadePlane.SetActive (false);
+		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		buttonLeftBtn = buttonLeft.GetComponent<Button> ();
 		buttonRightBtn = buttonRight.GetComponent<Button> ();
 		buttonsColor = buttonLeftBtn.image.color;
@@ -198,7 +205,9 @@ public class MainScript : MonoBehaviour {
 					clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
 					if(currentMovement != MovementState.MoveToTheBall)
 					{
-						currentMovement = MovementState.MoveToTheBall;
+						fadeAlphaValue = 0;
+						FadePlane.SetActive (true);
+						currentMovement = MovementState.FadeOut;
 					}
 					if(clubTransf.localRotation.z > midAngle)
 					{
@@ -226,25 +235,45 @@ public class MainScript : MonoBehaviour {
 			 */
 			case MovementState.TurnLeft:
 				buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -1);
+				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity);
 			break;
 
 			/*
 			 * Turn right
 			 */
 			case MovementState.TurnRight:
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, 1);
-				buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
+				buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
+				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity);
+			break;
+
+			/*
+			 * 	Fade Out
+			 */
+			case MovementState.FadeOut:
+				fadeAlphaValue += Time.deltaTime / FadeSpeed;
+				fadePlaneMaterial.color = new Color(fadePlaneMaterial.color.r, fadePlaneMaterial.color.g, fadePlaneMaterial.color.b, fadeAlphaValue);
+				if(fadeAlphaValue>=1f)
+					currentMovement = MovementState.MoveToTheBall;
 			break;
 
 			/*
 			 * Move toward the ball
 			 */
 			case MovementState.MoveToTheBall:
-				float step = moveToBallVelocity * Time.deltaTime;
-				Player.transform.position = Vector3.MoveTowards (Player.transform.position, Ball.transform.position + playerOffsetWithBall, step);
-				if(transform.position == Ball.transform.position + playerOffsetWithBall)
-					currentMovement = MovementState.MoveToTheBall;
+				Player.transform.position = Ball.transform.position + playerOffsetWithBall;
+				currentMovement = MovementState.FadeIn;
+			break;
+
+			/*
+			 * 	Fade In
+			 */
+			case MovementState.FadeIn:
+				fadeAlphaValue -= Time.deltaTime / FadeSpeed;
+				fadePlaneMaterial.color = new Color(fadePlaneMaterial.color.r, fadePlaneMaterial.color.g, fadePlaneMaterial.color.b, fadeAlphaValue);
+				if(fadeAlphaValue<=0f){
+					FadePlane.SetActive (false);
+					currentMovement = MovementState.None;
+				}
 			break;
 		}
 	}
@@ -276,7 +305,8 @@ public class MainScript : MonoBehaviour {
 	public void ShootBall (float magnitude, float orientation)
 	{
 		Vector3 direction = Quaternion.Euler(0, orientation, -clubProperties.clubAngle) * new Vector3 (-1, 0, 0);
-		ballRigidBody.AddForce(direction * magnitude * clubProperties.clubForceCoef, ForceMode.Impulse);	
+		ballRigidBody.AddForce(direction * magnitude * clubProperties.clubForceCoef, ForceMode.Impulse);
+
 		ballAudioSource.Play();
 	}
 
