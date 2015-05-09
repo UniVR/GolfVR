@@ -55,6 +55,9 @@ public class MainScript : MonoBehaviour {
 	//Player
 	private Transform playerTransf;
 	private Vector3 playerOffsetWithBall;
+	private Vector3 initialPosition;
+	private Quaternion initialRotation;
+	private float angleRotationAroundBall;
 
 	//Club
 	private ClubProperties clubProperties;
@@ -92,6 +95,9 @@ public class MainScript : MonoBehaviour {
 		 */		
 		playerTransf = Player.transform;
 		playerOffsetWithBall = Player.transform.position - Ball.transform.position;
+		initialPosition = playerTransf.position;
+		initialRotation = playerTransf.rotation;
+		angleRotationAroundBall = 0;
 
 		/*
 		 * 	Club
@@ -236,7 +242,8 @@ public class MainScript : MonoBehaviour {
 			case MovementState.TurnLeft:
 				buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity);
-			break;
+				angleRotationAroundBall -= rotateAroundBallVelocity;
+				break;
 
 			/*
 			 * Turn right
@@ -244,6 +251,7 @@ public class MainScript : MonoBehaviour {
 			case MovementState.TurnRight:
 				buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity);
+				angleRotationAroundBall += rotateAroundBallVelocity;
 			break;
 
 			/*
@@ -260,7 +268,10 @@ public class MainScript : MonoBehaviour {
 			 * Move toward the ball
 			 */
 			case MovementState.MoveToTheBall:
+				Player.transform.position = initialPosition;
+				Player.transform.rotation = initialRotation;
 				Player.transform.position = Ball.transform.position + playerOffsetWithBall;
+				playerTransf.RotateAround(Ball.transform.position, Vector3.up, angleRotationAroundBall);
 				currentMovement = MovementState.FadeIn;
 			break;
 
