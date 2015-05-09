@@ -171,7 +171,6 @@ public class MainScript : MonoBehaviour {
 			case ActionState.Firing:
 				if(clubTransf.localRotation.z > minAngle)
 				{
-				ballAudioSource.Play();
 					clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * timeLoading);
 					if(!ballIsShooted && clubTransf.localRotation.z < midAngle)							//Shoot now
 					{
@@ -278,6 +277,7 @@ public class MainScript : MonoBehaviour {
 	{
 		Vector3 direction = Quaternion.Euler(0, orientation, -clubProperties.clubAngle) * new Vector3 (-1, 0, 0);
 		ballRigidBody.AddForce(direction * magnitude * clubProperties.clubForceCoef, ForceMode.Impulse);	
+		ballAudioSource.Play();
 	}
 
 
