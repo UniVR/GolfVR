@@ -33,6 +33,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject Player;	
 	public GameObject Club;
 	public GameObject Ball;
+	public Terrain Terrain;
 
 	// Global Clubs properties
 	public float velocityLoading;
@@ -66,6 +67,7 @@ public class MainScript : MonoBehaviour {
 	private float timeLoading;
 
 	//Ball
+	private DetectTerrainType detectTerrainType;
 	private Rigidbody ballRigidBody;
 	private MeshRenderer ballRenderer;
 	private AudioSource ballAudioSource;
@@ -73,6 +75,7 @@ public class MainScript : MonoBehaviour {
 	private Color ballCurrentColor;
 	private bool ballIsWatched;
 	private bool ballIsShooted;
+	private bool ballIsOnGround;
 	
 	//GUI
 	private Material fadePlaneMaterial;
@@ -109,12 +112,14 @@ public class MainScript : MonoBehaviour {
 		/*
 		 * Ball
 		 */
+		detectTerrainType = GetComponent<DetectTerrainType> ();
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
 		ballRenderer = Ball.GetComponent<MeshRenderer> ();
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
 		ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
 		ballIsWatched = false;
 		ballIsShooted = false;
+		ballIsOnGround = true;
 
 		/*
 		 * GUI
@@ -194,7 +199,9 @@ public class MainScript : MonoBehaviour {
 						ballIsShooted = true;
 					}
 					else if (clubTransf.localRotation.z <= minAngle)
-					{
+					{					
+						if(ballIsOnGround)
+							detectTerrainType.SetBallDrag();
 						currentAction = ActionState.Fired;
 						ballIsShooted = false;
 						timeLoading = 0;
@@ -208,7 +215,10 @@ public class MainScript : MonoBehaviour {
 			/*
 			 * Fired
 			 */
-			case ActionState.Fired:
+			case ActionState.Fired:		
+				if(ballIsOnGround)
+					detectTerrainType.SetBallDrag();
+
 				if(ballRigidBody.velocity.magnitude < 0.1f)
 				{
 					clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
@@ -222,7 +232,7 @@ public class MainScript : MonoBehaviour {
 					{
 						currentAction = ActionState.Idle;
 					}
-				}
+				}				
 			break;
 		}
 
@@ -324,6 +334,19 @@ public class MainScript : MonoBehaviour {
 		ballAudioSource.Play();
 	}
 
+
+	/*
+	 * 	Events
+	 */
+	public void CollisionEnter(GameObject source, Collision collision)
+	{
+		ballIsOnGround = true;
+	}
+
+	public void CollisionExit (GameObject source, Collision collision)
+	{
+		ballIsOnGround = false;
+	}
 
 	/*
 	 * Button Left/Right

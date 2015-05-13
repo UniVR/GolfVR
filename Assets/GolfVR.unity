@@ -125,14 +125,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainTexturePhysics:
-  - drag: 1
+  - drag: .200000003
     angularDrag: 5
-  - drag: 2
+  - drag: .5
     angularDrag: 10
-  - drag: 3
+  - drag: .5
     angularDrag: 30
-  - drag: 4
+  - drag: .5
     angularDrag: 160
+  - drag: .5
+    angularDrag: 300
   currentTextureLevel: []
 --- !u!114 &496065655
 MonoBehaviour:
@@ -150,6 +152,7 @@ MonoBehaviour:
   Player: {fileID: 1563345029}
   Club: {fileID: 501213725}
   Ball: {fileID: 1598460200}
+  Terrain: {fileID: 1202199684}
   velocityLoading: 50
   velocityShooting: 200
   minAngle: -.699999988
@@ -1494,6 +1497,14 @@ Prefab:
       propertyPath: Mute
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5429280, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429280, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
     - {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -1598,6 +1609,18 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_PrefabInternal: {fileID: 1415543280}
+--- !u!114 &1598460207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598460200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584fce82b6391914d8b8bca1e58abe79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScript: {fileID: 496065655}
 --- !u!96 &1598460211
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1802,14 +1825,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: centerOfInterest
-      value: 
-      objectReference: {fileID: 1598460201}
-    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: target
       value: 
@@ -1890,25 +1905,17 @@ Prefab:
       propertyPath: m_BackGroundColor.b
       value: .588235259
       objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: radiusOfInterest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 2000002, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: far clip plane
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: matchMonoFOV
+      propertyPath: centerOfInterest
+      value: 
+      objectReference: {fileID: 1598460201}
+    - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: radiusOfInterest
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: field of view
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
@@ -1956,7 +1963,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077730840}
-  m_LocalRotation: {x: -.258537382, y: .681155264, z: -.282143891, w: -.624164164}
+  m_LocalRotation: {x: -.258537352, y: .681155205, z: -.282143861, w: -.624164104}
   m_LocalPosition: {x: 0, y: 0, z: -137.630005}
   m_LocalScale: {x: .0299999993, y: .0299999993, z: .0299999993}
   m_Children: []
