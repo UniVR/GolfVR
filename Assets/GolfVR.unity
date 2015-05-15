@@ -150,7 +150,7 @@ MonoBehaviour:
   currentAction: 0
   currentMovement: 0
   Player: {fileID: 1563345029}
-  Club: {fileID: 501213725}
+  Club: {fileID: 1131250930}
   Ball: {fileID: 1598460200}
   Terrain: {fileID: 1202199684}
   velocityLoading: 50
@@ -177,82 +177,62 @@ Transform:
   - {fileID: 1495966406}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &501213725
-GameObject:
+--- !u!1001 &647855851
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 142746, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 501213726}
-  - 33: {fileID: 501213729}
-  - 23: {fileID: 501213728}
-  - 114: {fileID: 501213727}
-  m_Layer: 0
-  m_Name: VLP.iron
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &501213726
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 440262, guid: 18be93912ec8b924e93db677d19bc51f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 501213725}
-  m_LocalRotation: {x: -.705643654, y: -.0234371293, z: .0235083774, w: .707788944}
-  m_LocalPosition: {x: .354000002, y: .703000009, z: 1.76900005}
-  m_LocalScale: {x: 1.23892939, y: 1.23892975, z: 1.23892963}
-  m_Children: []
-  m_Father: {fileID: 1563345030}
-  m_RootOrder: 3
---- !u!114 &501213727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 501213725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b863a989eb0fca543950fecf1ccc64af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clubForceCoef: 10
-  clubAngle: 45
---- !u!23 &501213728
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2395512, guid: 18be93912ec8b924e93db677d19bc51f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 501213725}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 0ddc506a6e8e6ee4db3468210972bcae, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &501213729
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3312986, guid: 18be93912ec8b924e93db677d19bc51f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 501213725}
-  m_Mesh: {fileID: 4300000, guid: b1f33177de257c046beab9e9dbf7310c, type: 3}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1563345030}
+    m_Modifications:
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .145999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .755999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.881517351
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.043988198
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .030800892
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .469087958
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.62
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11488980, guid: d7b705100debac040aad6c052f825f94, type: 2}
+    - {fileID: 11466950, guid: d7b705100debac040aad6c052f825f94, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: d7b705100debac040aad6c052f825f94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &663271061
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +477,27 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!1 &1131250930
+GameObject:
+  m_PrefabParentObject: {fileID: 116994, guid: d7b705100debac040aad6c052f825f94, type: 2}
+  m_PrefabInternal: {fileID: 647855851}
+--- !u!4 &1131250931
+Transform:
+  m_PrefabParentObject: {fileID: 467516, guid: d7b705100debac040aad6c052f825f94, type: 2}
+  m_PrefabInternal: {fileID: 647855851}
+--- !u!114 &1131250932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131250930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b863a989eb0fca543950fecf1ccc64af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clubForceCoef: 10
+  clubAngle: 45
 --- !u!1 &1202199681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1599,7 @@ Transform:
   - {fileID: 1883280946}
   - {fileID: 663271062}
   - {fileID: 234356904}
-  - {fileID: 501213726}
+  - {fileID: 1131250931}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1598460200
