@@ -7,29 +7,6 @@ QualitySettings:
   m_CurrentQuality: 6
   m_QualitySettings:
   - serializedVersion: 2
-    name: Fastest
-    pixelLightCount: 0
-    shadows: 0
-    shadowResolution: 0
-    shadowProjection: 1
-    shadowCascades: 1
-    shadowDistance: 15
-    shadowCascade2Split: .333333343
-    shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
-    blendWeights: 1
-    textureQuality: 1
-    anisotropicTextures: 0
-    antiAliasing: 0
-    softParticles: 0
-    softVegetation: 0
-    realtimeReflectionProbes: 0
-    billboardsFaceCameraPosition: 0
-    vSyncCount: 0
-    lodBias: .300000012
-    maximumLODLevel: 0
-    particleRaycastBudget: 4
-    excludedTargetPlatforms: []
-  - serializedVersion: 2
     name: Fast
     pixelLightCount: 0
     shadows: 0
@@ -51,6 +28,29 @@ QualitySettings:
     lodBias: .400000006
     maximumLODLevel: 0
     particleRaycastBudget: 16
+    excludedTargetPlatforms: []
+  - serializedVersion: 2
+    name: Fastest
+    pixelLightCount: 0
+    shadows: 0
+    shadowResolution: 0
+    shadowProjection: 1
+    shadowCascades: 1
+    shadowDistance: 15
+    shadowCascade2Split: .333333343
+    shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
+    blendWeights: 1
+    textureQuality: 1
+    anisotropicTextures: 0
+    antiAliasing: 0
+    softParticles: 0
+    softVegetation: 0
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 0
+    vSyncCount: 0
+    lodBias: .300000012
+    maximumLODLevel: 0
+    particleRaycastBudget: 4
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Simple
@@ -146,33 +146,33 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: GolfVR
-    pixelLightCount: 1
+    pixelLightCount: 0
     shadows: 1
     shadowResolution: 0
-    shadowProjection: 1
+    shadowProjection: 0
     shadowCascades: 1
     shadowDistance: 10
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
     blendWeights: 1
-    textureQuality: 0
-    anisotropicTextures: 1
-    antiAliasing: 0
+    textureQuality: 1
+    anisotropicTextures: 0
+    antiAliasing: 4
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
-    lodBias: .5
+    lodBias: .200000003
     maximumLODLevel: 0
-    particleRaycastBudget: 64
+    particleRaycastBudget: 16
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 0
-    BlackBerry: 0
-    Standalone: 0
-    WP8: 0
-    Web: 0
-    WebGL: 0
-    Windows Store Apps: 0
-    iPhone: 0
+    Android: 6
+    BlackBerry: 6
+    Standalone: 6
+    WP8: 6
+    Web: 6
+    WebGL: 6
+    Windows Store Apps: 6
+    iPhone: 6

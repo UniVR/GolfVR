@@ -537,7 +537,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 0e2f37bcb66c3f645890a04d1157cbe1, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &1202199684
 Terrain:
   m_ObjectHideFlags: 0
@@ -553,7 +553,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
+  m_HeightmapPixelError: 70
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -566,7 +566,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_UseDefaultSmoothness: 1
-  m_DefaultSmoothness: 0
+  m_DefaultSmoothness: .200000003
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: .0731428564
@@ -1698,7 +1698,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_Strength: .389999986
     m_Bias: .0500000007
@@ -1781,7 +1781,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1883280943}
-  m_LocalRotation: {x: 1.15202326e-07, y: -.707106709, z: -.707106829, w: -1.15202312e-07}
+  m_LocalRotation: {x: 1.15202333e-07, y: -.707106769, z: -.707106888, w: -1.15202319e-07}
   m_LocalPosition: {x: .200000003, y: -1.57000005, z: .209999993}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
@@ -1918,6 +1918,10 @@ Prefab:
       propertyPath: radiusOfInterest
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: updateEarly
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
   m_IsPrefabParent: 0
@@ -1964,7 +1968,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077730840}
-  m_LocalRotation: {x: -.258537352, y: .681155205, z: -.282143861, w: -.624164104}
+  m_LocalRotation: {x: -.258537382, y: .681155264, z: -.282143891, w: -.624164164}
   m_LocalPosition: {x: 0, y: 0, z: -137.630005}
   m_LocalScale: {x: .0299999993, y: .0299999993, z: .0299999993}
   m_Children: []
