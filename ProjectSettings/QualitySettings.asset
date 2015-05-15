@@ -151,7 +151,7 @@ QualitySettings:
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 5
+    shadowDistance: 10
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
     blendWeights: 1
@@ -167,4 +167,12 @@ QualitySettings:
     maximumLODLevel: 0
     particleRaycastBudget: 64
     excludedTargetPlatforms: []
-  m_PerPlatformDefaultQuality: {}
+  m_PerPlatformDefaultQuality:
+    Android: 0
+    BlackBerry: 0
+    Standalone: 0
+    WP8: 0
+    Web: 0
+    WebGL: 0
+    Windows Store Apps: 0
+    iPhone: 0
