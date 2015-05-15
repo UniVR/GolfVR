@@ -176,8 +176,10 @@ public class MainScript : MonoBehaviour {
 					currentMovement = MovementState.None;
 				}
 				
+			/*
 				ballCurrentColor = new Color(ballCurrentColor.r += 0.05f, ballCurrentColor.g, ballCurrentColor.b);
 				ballRenderer.material.color = ballCurrentColor;
+			*/
 			break;
 
 			/*
@@ -244,16 +246,18 @@ public class MainScript : MonoBehaviour {
 			/*
 			 * 	None
 			 */
+		/*	
 			case MovementState.None:
 				buttonRightBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
 				buttonLeftBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
 			break;
-
+		*/
+		
 			/*
 			 * Turn left
 			 */
 			case MovementState.TurnLeft:
-				buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
+			//	buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity);
 				angleRotationAroundBall -= rotateAroundBallVelocity;
 				break;
@@ -262,7 +266,7 @@ public class MainScript : MonoBehaviour {
 			 * Turn right
 			 */
 			case MovementState.TurnRight:
-				buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
+			//	buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity);
 				angleRotationAroundBall += rotateAroundBallVelocity;
 			break;
