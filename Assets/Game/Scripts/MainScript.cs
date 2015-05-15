@@ -71,8 +71,8 @@ public class MainScript : MonoBehaviour {
 	private Rigidbody ballRigidBody;
 	private MeshRenderer ballRenderer;
 	private AudioSource ballAudioSource;
-	private Color ballOriginalColor;
-	private Color ballCurrentColor;
+	// private Color ballOriginalColor;
+	// private Color ballCurrentColor;
 	private bool ballIsWatched;
 	private bool ballIsShooted;
 	private bool ballIsOnGround;
@@ -116,7 +116,7 @@ public class MainScript : MonoBehaviour {
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
 		ballRenderer = Ball.GetComponent<MeshRenderer> ();
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
-		ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
+		// ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
 		ballIsWatched = false;
 		ballIsShooted = false;
 		ballIsOnGround = true;
@@ -210,8 +210,8 @@ public class MainScript : MonoBehaviour {
 					}
 				}
 				
-				ballCurrentColor = ballOriginalColor;
-				ballRenderer.material.color = ballCurrentColor;
+			//	ballCurrentColor = ballOriginalColor;
+			//	ballRenderer.material.color = ballCurrentColor;
 			break;
 
 			/*
