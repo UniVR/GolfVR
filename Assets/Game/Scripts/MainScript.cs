@@ -69,11 +69,11 @@ public class MainScript : MonoBehaviour {
 	//Ball
 	private DetectTerrainType detectTerrainType;
 	private Rigidbody ballRigidBody;
-	private MeshRenderer ballRenderer;
+	//private MeshRenderer ballRenderer;
 	private AudioSource ballAudioSource;
 	// private Color ballOriginalColor;
 	// private Color ballCurrentColor;
-	private bool ballIsWatched;
+	//private bool ballIsWatched;
 	private bool ballIsShooted;
 	private bool ballIsOnGround;
 	
@@ -81,7 +81,7 @@ public class MainScript : MonoBehaviour {
 	private Material fadePlaneMaterial;
 	private float fadeAlphaValue;
 	private Button buttonLeftBtn;
-	private Button buttonRightBtn;
+	//private Button buttonRightBtn;
 	private Color buttonsColor;
 	private bool isGuiVisible;
 	
@@ -114,10 +114,10 @@ public class MainScript : MonoBehaviour {
 		 */
 		detectTerrainType = GetComponent<DetectTerrainType> ();
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
-		ballRenderer = Ball.GetComponent<MeshRenderer> ();
+		//ballRenderer = Ball.GetComponent<MeshRenderer> ();
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
 		// ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
-		ballIsWatched = false;
+		//ballIsWatched = false;
 		ballIsShooted = false;
 		ballIsOnGround = true;
 
@@ -127,7 +127,7 @@ public class MainScript : MonoBehaviour {
 		FadePlane.SetActive (false);
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		buttonLeftBtn = buttonLeft.GetComponent<Button> ();
-		buttonRightBtn = buttonRight.GetComponent<Button> ();
+		//buttonRightBtn = buttonRight.GetComponent<Button> ();
 		buttonsColor = buttonLeftBtn.image.color;
 		isGuiVisible = true;
 	}
@@ -229,6 +229,7 @@ public class MainScript : MonoBehaviour {
 						fadeAlphaValue = 0;
 						FadePlane.SetActive (true);
 						currentMovement = MovementState.FadeOut;
+						ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
 					}
 					if(clubTransf.localRotation.z > midAngle)
 					{
@@ -258,7 +259,7 @@ public class MainScript : MonoBehaviour {
 			 */
 			case MovementState.TurnLeft:
 			//	buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity);
+				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity * Time.deltaTime);
 				angleRotationAroundBall -= rotateAroundBallVelocity;
 				break;
 
@@ -267,7 +268,7 @@ public class MainScript : MonoBehaviour {
 			 */
 			case MovementState.TurnRight:
 			//	buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity);
+				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity * Time.deltaTime);
 				angleRotationAroundBall += rotateAroundBallVelocity;
 			break;
 
@@ -313,7 +314,7 @@ public class MainScript : MonoBehaviour {
 	 * Watching ball (shoot/release)
 	 */
 	public void LoadShoot(){
-		ballIsWatched = true;
+		//ballIsWatched = true;
 		if (currentAction == ActionState.Idle)
 			currentAction = ActionState.Loading;
 		/*
@@ -322,7 +323,7 @@ public class MainScript : MonoBehaviour {
 	}
 
 	public void ReleaseShoot(){
-		ballIsWatched = false;
+		//ballIsWatched = false;
 		if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded)
 			currentAction = ActionState.Firing;
 		/*

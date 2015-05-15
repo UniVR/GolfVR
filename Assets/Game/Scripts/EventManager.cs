@@ -9,12 +9,6 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class EventManager : MonoBehaviour {
 
-	private bool isViewed = false;
-	private float time = 0f;
-	private Button currentButton = null;
-
-
-
 	public void LoadFirstScene(){
 		Application.LoadLevel("GolfVR");
 	}
