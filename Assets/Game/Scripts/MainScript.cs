@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,8 @@ public enum ActionState{
 	Loading,
 	Loaded,
 	Firing,
-	Fired
+	Fired, 
+	Won
 }
 
 public enum MovementState{
@@ -34,6 +36,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject Club;
 	public GameObject Ball;
 	public Terrain Terrain;
+	public List<HoleScript> Holes;
 
 	// Global Clubs properties
 	public float velocityLoading;
@@ -69,6 +72,8 @@ public class MainScript : MonoBehaviour {
 	//Ball
 	private DetectTerrainType detectTerrainType;
 	private Rigidbody ballRigidBody;
+	private TrailRenderer ballTrail;
+	private float ballOldTrailTime;
 	//private MeshRenderer ballRenderer;
 	private AudioSource ballAudioSource;
 	// private Color ballOriginalColor;
@@ -76,6 +81,7 @@ public class MainScript : MonoBehaviour {
 	//private bool ballIsWatched;
 	private bool ballIsShooted;
 	private bool ballIsOnGround;
+	private HoleScript currentHole;
 	
 	//GUI
 	private Material fadePlaneMaterial;
@@ -114,12 +120,15 @@ public class MainScript : MonoBehaviour {
 		 */
 		detectTerrainType = GetComponent<DetectTerrainType> ();
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
+		ballTrail = Ball.GetComponent<TrailRenderer> ();
+		ballOldTrailTime = ballTrail.time;
 		//ballRenderer = Ball.GetComponent<MeshRenderer> ();
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
 		// ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
 		//ballIsWatched = false;
 		ballIsShooted = false;
 		ballIsOnGround = true;
+		currentHole = Holes [0];
 
 		/*
 		 * GUI
@@ -237,6 +246,17 @@ public class MainScript : MonoBehaviour {
 					}
 				}				
 			break;
+
+			case ActionState.Won:	
+					ballTrail.enabled = false;
+					ballTrail.time = 0;
+					currentAction = ActionState.Fired;
+					Ball.transform.position = currentHole.BeginPosition.transform.position;
+					ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
+					ballRigidBody.angularDrag = 20f;
+					ballIsOnGround = false;
+				return;
+			break;
 		}
 
 		/*
@@ -303,6 +323,11 @@ public class MainScript : MonoBehaviour {
 					FadePlane.SetActive (false);
 					currentMovement = MovementState.None;
 				}
+				if(!ballTrail.enabled)
+				{
+					ballTrail.enabled = true;
+					ballTrail.time = ballOldTrailTime;
+				}
 			break;
 		}
 	}
@@ -351,6 +376,18 @@ public class MainScript : MonoBehaviour {
 	public void CollisionExit (GameObject source, Collision collision)
 	{
 		ballIsOnGround = false;
+	}
+
+	public void EnterHole(int holeNumber)
+	{
+		foreach (HoleScript hole in Holes) 
+		{
+			if(hole.HoleNumber==holeNumber+1)
+			{
+				currentHole = hole;
+				currentAction = ActionState.Won;
+			}
+		}
 	}
 
 	/*
