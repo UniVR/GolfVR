@@ -573,6 +573,10 @@ Prefab:
       propertyPath: holeScript
       value: 
       objectReference: {fileID: 1284459537}
+    - target: {fileID: 484864, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0410000011
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
   m_IsPrefabParent: 0
