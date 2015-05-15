@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Watched
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GUI
+    uniqueID: 1786697983
+    locked: 0
+  - name: objectWorldToBeWatched
+    uniqueID: 611889497
     locked: 0
