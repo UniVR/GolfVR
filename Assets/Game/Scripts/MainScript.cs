@@ -51,7 +51,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
 	public Text ScoreHUD;
-	public Renderer PowerBar;
+	public Image PowerBar;
 	public float rotateAroundBallVelocity;
 	public float moveToBallVelocity;
 
@@ -86,7 +86,6 @@ public class MainScript : MonoBehaviour {
 	private float fadeAlphaValue;
 	private Button buttonLeftBtn;
 	private int score;
-	private Material PowerBarMaterial;
 	private Color buttonsColor;
 	private bool isGuiVisible;
 	
@@ -133,7 +132,6 @@ public class MainScript : MonoBehaviour {
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		buttonLeftBtn = buttonLeft.GetComponent<Button> ();
 		buttonsColor = buttonLeftBtn.image.color;
-		PowerBarMaterial = PowerBar.material;
 		PowerBar.enabled = false;
 		isGuiVisible = true;
 		score = 0;
@@ -172,7 +170,8 @@ public class MainScript : MonoBehaviour {
 					clubTransf.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
 					
 					PowerBar.enabled = true;
-					PowerBarMaterial.SetFloat("_Cutoff", Mathf.InverseLerp(maxAngle, midAngle, clubTransf.localRotation.z)); 
+					PowerBar.fillAmount = Mathf.InverseLerp(midAngle, maxAngle, clubTransf.localRotation.z);
+					//PowerBarMaterial.SetFloat("_Cutoff", 1f - Mathf.InverseLerp(maxAngle, midAngle, clubTransf.localRotation.z)); 
 				}
 				else
 				{
