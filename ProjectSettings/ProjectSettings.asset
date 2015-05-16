@@ -7,7 +7,7 @@ PlayerSettings:
   AndroidProfiler: 0
   defaultScreenOrientation: 3
   targetDevice: 2
-  targetGlesGraphics: 2
+  targetGlesGraphics: -1
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
@@ -83,7 +83,7 @@ PlayerSettings:
   productGUID: d6a3c9b1d79528b48bba003ee5125213
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 14
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   apiCompatibilityLevel: 1
   iPhoneStrippingLevel: 0

@@ -51,6 +51,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
 	public Text ScoreHUD;
+	public Image PowerBar;
 	public float rotateAroundBallVelocity;
 	public float moveToBallVelocity;
 
@@ -75,11 +76,7 @@ public class MainScript : MonoBehaviour {
 	private Rigidbody ballRigidBody;
 	private TrailRenderer ballTrail;
 	private float ballOldTrailTime;
-	//private MeshRenderer ballRenderer;
 	private AudioSource ballAudioSource;
-	// private Color ballOriginalColor;
-	// private Color ballCurrentColor;
-	//private bool ballIsWatched;
 	private bool ballIsShooted;
 	private bool ballIsOnGround;
 	private HoleScript currentHole;
@@ -123,10 +120,7 @@ public class MainScript : MonoBehaviour {
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
 		ballTrail = Ball.GetComponent<TrailRenderer> ();
 		ballOldTrailTime = ballTrail.time;
-		//ballRenderer = Ball.GetComponent<MeshRenderer> ();
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
-		// ballOriginalColor = ballCurrentColor = ballRenderer.material.color;
-		//ballIsWatched = false;
 		ballIsShooted = false;
 		ballIsOnGround = true;
 		currentHole = Holes [0];
@@ -137,8 +131,8 @@ public class MainScript : MonoBehaviour {
 		FadePlane.SetActive (false);
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		buttonLeftBtn = buttonLeft.GetComponent<Button> ();
-		//buttonRightBtn = buttonRight.GetComponent<Button> ();
 		buttonsColor = buttonLeftBtn.image.color;
+		PowerBar.enabled = false;
 		isGuiVisible = true;
 		score = 0;
 		ScoreHUD.text = "Score: " + score;	
@@ -174,6 +168,10 @@ public class MainScript : MonoBehaviour {
 				{
 					timeLoading += Time.deltaTime;
 					clubTransf.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
+					
+					PowerBar.enabled = true;
+					PowerBar.fillAmount = Mathf.InverseLerp(midAngle, maxAngle, clubTransf.localRotation.z);
+					//PowerBarMaterial.SetFloat("_Cutoff", 1f - Mathf.InverseLerp(maxAngle, midAngle, clubTransf.localRotation.z)); 
 				}
 				else
 				{
@@ -204,6 +202,9 @@ public class MainScript : MonoBehaviour {
 			 * Firing
 			 */
 			case ActionState.Firing:
+				if(PowerBar.enabled)
+					PowerBar.enabled = false;
+				
 				if(clubTransf.localRotation.z > minAngle)
 				{
 					clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * timeLoading);
