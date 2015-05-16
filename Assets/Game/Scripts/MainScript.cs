@@ -50,6 +50,7 @@ public class MainScript : MonoBehaviour {
 	public float FadeSpeed;	
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
+	public Text ScoreHUD;
 	public float rotateAroundBallVelocity;
 	public float moveToBallVelocity;
 
@@ -87,7 +88,7 @@ public class MainScript : MonoBehaviour {
 	private Material fadePlaneMaterial;
 	private float fadeAlphaValue;
 	private Button buttonLeftBtn;
-	//private Button buttonRightBtn;
+	private int score;
 	private Color buttonsColor;
 	private bool isGuiVisible;
 	
@@ -139,6 +140,8 @@ public class MainScript : MonoBehaviour {
 		//buttonRightBtn = buttonRight.GetComponent<Button> ();
 		buttonsColor = buttonLeftBtn.image.color;
 		isGuiVisible = true;
+		score = 0;
+		ScoreHUD.text = "Score: " + score;	
 	}
 
 
@@ -208,6 +211,8 @@ public class MainScript : MonoBehaviour {
 					{
 						ShootBall(timeLoading, playerTransf.eulerAngles.y);
 						ballIsShooted = true;
+						score++;
+						ScoreHUD.text = "Score: " + score;	
 					}
 					else if (clubTransf.localRotation.z <= minAngle)
 					{					
