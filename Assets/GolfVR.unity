@@ -112,14 +112,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 49201476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.949999988}
+  m_LocalPosition: {x: 0, y: 0, z: -1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023647757}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: .159999996, y: .159999996}
+  m_AnchoredPosition: {x: 1.13, y: -.0900000036}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &49201478
@@ -147,7 +147,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 747
+  m_Text: 'Score: 0'
 --- !u!222 &49201479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - 114: {fileID: 663271064}
   - 114: {fileID: 663271063}
   m_Layer: 5
-  m_Name: HUD
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +627,7 @@ GameObject:
   - 114: {fileID: 1023647755}
   - 222: {fileID: 1023647759}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,7 +684,7 @@ RectTransform:
   - {fileID: 49201477}
   - {fileID: 942483152}
   m_Father: {fileID: 325630496}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: -.620000005}
@@ -2007,10 +2007,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_PrefabInternal: {fileID: 1415543280}
---- !u!4 &1598460201
-Transform:
-  m_PrefabParentObject: {fileID: 481810, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
-  m_PrefabInternal: {fileID: 1415543280}
 --- !u!114 &1598460207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,7 +2281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000002, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_ClearFlags
@@ -2311,21 +2307,13 @@ Prefab:
       propertyPath: far clip plane
       value: 300
       objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: centerOfInterest
-      value: 
-      objectReference: {fileID: 1598460201}
-    - target: {fileID: 11400006, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
-      propertyPath: radiusOfInterest
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: updateEarly
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
