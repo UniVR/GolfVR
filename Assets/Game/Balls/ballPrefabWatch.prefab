@@ -14,9 +14,7 @@ GameObject:
   - 54: {fileID: 5429280}
   - 82: {fileID: 8278636}
   - 198: {fileID: 19822502}
-  - 114: {fileID: 11433554}
   - 199: {fileID: 19974808}
-  - 114: {fileID: 11445830}
   m_Layer: 0
   m_Name: ballPrefabWatch
   m_TagString: Untagged
@@ -237,36 +235,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &11433554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53687ec594bca8f4eaff22be74665732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TerrainTexturePhysics:
-  - drag: 1
-    angularDrag: 100
-  - drag: 1
-    angularDrag: 200
-  - drag: 1
-    angularDrag: 500
-  currentTextureLevel: []
---- !u!114 &11445830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2529a30262ff8439bb8c9a95509d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13500842
 SphereCollider:
   m_ObjectHideFlags: 1

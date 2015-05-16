@@ -150,7 +150,6 @@ GameObject:
   - 114: {fileID: 306315985}
   - 114: {fileID: 306315983}
   - 114: {fileID: 306315984}
-  - 114: {fileID: 306315988}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -178,7 +177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 306315982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14782ff9e752e6a4cbadf8bf997d1756, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a623d65ebe8eed49b5f8cfab53c8605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &306315985
@@ -222,17 +221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &306315988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 306315982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea9c64cce3faaf4cb25ae0866f036be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &651353108
 GameObject:
   m_ObjectHideFlags: 0
