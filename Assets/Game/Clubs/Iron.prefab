@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &116994
+--- !u!1 &191882
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 467516}
-  - 33: {fileID: 3357186}
-  - 23: {fileID: 2304706}
+  - 4: {fileID: 489150}
+  - 33: {fileID: 3308324}
+  - 23: {fileID: 2359892}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Untagged
@@ -17,24 +17,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &467516
+--- !u!4 &489150
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116994}
-  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
-  m_LocalPosition: {x: 21.9400005, y: 1.00999999, z: 26.2600002}
-  m_LocalScale: {x: .341313481, y: .341313481, z: .533011317}
+  m_GameObject: {fileID: 191882}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalPosition: {x: 21.9400005, y: .99000001, z: 26.2600002}
+  m_LocalScale: {x: .449999988, y: .449999988, z: .449999988}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2304706
+--- !u!23 &2359892
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116994}
+  m_GameObject: {fileID: 191882}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -53,12 +53,12 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3357186
+--- !u!33 &3308324
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116994}
+  m_GameObject: {fileID: 191882}
   m_Mesh: {fileID: 4300000, guid: 775ca8b389f48e340b26b11b339e4c1b, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -69,5 +69,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 116994}
+  m_RootGameObject: {fileID: 191882}
   m_IsPrefabParent: 1
