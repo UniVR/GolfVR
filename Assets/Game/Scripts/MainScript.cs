@@ -273,30 +273,34 @@ public class MainScript : MonoBehaviour {
 			/*
 			 * 	None
 			 */
-		/*	
+			/*	
 			case MovementState.None:
 				buttonRightBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
 				buttonLeftBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
 			break;
-		*/
+			*/
 		
 			/*
 			 * Turn left
 			 */
+			/*
 			case MovementState.TurnLeft:
 			//	buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity * Time.deltaTime);
 				angleRotationAroundBall -= rotateAroundBallVelocity;
 				break;
+			*/
 
 			/*
 			 * Turn right
 			 */
+			/*
 			case MovementState.TurnRight:
 			//	buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
 				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity * Time.deltaTime);
 				angleRotationAroundBall += rotateAroundBallVelocity;
 			break;
+			*/
 
 			/*
 			 * 	Fade Out
@@ -336,6 +340,14 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 		}
+
+		var offset = 0.1f;
+		//var absoluteRot = Cardboard.SDK.HeadRotation.y - playerTransf.rotation.y;
+		Debug.Log ("Player: " + (initialRotation.y - playerTransf.rotation.y));
+		Debug.Log ("Cardboard: " + Cardboard.SDK.HeadRotation.y);
+		Debug.Log ("Condition: " + (initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset));
+		if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset)
+			playerTransf.RotateAround (Ball.transform.position, Vector3.up, Cardboard.SDK.HeadRotation.y /* rotateAroundBallVelocity * Time.deltaTime*/);
 	}
 
 
