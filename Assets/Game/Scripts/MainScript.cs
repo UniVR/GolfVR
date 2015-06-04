@@ -341,12 +341,37 @@ public class MainScript : MonoBehaviour {
 			break;
 		}
 
-		var offset = 0.1f;
+		/*
+		 * 	New rotation system
+		 */
+		Quaternion headRotation = Cardboard.SDK.HeadRotation;	// Head rotation
+		Vector3 neck = headRotation * Vector3.up;				// Neck vector
+		float forwardRotation = headRotation.x;					// x rotation of the neck (forward) 
+
+		float rotationThreshold = 0.2f; 						// The left right scope of the player
+		float forwardRotationThreshold = 0.2f; 					// Player look at the horizon or in direction of the ground/ball
+
+		
+		Debug.Log ("Head: " + headRotation + "; Neck: " + neck + "; ");
+
+		// Player look at the horizon
+		if (forwardRotation < forwardRotationThreshold) 
+		{
+			if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + rotationThreshold || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - rotationThreshold)
+				playerTransf.RotateAround (Ball.transform.position, Vector3.up, Cardboard.SDK.HeadRotation.y /* rotateAroundBallVelocity * Time.deltaTime*/);
+		}
+		// Player look at the ground (the ball)
+		else
+		{
+
+		}
+
 		//var absoluteRot = Cardboard.SDK.HeadRotation.y - playerTransf.rotation.y;
-		Debug.Log ("Player: " + (initialRotation.y - playerTransf.rotation.y));
-		Debug.Log ("Cardboard: " + Cardboard.SDK.HeadRotation.y);
-		Debug.Log ("Condition: " + (initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset));
-		if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset)
+		//Debug.Log ("Player: " + (initialRotation.y - playerTransf.rotation.y));
+		//Debug.Log ("Cardboard: " + Cardboard.SDK.HeadRotation * Vector3.up);
+		//Debug.Log ("Condition: " + (initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset));
+
+		if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + rotationThreshold || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - rotationThreshold)
 			playerTransf.RotateAround (Ball.transform.position, Vector3.up, Cardboard.SDK.HeadRotation.y /* rotateAroundBallVelocity * Time.deltaTime*/);
 	}
 
