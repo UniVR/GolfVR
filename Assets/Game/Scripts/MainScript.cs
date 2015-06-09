@@ -47,9 +47,7 @@ public class MainScript : MonoBehaviour {
 
 	//GUI	
 	public GameObject FadePlane;
-	public float FadeSpeed;	
-	public GameObject buttonLeft;
-	public GameObject buttonRight;
+	public float FadeSpeed;
 	public Text ScoreHUD;
 	public Image PowerBar;
 	public float rotateAroundBallVelocity;
@@ -84,7 +82,6 @@ public class MainScript : MonoBehaviour {
 	//GUI
 	private Material fadePlaneMaterial;
 	private float fadeAlphaValue;
-	private Button buttonLeftBtn;
 	private int score;
 	private Color buttonsColor;
 	private bool isGuiVisible;
@@ -103,7 +100,7 @@ public class MainScript : MonoBehaviour {
 		playerTransf = Player.transform;
 		playerOffsetWithBall = Player.transform.position - Ball.transform.position;
 		initialPosition = playerTransf.position;
-		initialRotation = playerTransf.rotation;
+		initialRotation = playerTransf.localRotation;
 		angleRotationAroundBall = 0;
 
 		/*
@@ -130,8 +127,6 @@ public class MainScript : MonoBehaviour {
 		 */
 		FadePlane.SetActive (false);
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
-		buttonLeftBtn = buttonLeft.GetComponent<Button> ();
-		buttonsColor = buttonLeftBtn.image.color;
 		PowerBar.enabled = false;
 		isGuiVisible = true;
 		score = 0;
@@ -155,8 +150,6 @@ public class MainScript : MonoBehaviour {
 			   		&& currentMovement!=MovementState.MoveToTheBall)
 				{
 					isGuiVisible = true;
-					buttonLeft.SetActive(true);
-					buttonRight.SetActive(true);
 				}
 			break;
 
@@ -181,15 +174,8 @@ public class MainScript : MonoBehaviour {
 				if(isGuiVisible)
 				{
 					isGuiVisible = false;
-					buttonLeft.SetActive(false);
-					buttonRight.SetActive(false);
 					currentMovement = MovementState.None;
 				}
-				
-			/*
-				ballCurrentColor = new Color(ballCurrentColor.r += 0.05f, ballCurrentColor.g, ballCurrentColor.b);
-				ballRenderer.material.color = ballCurrentColor;
-			*/
 			break;
 
 			/*
@@ -224,9 +210,6 @@ public class MainScript : MonoBehaviour {
 						timeLoading = 0;
 					}
 				}
-				
-			//	ballCurrentColor = ballOriginalColor;
-			//	ballRenderer.material.color = ballCurrentColor;
 			break;
 
 			/*
@@ -342,37 +325,33 @@ public class MainScript : MonoBehaviour {
 		}
 
 		/*
-		 * 	New rotation system
+		 * 	New rotation system (Every value here is in degree°)
 		 */
-		Quaternion headRotation = Cardboard.SDK.HeadRotation;	// Head rotation
-		Vector3 neck = headRotation * Vector3.up;				// Neck vector
-		float forwardRotation = headRotation.x;					// x rotation of the neck (forward) 
+		var headRotation = Cardboard.SDK.HeadRotation.eulerAngles;		// Head rotation
+		var horizontalNeckRotation = headRotation.y;					// Neck vector
+		var forwardNeckRotation = headRotation.x;						// x rotation of the neck (forward) 
 
-		float rotationThreshold = 0.2f; 						// The left right scope of the player
-		float forwardRotationThreshold = 0.2f; 					// Player look at the horizon or in direction of the ground/ball
+		var horizontalRotationThreshold = 20; 							// The left right scope of the player
 
-		
-		Debug.Log ("Head: " + headRotation + "; Neck: " + neck + "; ");
+		var forwardRotationThresholdMin = 20; 							// Player look in direction of the ground/ball
+		var forwardRotationThresholdMax = 90; 	
 
-		// Player look at the horizon
-		if (forwardRotation < forwardRotationThreshold) 
+		var playerRot = playerTransf.localRotation.eulerAngles.y - initialRotation.eulerAngles.y; //The player rotation without the initial rotation
+
+
+		Debug.Log ("Head: " + headRotation + "; PlayerRot: " + playerRot);
+
+		// Player look at the horizon (we follow his neck rotation)
+		if (forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax) 
 		{
-			if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + rotationThreshold || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - rotationThreshold)
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, Cardboard.SDK.HeadRotation.y /* rotateAroundBallVelocity * Time.deltaTime*/);
+			playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
+			Debug.Log ("Look at the Horizon");
 		}
-		// Player look at the ground (the ball)
+		// Player look at the ground we follow his neck
 		else
 		{
-
+			Debug.Log ("Look at the Ground");
 		}
-
-		//var absoluteRot = Cardboard.SDK.HeadRotation.y - playerTransf.rotation.y;
-		//Debug.Log ("Player: " + (initialRotation.y - playerTransf.rotation.y));
-		//Debug.Log ("Cardboard: " + Cardboard.SDK.HeadRotation * Vector3.up);
-		//Debug.Log ("Condition: " + (initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + offset || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - offset));
-
-		if(initialRotation.y - playerTransf.rotation.y > Cardboard.SDK.HeadRotation.y + rotationThreshold || initialRotation.y - playerTransf.rotation.y < Cardboard.SDK.HeadRotation.y - rotationThreshold)
-			playerTransf.RotateAround (Ball.transform.position, Vector3.up, Cardboard.SDK.HeadRotation.y /* rotateAroundBallVelocity * Time.deltaTime*/);
 	}
 
 
