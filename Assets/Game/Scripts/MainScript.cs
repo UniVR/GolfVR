@@ -71,6 +71,7 @@ public class MainScript : MonoBehaviour {
 
 	//Ball
 	private DetectTerrainType detectTerrainType;
+	private Transform ballTransf;
 	private Rigidbody ballRigidBody;
 	private TrailRenderer ballTrail;
 	private float ballOldTrailTime;
@@ -114,6 +115,7 @@ public class MainScript : MonoBehaviour {
 		 * Ball
 		 */
 		detectTerrainType = GetComponent<DetectTerrainType> ();
+		ballTransf = Ball.transform;
 		ballRigidBody = Ball.GetComponent<Rigidbody> ();
 		ballTrail = Ball.GetComponent<TrailRenderer> ();
 		ballOldTrailTime = ballTrail.time;
@@ -328,18 +330,17 @@ public class MainScript : MonoBehaviour {
 		 * 	New rotation system (Every value here is in degree°)
 		 */
 		var headRotation = Cardboard.SDK.HeadRotation.eulerAngles;		// Head rotation
-		var horizontalNeckRotation = headRotation.y;					// Neck vector
+		var horizontalNeckRotation = headRotation.y;					// y rotation of the neck (horizontally)
 		var forwardNeckRotation = headRotation.x;						// x rotation of the neck (forward) 
+		var neckVector = Cardboard.SDK.HeadRotation  * Vector3.up;		// Neck vector
 
-		var horizontalRotationThreshold = 20; 							// The left right scope of the player
-
-		var forwardRotationThresholdMin = 20; 							// Player look in direction of the ground/ball
+		var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
 		var forwardRotationThresholdMax = 90; 	
 
-		var playerRot = playerTransf.localRotation.eulerAngles.y - initialRotation.eulerAngles.y; //The player rotation without the initial rotation
+		//var distanceWithBall = Vector3.Distance(new Vector3(playerTransf.position.x, 0, playerTransf.position.z), new Vector3(ballTransf.position.x, 0, ballTransf.position.z));
+		var forwardAngle = Mathf.Rad2Deg * Mathf.Atan(neckVector.x / neckVector.z) * 6;
 
-
-		Debug.Log ("Head: " + headRotation + "; PlayerRot: " + playerRot);
+		Debug.Log ("Head: " + headRotation + "; Forward: " + neckVector);
 
 		// Player look at the horizon (we follow his neck rotation)
 		if (forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax) 
@@ -350,8 +351,12 @@ public class MainScript : MonoBehaviour {
 		// Player look at the ground we follow his neck
 		else
 		{
+
+			playerTransf.rotation = Quaternion.Euler(0, forwardAngle, 0);
 			Debug.Log ("Look at the Ground");
 		}
+
+		Debug.Log ("Head: " + headRotation + "; Forward: " + neckVector + "; Player: " + playerTransf.rotation + "; forwardAngle: " + forwardAngle );
 	}
 
 
