@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAction: 0
   currentMovement: 0
+  CardboardGameObject: {fileID: 516060130}
   Player: {fileID: 1563345029}
   Club: {fileID: 739911293}
   Ball: {fileID: 1598460200}
@@ -246,6 +247,10 @@ Transform:
   - {fileID: 1495966406}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &516060130 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+  m_PrefabInternal: {fileID: 1916649007}
 --- !u!114 &637654739 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11476540, guid: 85da3aa8d9f616a41b2e00c73a055bd0,
@@ -2108,6 +2113,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: trackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: trackPosition
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

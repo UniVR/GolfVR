@@ -32,6 +32,7 @@ public class MainScript : MonoBehaviour {
 	/*
 	 * 	Public Properties
 	 */
+	public GameObject CardboardGameObject;
 	public GameObject Player;	
 	public GameObject Club;
 	public GameObject Ball;
@@ -338,25 +339,25 @@ public class MainScript : MonoBehaviour {
 		var forwardRotationThresholdMax = 90; 	
 
 		//var distanceWithBall = Vector3.Distance(new Vector3(playerTransf.position.x, 0, playerTransf.position.z), new Vector3(ballTransf.position.x, 0, ballTransf.position.z));
-		var forwardAngle = Mathf.Rad2Deg * Mathf.Atan(neckVector.x / neckVector.z) * 6;
-
-		Debug.Log ("Head: " + headRotation + "; Forward: " + neckVector);
+		var forwardAngle = Mathf.Rad2Deg * Mathf.Atan(neckVector.x / neckVector.z);
 
 		// Player look at the horizon (we follow his neck rotation)
-		if (forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax) 
+		var lookHorizontally = forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax;
+		if (lookHorizontally) 
 		{
-			playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
-			Debug.Log ("Look at the Horizon");
+			//playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
+			playerTransf.eulerAngles = new Vector3(0, horizontalNeckRotation, 0);
 		}
 		// Player look at the ground we follow his neck
 		else
 		{
-
 			playerTransf.rotation = Quaternion.Euler(0, forwardAngle, 0);
-			Debug.Log ("Look at the Ground");
 		}
 
-		Debug.Log ("Head: " + headRotation + "; Forward: " + neckVector + "; Player: " + playerTransf.rotation + "; forwardAngle: " + forwardAngle );
+		CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, CardboardGameObject.transform.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
+
+		//Debug.Log ("LookHorizontally?: " + lookHorizontally + "; Head: " + headRotation + "; Forward: " + neckVector + "; Player: " + playerTransf.rotation + "; forwardAngle: " + forwardAngle );
+		//Debug.Log ("LookHorizontally?: " + lookHorizontally + "; Player: " + playerTransf.eulerAngles + "; Head: " + headRotation );
 	}
 
 
