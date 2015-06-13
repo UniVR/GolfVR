@@ -349,6 +349,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .537299454
       objectReference: {fileID: 0}
+    - target: {fileID: 3308324, guid: d7b705100debac040aad6c052f825f94, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 775ca8b389f48e340b26b11b339e4c1b, type: 3}
     m_RemovedComponents:
     - {fileID: 11488980, guid: d7b705100debac040aad6c052f825f94, type: 2}
     - {fileID: 11466950, guid: d7b705100debac040aad6c052f825f94, type: 2}
