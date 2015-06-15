@@ -258,13 +258,35 @@ public class MainScript : MonoBehaviour {
 		{
 			/*
 			 * 	None
-			 */
-			/*	
+			 */	
 			case MovementState.None:
-				buttonRightBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
-				buttonLeftBtn.image.color =  new Color(buttonsColor.r, buttonsColor.g, buttonsColor.b); 
+				/*
+				 * 	New rotation system (Every value here is in degree°)
+				 */
+				var headRotation = Cardboard.SDK.HeadRotation.eulerAngles;		// Head rotation
+				var horizontalNeckRotation = headRotation.y;					// y rotation of the neck (horizontally)
+				var forwardNeckRotation = headRotation.x;						// x rotation of the neck (forward) 
+				var neckVector = Cardboard.SDK.HeadRotation  * Vector3.up;		// Neck vector
+				
+				var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
+				var forwardRotationThresholdMax = 90; 	
+
+				// Player look at the horizon (we follow his neck rotation)
+				var lookHorizontally = forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax;
+				if (lookHorizontally) 
+				{
+					//playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
+					playerTransf.eulerAngles = new Vector3(0, horizontalNeckRotation, 0);
+				}
+				else // Player look at the ground we follow his neck
+				{
+					var direction = new Vector3(neckVector.x, 0, neckVector.z);
+					playerTransf.rotation = Quaternion.LookRotation(direction);
+				}
+				//Vertical rotation
+				CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, CardboardGameObject.transform.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
+			Debug.Log("headRotation" + CardboardGameObject.transform.rotation);
 			break;
-			*/
 		
 			/*
 			 * Turn left
@@ -302,11 +324,17 @@ public class MainScript : MonoBehaviour {
 			 * Move toward the ball
 			 */
 			case MovementState.MoveToTheBall:
-				Player.transform.position = initialPosition;
-				Player.transform.rotation = initialRotation;
-				Player.transform.position = Ball.transform.position + playerOffsetWithBall;
-				playerTransf.RotateAround(Ball.transform.position, Vector3.up, angleRotationAroundBall);
+				//Player.transform.position = initialPosition;
+				//Player.transform.rotation = initialRotation;
+				//Player.transform.LookAt(currentHole.transform);
+				//Player.transform.position = Ball.transform.position + playerOffsetWithBall;
+				//playerTransf.RotateAround(Ball.transform.position, Vector3.up, angleRotationAroundBall);
+				Player.transform.position = Ball.transform.position;
+				Player.transform.LookAt(currentHole.transform);
+			CardboardGameObject.transform.LookAt(currentHole.transform);
+
 				currentMovement = MovementState.FadeIn;
+			Debug.Log("headRotation MOVE!" + CardboardGameObject.transform.rotation);
 			break;
 
 			/*
@@ -326,38 +354,6 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 		}
-
-		/*
-		 * 	New rotation system (Every value here is in degree°)
-		 */
-		var headRotation = Cardboard.SDK.HeadRotation.eulerAngles;		// Head rotation
-		var horizontalNeckRotation = headRotation.y;					// y rotation of the neck (horizontally)
-		var forwardNeckRotation = headRotation.x;						// x rotation of the neck (forward) 
-		var neckVector = Cardboard.SDK.HeadRotation  * Vector3.up;		// Neck vector
-
-		var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
-		var forwardRotationThresholdMax = 90; 	
-
-		//var distanceWithBall = Vector3.Distance(new Vector3(playerTransf.position.x, 0, playerTransf.position.z), new Vector3(ballTransf.position.x, 0, ballTransf.position.z));
-		var forwardAngle = Mathf.Rad2Deg * Mathf.Atan(neckVector.x / neckVector.z);
-
-		// Player look at the horizon (we follow his neck rotation)
-		var lookHorizontally = forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax;
-		if (lookHorizontally) 
-		{
-			//playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
-			playerTransf.eulerAngles = new Vector3(0, horizontalNeckRotation, 0);
-		}
-		// Player look at the ground we follow his neck
-		else
-		{
-			playerTransf.rotation = Quaternion.Euler(0, forwardAngle, 0);
-		}
-
-		CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, CardboardGameObject.transform.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
-
-		//Debug.Log ("LookHorizontally?: " + lookHorizontally + "; Head: " + headRotation + "; Forward: " + neckVector + "; Player: " + playerTransf.rotation + "; forwardAngle: " + forwardAngle );
-		//Debug.Log ("LookHorizontally?: " + lookHorizontally + "; Player: " + playerTransf.eulerAngles + "; Head: " + headRotation );
 	}
 
 

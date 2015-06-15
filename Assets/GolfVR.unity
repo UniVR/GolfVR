@@ -1708,6 +1708,22 @@ Prefab:
       propertyPath: MinDistance
       value: 1.0266571
       objectReference: {fileID: 0}
+    - target: {fileID: 11401186, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 496065655}
+    - target: {fileID: 11401186, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401186, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 496065655}
+    - target: {fileID: 11401186, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReleaseShoot
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
     - {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -2122,6 +2138,10 @@ Prefab:
     - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: trackPosition
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: neckModelScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
