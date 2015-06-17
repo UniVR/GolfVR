@@ -403,7 +403,7 @@ RectTransform:
   m_GameObject: {fileID: 942483151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .631781459, y: .631781459, z: .631781459}
   m_Children: []
   m_Father: {fileID: 1023647757}
   m_RootOrder: 1
@@ -1775,6 +1775,18 @@ Prefab:
       value: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 415782, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .132440597
+      objectReference: {fileID: 0}
+    - target: {fileID: 415782, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .132440522
+      objectReference: {fileID: 0}
+    - target: {fileID: 415782, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .132440522
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19974808, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
     - {fileID: 19822502, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
@@ -2184,11 +2196,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: trackRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: trackPosition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400012, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: neckModelScale

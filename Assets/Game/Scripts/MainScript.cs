@@ -263,10 +263,10 @@ public class MainScript : MonoBehaviour {
 				/*
 				 * 	New rotation system (Every value here is in degree°)
 				 */
-				var headRotation = Cardboard.SDK.HeadRotation.eulerAngles;		// Head rotation
+				var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;		// Head rotation
 				var horizontalNeckRotation = headRotation.y;					// y rotation of the neck (horizontally)
 				var forwardNeckRotation = headRotation.x;						// x rotation of the neck (forward) 
-				var neckVector = Cardboard.SDK.HeadRotation  * Vector3.up;		// Neck vector
+				var neckVector = Cardboard.SDK.HeadPose.Orientation  * Vector3.up;		// Neck vector
 				
 				var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
 				var forwardRotationThresholdMax = 90; 	
@@ -282,10 +282,11 @@ public class MainScript : MonoBehaviour {
 				{
 					var direction = new Vector3(neckVector.x, 0, neckVector.z);
 					playerTransf.rotation = Quaternion.LookRotation(direction);
+				CardboardGameObject.transform.eulerAngles = new Vector3 (CardboardGameObject.transform.eulerAngles.x, horizontalNeckRotation-playerTransf.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
 				}
 				//Vertical rotation
-				CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, CardboardGameObject.transform.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
-			Debug.Log("headRotation" + CardboardGameObject.transform.rotation);
+			//CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, /*CardboardGameObject.transform.eulerAngles.y*/horizontalNeckRotation, CardboardGameObject.transform.eulerAngles.z);
+			//Debug.Log("headRotation" + CardboardGameObject.transform.eulerAngles);
 			break;
 		
 			/*
@@ -331,7 +332,7 @@ public class MainScript : MonoBehaviour {
 				//playerTransf.RotateAround(Ball.transform.position, Vector3.up, angleRotationAroundBall);
 				Player.transform.position = Ball.transform.position;
 				Player.transform.LookAt(currentHole.transform);
-			CardboardGameObject.transform.LookAt(currentHole.transform);
+				//CardboardGameObject.transform.LookAt(currentHole.transform);
 
 				currentMovement = MovementState.FadeIn;
 			Debug.Log("headRotation MOVE!" + CardboardGameObject.transform.rotation);
