@@ -21,9 +21,14 @@ public class DetectTerrainType : MonoBehaviour {
 	[SerializeField] public TexturePhysics[] TerrainTexturePhysics;
 	[SerializeField] public float[] currentTextureLevel;
 
+	private MainScript mainScript;
+
+	//The ball
 	private Transform ballTransf;
 	private Rigidbody ballRigidBody;
 
+	//Terrain properties
+	private Terrain currentTerrain;
 	private int textureSize;
 	private TerrainData terrainData;
 	private Vector3 terrainPos;
@@ -32,23 +37,17 @@ public class DetectTerrainType : MonoBehaviour {
 	private float coefZ;
 
 	void Start () {
-		var MainScript = GetComponent<MainScript> ();
+		mainScript = GetComponent<MainScript> ();
 
-		ballTransf = MainScript.Ball.transform;
-		ballRigidBody = MainScript.Ball.GetComponent<Rigidbody>();
+		ballTransf = mainScript.Ball.transform;
+		ballRigidBody = mainScript.Ball.GetComponent<Rigidbody>();
 
-		Terrain terrain = MainScript.Terrain;
-		terrainData = terrain.terrainData;
-		terrainPos = terrain.transform.position;
-		
-		textureSize = TerrainTexturePhysics.Length;
-		currentTextureLevel = new float[textureSize];
-
-		coefX = terrainData.alphamapWidth / terrainData.size.x;
-		coefZ = terrainData.alphamapHeight / terrainData.size.z;
+		InitTerrainData ();
 	}
 
 	public void SetBallDrag(){
+		InitTerrainData ();
+
 		var ballPos = ballTransf.position;
 		var mapX = (ballPos.x - terrainPos.x) * coefX;
 		var mapZ = (ballPos.z - terrainPos.z) * coefZ;
@@ -72,4 +71,19 @@ public class DetectTerrainType : MonoBehaviour {
 			return true;
 		return false;
 	}
+
+	private void InitTerrainData(){
+		Terrain terrain = mainScript.GetCurrentHole().Terrain;
+		if (terrain != currentTerrain) {
+			terrainData = terrain.terrainData;
+			terrainPos = terrain.transform.position;
+		
+			textureSize = TerrainTexturePhysics.Length;
+			currentTextureLevel = new float[textureSize];
+		
+			coefX = terrainData.alphamapWidth / terrainData.size.x;
+			coefZ = terrainData.alphamapHeight / terrainData.size.z;
+		}
+	}
+
 }

@@ -13,8 +13,6 @@ public enum ActionState{
 }
 
 public enum MovementState{
-	TurnLeft,
-	TurnRight,
 	FadeIn,
 	FadeOut,
 	MoveToTheBall,
@@ -36,8 +34,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject Player;	
 	public GameObject Club;
 	public GameObject Ball;
-	public Terrain Terrain;
-	public List<HoleScript> Holes;
+	public HolesListScript Holes;
 
 	// Global Clubs properties
 	public float velocityLoading;
@@ -58,6 +55,7 @@ public class MainScript : MonoBehaviour {
 	 * Private properties
 	 */	
 	//Player
+	private CardboardHead cardBoardHead;
 	private Transform playerTransf;
 	private Vector3 playerOffsetWithBall;
 	private Vector3 initialPosition;
@@ -79,7 +77,6 @@ public class MainScript : MonoBehaviour {
 	private AudioSource ballAudioSource;
 	private bool ballIsShooted;
 	private bool ballIsOnGround;
-	private HoleScript currentHole;
 	
 	//GUI
 	private Material fadePlaneMaterial;
@@ -99,6 +96,7 @@ public class MainScript : MonoBehaviour {
 		/*
 		 * Player
 		 */		
+		cardBoardHead = CardboardGameObject.GetComponentInChildren<CardboardHead> ();
 		playerTransf = Player.transform;
 		playerOffsetWithBall = Player.transform.position - Ball.transform.position;
 		initialPosition = playerTransf.position;
@@ -123,7 +121,6 @@ public class MainScript : MonoBehaviour {
 		ballAudioSource = Ball.GetComponent<AudioSource> ();
 		ballIsShooted = false;
 		ballIsOnGround = true;
-		currentHole = Holes [0];
 
 		/*
 		 * GUI
@@ -243,7 +240,7 @@ public class MainScript : MonoBehaviour {
 					ballTrail.enabled = false;
 					ballTrail.time = 0;
 					currentAction = ActionState.Fired;
-					Ball.transform.position = currentHole.BeginPosition.transform.position;
+					Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
 					ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
 					ballRigidBody.angularDrag = 20f;
 					ballIsOnGround = false;
@@ -271,46 +268,25 @@ public class MainScript : MonoBehaviour {
 				var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
 				var forwardRotationThresholdMax = 90; 	
 
-				// Player look at the horizon (we follow his neck rotation)
+				// Player look at the horizon (normal rotation around the ball)
 				var lookHorizontally = forwardNeckRotation < forwardRotationThresholdMin || forwardNeckRotation > forwardRotationThresholdMax;
 				if (lookHorizontally) 
 				{
-					//playerTransf.rotation = Quaternion.Euler(0, horizontalNeckRotation, 0);
 					playerTransf.eulerAngles = new Vector3(0, horizontalNeckRotation, 0);
 				}
-				else // Player look at the ground we follow his neck
+				else // Player look at the ground we follow his neck direction (Horizontal projection of the neck vector)
 				{
 					var direction = new Vector3(neckVector.x, 0, neckVector.z);
-					playerTransf.rotation = Quaternion.LookRotation(direction);
-				CardboardGameObject.transform.eulerAngles = new Vector3 (CardboardGameObject.transform.eulerAngles.x, horizontalNeckRotation-playerTransf.eulerAngles.y, CardboardGameObject.transform.eulerAngles.z);
+					playerTransf.rotation = Quaternion.LookRotation(direction); // TODO: add a little threshold?
 				}
-				//Vertical rotation
-			//CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, /*CardboardGameObject.transform.eulerAngles.y*/horizontalNeckRotation, CardboardGameObject.transform.eulerAngles.z);
-			//Debug.Log("headRotation" + CardboardGameObject.transform.eulerAngles);
+
+				//Cardboard top/bottom rotation
+				var cardBoardVect = CardboardGameObject.transform.eulerAngles;
+				CardboardGameObject.transform.eulerAngles = new Vector3(forwardNeckRotation, cardBoardVect.y, cardBoardVect.z);
+
+				//Debug.Log("horizontalNeckRotation: " + horizontalNeckRotation);
 			break;
 		
-			/*
-			 * Turn left
-			 */
-			/*
-			case MovementState.TurnLeft:
-			//	buttonLeftBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f); 
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, -rotateAroundBallVelocity * Time.deltaTime);
-				angleRotationAroundBall -= rotateAroundBallVelocity;
-				break;
-			*/
-
-			/*
-			 * Turn right
-			 */
-			/*
-			case MovementState.TurnRight:
-			//	buttonRightBtn.image.color = new Color (buttonsColor.r - 1f, buttonsColor.g, buttonsColor.b - 1f);
-				playerTransf.RotateAround (Ball.transform.position, Vector3.up, rotateAroundBallVelocity * Time.deltaTime);
-				angleRotationAroundBall += rotateAroundBallVelocity;
-			break;
-			*/
-
 			/*
 			 * 	Fade Out
 			 */
@@ -325,17 +301,12 @@ public class MainScript : MonoBehaviour {
 			 * Move toward the ball
 			 */
 			case MovementState.MoveToTheBall:
-				//Player.transform.position = initialPosition;
-				//Player.transform.rotation = initialRotation;
-				//Player.transform.LookAt(currentHole.transform);
-				//Player.transform.position = Ball.transform.position + playerOffsetWithBall;
-				//playerTransf.RotateAround(Ball.transform.position, Vector3.up, angleRotationAroundBall);
 				Player.transform.position = Ball.transform.position;
-				Player.transform.LookAt(currentHole.transform);
-				//CardboardGameObject.transform.LookAt(currentHole.transform);
-
+				//TODO NOW !
+				//Player.transform.LookAt(Holes.CurrentHole.transform);
+				//cardBoardHead.transform.LookAt(Holes.CurrentHole.transform.position);
+				//Debug.Log("MOVE !");
 				currentMovement = MovementState.FadeIn;
-			Debug.Log("headRotation MOVE!" + CardboardGameObject.transform.rotation);
 			break;
 
 			/*
@@ -358,7 +329,9 @@ public class MainScript : MonoBehaviour {
 	}
 
 
-
+	public HoleScript GetCurrentHole(){
+		return Holes.CurrentHole;
+	}
 
 	/*
 	 * Watching ball (shoot/release)
@@ -403,46 +376,12 @@ public class MainScript : MonoBehaviour {
 		ballIsOnGround = false;
 	}
 
-	public void EnterHole(int holeNumber)
+	public void EnterHole()
 	{
-		foreach (HoleScript hole in Holes) 
-		{
-			if(hole.HoleNumber==holeNumber+1)
-			{
-				currentHole = hole;
-				currentAction = ActionState.Won;
-			}
-		}
+		currentAction = ActionState.Won;
 	}
 
-	/*
-	 * Button Left/Right
-	 */
-	public void WatchButtonLeft(){
-		currentMovement = MovementState.TurnLeft;
-		/*
-		 * TODO: Sounds
-		 */
-	}
-
-	public void UnWatchButtonLeft(){
-		currentMovement = MovementState.None;
-		/*
-		 * TODO: Sounds
-		 */
-	}
-
-	public void WatchButtonRight(){
-		currentMovement = MovementState.TurnRight;
-		/*
-		 * TODO: Sounds
-		 */
-	}
-	
-	public void UnWatchButtonRight(){
-		currentMovement = MovementState.None;
-		/*
-		 * TODO: Sounds
-		 */
+	public void Win(){
+		// TODO
 	}
 }

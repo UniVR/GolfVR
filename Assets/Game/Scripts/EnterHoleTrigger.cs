@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnterHoleTrigger : MonoBehaviour {
-
+	
 	private HoleScript holeScript;
 
 	void Start()
@@ -12,7 +12,7 @@ public class EnterHoleTrigger : MonoBehaviour {
 
 	void OnTriggerEnter (Collider collider)
 	{
-		if(collider.gameObject==holeScript.MainScript.Ball)
+		if(collider.gameObject==holeScript.HolesListScript.MainScript.Ball)
 			holeScript.EnterHole();
 	}
 
