@@ -9,7 +9,8 @@ public enum ActionState{
 	Loaded,
 	Firing,
 	Fired, 
-	Won
+	Won,
+	OutOfBound
 }
 
 public enum MovementState{
@@ -47,6 +48,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject FadePlane;
 	public float FadeSpeed;
 	public Text ScoreHUD;
+	public Text InformationsHUD;
 	public Image PowerBar;
 	public float rotateAroundBallVelocity;
 	public float moveToBallVelocity;
@@ -71,6 +73,7 @@ public class MainScript : MonoBehaviour {
 	//Ball
 	private DetectTerrainType detectTerrainType;
 	private Transform ballTransf;
+	private Vector3 ballOldPos;
 	private Rigidbody ballRigidBody;
 	private TrailRenderer ballTrail;
 	private float ballOldTrailTime;
@@ -196,6 +199,7 @@ public class MainScript : MonoBehaviour {
 					clubTransf.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * timeLoading);
 					if(!ballIsShooted && clubTransf.localRotation.z < midAngle)							//Shoot now
 					{
+						ballOldPos = ballTransf.position;
 						ShootBall(timeLoading, playerTransf.eulerAngles.y);
 						ballIsShooted = true;
 						score++;
@@ -215,10 +219,14 @@ public class MainScript : MonoBehaviour {
 			/*
 			 * Fired
 			 */
-			case ActionState.Fired:		
+			case ActionState.Fired:					
 				if(ballIsOnGround)
 					detectTerrainType.SetBallDrag();
 
+				if(detectTerrainType.IsOutOfBound()){
+					currentAction = ActionState.OutOfBound;
+					break;
+				}		   		
 				if(ballRigidBody.velocity.magnitude < 0.1f)
 				{
 					clubTransf.localRotation = Quaternion.RotateTowards(clubTransf.localRotation, clubDefaultRotation, 10f);
@@ -237,14 +245,34 @@ public class MainScript : MonoBehaviour {
 			break;
 
 			case ActionState.Won:	
-					ballTrail.enabled = false;
-					ballTrail.time = 0;
+				currentAction = ActionState.Fired;
+				Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
+				ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
+				ballRigidBody.angularDrag = 20f;		
+				ballTrail.enabled = false;
+				ballTrail.time = 0;
+				ballIsOnGround = true;
+			break;
+
+			case ActionState.OutOfBound:	
+				InformationsHUD.enabled = true;
+				score++;
+				ScoreHUD.text = "Score: " + score;	
+				Ball.transform.position = ballOldPos;
+				ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
+				ballRigidBody.angularDrag = 20f;		
+				ballTrail.enabled = false;
+				ballTrail.time = 0;
+				ballIsOnGround = true;
+
+				if(currentMovement != MovementState.FadeOut){
+					fadeAlphaValue = 0;
+					FadePlane.SetActive (true);
+					currentMovement = MovementState.FadeOut;
+				}
+				else{
 					currentAction = ActionState.Fired;
-					Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
-					ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
-					ballRigidBody.angularDrag = 20f;
-					ballIsOnGround = false;
-				return;
+				}
 			break;
 		}
 
@@ -283,8 +311,6 @@ public class MainScript : MonoBehaviour {
 				//Cardboard top/bottom rotation
 				var cardBoardVect = CardboardGameObject.transform.eulerAngles;
 				CardboardGameObject.transform.eulerAngles = new Vector3(forwardNeckRotation, cardBoardVect.y, cardBoardVect.z);
-
-				//Debug.Log("horizontalNeckRotation: " + horizontalNeckRotation);
 			break;
 		
 			/*
@@ -302,10 +328,18 @@ public class MainScript : MonoBehaviour {
 			 */
 			case MovementState.MoveToTheBall:
 				Player.transform.position = Ball.transform.position;
-				//TODO NOW !
+		//TODO: find how rotate the player to front the ball... !
 				//Player.transform.LookAt(Holes.CurrentHole.transform);
 				//cardBoardHead.transform.LookAt(Holes.CurrentHole.transform.position);
-				//Debug.Log("MOVE !");
+				//Cardboard.SDK.HeadPose.Orientation.SetLookRotation(Holes.CurrentHole.transform.position);
+				//var vectorHeadToHole = Holes.CurrentHole.transform.position - Cardboard.SDK.HeadPose.Position;
+				//Cardboard.SDK.HeadPose.Orientation.SetLookRotation(vectorHeadToHole);
+				//var vectorHeadToHole = Holes.CurrentHole.transform.position - Cardboard.SDK.HeadPose.Position;
+				//var orientation = Quaternion.LookRotation(vectorHeadToHole, Vector3.up);
+				//((MutablePose3D) Cardboard.SDK.HeadPose).Set(Cardboard.SDK.HeadPose.Position, orientation);	
+				//Cardboard.SDK.HeadPose.Orientation.Set(orientation.x, orientation.y, orientation.z, orientation.w);
+				//Player.transform.LookAt(Holes.CurrentHole.transform);
+				//Debug.Log("########### MOVE !");
 				currentMovement = MovementState.FadeIn;
 			break;
 
@@ -318,6 +352,7 @@ public class MainScript : MonoBehaviour {
 				if(fadeAlphaValue<=0f){
 					FadePlane.SetActive (false);
 					currentMovement = MovementState.None;
+					InformationsHUD.enabled = false;	
 				}
 				if(!ballTrail.enabled)
 				{
@@ -326,7 +361,11 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 		}
+
+		//Debug.Log("NECK: " + Cardboard.SDK.HeadPose.Orientation  * Vector3.up);
 	}
+
+
 
 
 	public HoleScript GetCurrentHole(){

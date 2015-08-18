@@ -18,6 +18,9 @@ public class TexturePhysics{
 
 public class DetectTerrainType : MonoBehaviour {
 
+	public float Debug_CurrentDrag;
+	public float Debug_CurrentAngularDrag;
+
 	[SerializeField] public TexturePhysics[] TerrainTexturePhysics;
 	[SerializeField] public float[] currentTextureLevel;
 
@@ -62,8 +65,8 @@ public class DetectTerrainType : MonoBehaviour {
 			angularDrag += TerrainTexturePhysics[i].angularDrag * currentTextureLevel[i];
 		}
 		
-		ballRigidBody.drag = drag;
-		ballRigidBody.angularDrag = angularDrag;
+		Debug_CurrentDrag = ballRigidBody.drag = drag;
+		Debug_CurrentAngularDrag = ballRigidBody.angularDrag = angularDrag;
 	}
 
 	public bool IsOutOfBound(){
