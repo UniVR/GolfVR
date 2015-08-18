@@ -18,7 +18,7 @@ TextureImporter:
     convertToNormalMap: 1
     externalNormalMap: 1
     heightScale: .300000012
-    normalMapFilter: 0
+    normalMapFilter: 1
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
@@ -26,7 +26,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 512
   textureSettings:
     filterMode: -1
