@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public enum ActionState{
 	Idle,
 	Loading,
@@ -133,7 +134,7 @@ public class MainScript : MonoBehaviour {
 		PowerBar.enabled = false;
 		isGuiVisible = true;
 		score = 0;
-		ScoreHUD.text = "Score: " + score;	
+		ScoreHUD.text = Localization.Score + score;	
 	}
 
 
@@ -203,7 +204,7 @@ public class MainScript : MonoBehaviour {
 						ShootBall(timeLoading, playerTransf.eulerAngles.y);
 						ballIsShooted = true;
 						score++;
-						ScoreHUD.text = "Score: " + score;	
+						ScoreHUD.text = Localization.Score + score;	
 					}
 					else if (clubTransf.localRotation.z <= minAngle)
 					{					
@@ -245,6 +246,8 @@ public class MainScript : MonoBehaviour {
 			break;
 
 			case ActionState.Won:	
+				InformationsHUD.enabled = true;
+				InformationsHUD.text = Localization.Hole;
 				currentAction = ActionState.Fired;
 				Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
 				ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
@@ -256,8 +259,9 @@ public class MainScript : MonoBehaviour {
 
 			case ActionState.OutOfBound:	
 				InformationsHUD.enabled = true;
+				InformationsHUD.text = Localization.OutOfZone;
 				score++;
-				ScoreHUD.text = "Score: " + score;	
+				ScoreHUD.text = Localization.Score + score;	
 				Ball.transform.position = ballOldPos;
 				ballRigidBody.velocity = new Vector3(0f, 0f, 0f);
 				ballRigidBody.angularDrag = 20f;		
