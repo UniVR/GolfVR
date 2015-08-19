@@ -626,7 +626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAction: 0
-  currentMovement: 0
   CardboardGameObject: {fileID: 801960631}
   Player: {fileID: 1563345029}
   Club: {fileID: 739911297}
@@ -978,10 +977,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadePlane: {fileID: 1235611204}
-  FadeSpeed: 5
+  FadeSpeed: 1
   ScoreHUD: {fileID: 49201478}
   InformationsHUD: {fileID: 1082363640}
-  InformationShowTime: 5
+  InformationShowTime: 3
   PowerBar: {fileID: 942483153}
 --- !u!114 &1023647755
 MonoBehaviour:

@@ -10,17 +10,16 @@ public enum ActionState{
 	Loaded,
 	Firing,
 	Fired, 
-	MoveToTheBall,
 	Won,
-	OutOfBound
+	OutOfBound,
+	MoveToTheBall
 }
 
 public class MainScript : MonoBehaviour {
 
 	[HideInInspector]
 	public ActionState currentAction;
-
-	[HideInInspector]
+		
 	public Terrain CurrentTerrain{
 		get{ return GetCurrentHole ().Terrain; }
 	}
@@ -38,6 +37,7 @@ public class MainScript : MonoBehaviour {
 
 	private int score;
 
+
 	// Singleton
 	private static MainScript instance;
 	public static MainScript Get(){
@@ -54,29 +54,19 @@ public class MainScript : MonoBehaviour {
 		currentAction = ActionState.Idle;
 	}
 
-
+	/*
+	 * 	Action
+	 */
 	void FixedUpdate () {
-		/*
-		 * 	Action
-		 */
+
 		switch (currentAction) 
 		{
-			/*
-			 * Idle
-			 */
 			case ActionState.Idle:
-				/*if(!Hud.IsVisible()
-			   		&& currentMovement!=MovementState.FadeIn
-			   		&& currentMovement!=MovementState.FadeOut
-			   		&& currentMovement!=MovementState.MoveToTheBall)
-				{
-					Hud.SetVisible(true);
-				}*/
+				//Do nothing
 			break;
 
-			/*
-			 * Loading
-			 */
+
+
 			case ActionState.Loading:
 				if(!Club.IsLoaded())
 				{
@@ -89,17 +79,15 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 
-			/*
-			 * Loaded
-			 */
+
+
 			case ActionState.Loaded:
+				//Wait
 			break;
 
-			/*
-			 * Firing
-			 */
-			case ActionState.Firing:
 
+
+			case ActionState.Firing:
 				Hud.SetPowerBarAmount(0);				
 				Club.Fire();
 
@@ -114,9 +102,8 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 
-			/*
-			 * Fired
-			 */
+
+
 			case ActionState.Fired:					
 				if(Ball.IsOutOfBound()){
 					currentAction = ActionState.OutOfBound;
@@ -124,41 +111,30 @@ public class MainScript : MonoBehaviour {
 				}		   		
 				if(Ball.IsStopped())
 				{
-					Club.Reset();
 					Hud.FadeOut();
 					currentAction = ActionState.MoveToTheBall;
 				}				
 			break;
 
 			case ActionState.Won:	
+				Ball.StopAndMove(Holes.CurrentHole.BeginPosition.transform.position); //Go to next hole
 				Hud.ShowInformation(Localization.Hole);
-				currentAction = ActionState.Fired;
-				Ball.StopAndMove(Holes.CurrentHole.BeginPosition.transform.position);
+				Hud.FadeOut();	
+				currentAction = ActionState.MoveToTheBall;
 			break;
 
 			case ActionState.OutOfBound:	
+				Ball.StopAndGetBackToOldPos();
 				Hud.UpdateScore(score++);
 				Hud.ShowInformation(Localization.OutOfZone);
-				Ball.StopAndGetBackToOldPos();
-				Club.Reset();
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;				
 			break;
 
 			case ActionState.MoveToTheBall:	
-				Player.transform.position = Ball.transform.position;
-				//TODO: find how rotate the player to front the ball... !
-				//Player.transform.LookAt(Holes.CurrentHole.transform);
-				//Cardboard.SDK.HeadPose.Orientation.SetLookRotation(Holes.CurrentHole.transform.position);
-				//var vectorHeadToHole = Holes.CurrentHole.transform.position - Cardboard.SDK.HeadPose.Position;
-				//Cardboard.SDK.HeadPose.Orientation.SetLookRotation(vectorHeadToHole);
-				//var vectorHeadToHole = Holes.CurrentHole.transform.position - Cardboard.SDK.HeadPose.Position;
-				//var orientation = Quaternion.LookRotation(vectorHeadToHole, Vector3.up);
-				//((MutablePose3D) Cardboard.SDK.HeadPose).Set(Cardboard.SDK.HeadPose.Position, orientation);	
-				//Cardboard.SDK.HeadPose.Orientation.Set(orientation.x, orientation.y, orientation.z, orientation.w);
-				//Player.transform.LookAt(Holes.CurrentHole.transform);
-				//Debug.Log("########### MOVE !");
-				if(Hud.IsFadedOut()){
+				if(Hud.IsFadingIn()){
+					Player.transform.position = Ball.transform.position;
+					Club.Reset();	
 					currentAction = ActionState.Idle;
 				}
 			break;
@@ -166,7 +142,7 @@ public class MainScript : MonoBehaviour {
 
 
 		/*
-		 * 	New rotation system (Every value here is in degree°)
+		 * 	Rotation system
 		 */
 		if (currentAction != ActionState.MoveToTheBall) {
 			var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;		// Head rotation
@@ -204,7 +180,6 @@ public class MainScript : MonoBehaviour {
 	 * Watching ball (shoot/release)
 	 */
 	public void LoadShoot(){
-		//ballIsWatched = true;
 		if (currentAction == ActionState.Idle)
 			currentAction = ActionState.Loading;
 		/*
@@ -213,7 +188,6 @@ public class MainScript : MonoBehaviour {
 	}
 
 	public void ReleaseShoot(){
-		//ballIsWatched = false;
 		if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded)
 			currentAction = ActionState.Firing;
 		/*

@@ -7,6 +7,7 @@ public class BallScript : MonoBehaviour {
 	private DetectTerrainType detectTerrainType;
 
 	private Vector3 oldPos;
+	private Vector3 newPos;
 	private Rigidbody rigidBody;
 	private TrailRenderer trail;
 	private float oldTrailTime;
@@ -62,7 +63,12 @@ public class BallScript : MonoBehaviour {
 	}
 
 	public bool IsStopped(){
-		return rigidBody.velocity.magnitude < 0.1f;
+		var stopped = rigidBody.velocity.magnitude < 0.1f;
+		if (stopped) {
+			isShooted = false;
+			Stop();
+		}
+		return stopped;
 	}
 
 	public bool IsShooted(){
