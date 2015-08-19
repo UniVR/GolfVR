@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HoleScript : MonoBehaviour {
 
 	[HideInInspector]
-	public HolesListScript HolesListScript;
+	public HolesScript HolesListScript;
 
 	public Terrain Terrain;
 	public int HoleNumber;
@@ -13,7 +13,7 @@ public class HoleScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		HolesListScript = GetComponentInParent<HolesListScript> ();
+		HolesListScript = GetComponentInParent<HolesScript> ();
 	}
 	
 	public void EnterHole(){

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class HolesListScript : MonoBehaviour {
+public class HolesScript : MonoBehaviour {
 
 	public MainScript MainScript;
 	
@@ -15,9 +15,6 @@ public class HolesListScript : MonoBehaviour {
 	/// Just to keep the hole list at one place
 	/// </summary>
 	public List<HoleScript> Holes;
-
-	// Use this for initialization
-	void Start () {}
 
 	public void EnterHole(HoleScript enteredHole){
 		var index = Holes.IndexOf (CurrentHole);

@@ -607,8 +607,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 496065656}
   - 114: {fileID: 496065655}
-  - 114: {fileID: 496065653}
-  - 114: {fileID: 496065654}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -616,52 +614,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &496065653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 496065652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53687ec594bca8f4eaff22be74665732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Debug_CurrentDrag: 0
-  Debug_CurrentAngularDrag: 0
-  TerrainTexturePhysics:
-  - drag: 1
-    angularDrag: 5
-  - drag: 1
-    angularDrag: 10
-  - drag: 1
-    angularDrag: 30
-  - drag: 1
-    angularDrag: 160
-  - drag: .5
-    angularDrag: 300
-  currentTextureLevel: []
---- !u!114 &496065654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 496065652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d756b995041f5f479f764672dc2d931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  terrains:
-  - {fileID: 3436932}
-  - {fileID: 295359735}
-  - {fileID: 1209720513}
-  - {fileID: 1802236283}
-  - {fileID: 439576638}
-  - {fileID: 257986214}
-  - {fileID: 1779961515}
-  - {fileID: 162472777}
-  - {fileID: 1493610890}
 --- !u!114 &496065655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,21 +629,10 @@ MonoBehaviour:
   currentMovement: 0
   CardboardGameObject: {fileID: 801960631}
   Player: {fileID: 1563345029}
-  Club: {fileID: 739911293}
-  Ball: {fileID: 1598460200}
+  Club: {fileID: 739911297}
+  Ball: {fileID: 1598460207}
   Holes: {fileID: 733752647}
-  velocityLoading: 50
-  velocityShooting: 200
-  minAngle: -.699999988
-  midAngle: 0
-  maxAngle: .699999988
-  FadePlane: {fileID: 1235611204}
-  FadeSpeed: 1
-  ScoreHUD: {fileID: 49201478}
-  InformationsHUD: {fileID: 1082363640}
-  PowerBar: {fileID: 942483153}
-  rotateAroundBallVelocity: 30
-  moveToBallVelocity: 50
+  Hud: {fileID: 1023647754}
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
@@ -847,7 +788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 733752645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f01a4658b6ca0e4bae3f97994357a96, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fb444b4dbdb8744883db2f21f64a9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainScript: {fileID: 496065655}
@@ -871,11 +812,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 739911293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b863a989eb0fca543950fecf1ccc64af, type: 3}
+  m_Script: {fileID: 11500000, guid: 22fd876d47de949458c2d99499941623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clubForceCoef: 10
   clubAngle: 25
+  velocityLoading: 50
+  velocityShooting: 200
+  minAngle: -.699999988
+  midAngle: 0
+  maxAngle: .699999988
+  LoadingTime: 0
 --- !u!1 &801960631 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
@@ -970,7 +917,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.0199999996, y: .460000008}
+  m_AnchoredPosition: {x: -.0599999987, y: .670000017}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &942483153
@@ -1011,6 +958,7 @@ GameObject:
   - 223: {fileID: 1023647756}
   - 114: {fileID: 1023647755}
   - 222: {fileID: 1023647759}
+  - 114: {fileID: 1023647754}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1018,6 +966,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1023647754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023647753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25885e8dc65083d43a6ae9ac798b9baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadePlane: {fileID: 1235611204}
+  FadeSpeed: 5
+  ScoreHUD: {fileID: 49201478}
+  InformationsHUD: {fileID: 1082363640}
+  InformationShowTime: 5
+  PowerBar: {fileID: 942483153}
 --- !u!114 &1023647755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,6 +2323,31 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 154866, guid: 682f1ec973a717e4a8a5390ec43da632, type: 2}
   m_PrefabInternal: {fileID: 1415543280}
+--- !u!114 &1598460201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598460200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53687ec594bca8f4eaff22be74665732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug_CurrentDrag: 0
+  Debug_CurrentAngularDrag: 0
+  TerrainTexturePhysics:
+  - drag: 1
+    angularDrag: 5
+  - drag: 1
+    angularDrag: 10
+  - drag: 1
+    angularDrag: 30
+  - drag: 1
+    angularDrag: 160
+  - drag: .5
+    angularDrag: 300
+  currentTextureLevel: []
 --- !u!114 &1598460207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,7 +2359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584fce82b6391914d8b8bca1e58abe79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainScript: {fileID: 496065655}
 --- !u!96 &1598460211
 TrailRenderer:
   m_ObjectHideFlags: 0

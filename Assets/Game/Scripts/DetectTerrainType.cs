@@ -24,14 +24,7 @@ public class DetectTerrainType : MonoBehaviour {
 	[SerializeField] public TexturePhysics[] TerrainTexturePhysics;
 	[SerializeField] public float[] currentTextureLevel;
 
-	private MainScript mainScript;
-
-	//The ball
-	private Transform ballTransf;
-	private Rigidbody ballRigidBody;
-
 	//Terrain properties
-	private Terrain currentTerrain;
 	private int textureSize;
 	private TerrainData terrainData;
 	private Vector3 terrainPos;
@@ -39,23 +32,9 @@ public class DetectTerrainType : MonoBehaviour {
 	private float coefX;
 	private float coefZ;
 
-	void Start () {
-		mainScript = GetComponent<MainScript> ();
-
-		ballTransf = mainScript.Ball.transform;
-		ballRigidBody = mainScript.Ball.GetComponent<Rigidbody>();
-
-		InitTerrainData ();
-	}
-
-	public void SetBallDrag(){
-		InitTerrainData ();
-
-		var ballPos = ballTransf.position;
-		var mapX = (ballPos.x - terrainPos.x) * coefX;
-		var mapZ = (ballPos.z - terrainPos.z) * coefZ;
-		var splatmapData = terrainData.GetAlphamaps((int)mapX, (int)mapZ, 1, 1); 
-		
+	public void SetBallDrag(Terrain terrain, Vector3 ballPos, Rigidbody ball){
+		InitTerrainData (terrain);
+		var splatmapData = getSplatMapData (ballPos);		
 		float drag = 0;
 		float angularDrag = 0;
 		
@@ -65,28 +44,33 @@ public class DetectTerrainType : MonoBehaviour {
 			angularDrag += TerrainTexturePhysics[i].angularDrag * currentTextureLevel[i];
 		}
 		
-		Debug_CurrentDrag = ballRigidBody.drag = drag;
-		Debug_CurrentAngularDrag = ballRigidBody.angularDrag = angularDrag;
+		Debug_CurrentDrag = ball.drag = drag;
+		Debug_CurrentAngularDrag = ball.angularDrag = angularDrag;
 	}
 
-	public bool IsOutOfBound(){
-		if (currentTextureLevel [textureSize - 1] > 0.1) 
+	public bool IsOutOfBound(Terrain terrain, Vector3 ballPos){
+		InitTerrainData (terrain);
+		var splatmapData = getSplatMapData (ballPos);	
+		if (splatmapData[0, 0, textureSize - 1] > 0.1) 
 			return true;
 		return false;
 	}
 
-	private void InitTerrainData(){
-		Terrain terrain = mainScript.GetCurrentHole().Terrain;
-		if (terrain != currentTerrain) {
-			terrainData = terrain.terrainData;
-			terrainPos = terrain.transform.position;
-		
-			textureSize = TerrainTexturePhysics.Length;
-			currentTextureLevel = new float[textureSize];
-		
-			coefX = terrainData.alphamapWidth / terrainData.size.x;
-			coefZ = terrainData.alphamapHeight / terrainData.size.z;
-		}
+	private float[,,] getSplatMapData(Vector3 pos){
+		var mapX = (pos.x - terrainPos.x) * coefX;
+		var mapZ = (pos.z - terrainPos.z) * coefZ;
+		return terrainData.GetAlphamaps((int)mapX, (int)mapZ, 1, 1); 
+	}
+
+	private void InitTerrainData(Terrain terrain){
+		terrainData = terrain.terrainData;
+		terrainPos = terrain.transform.position;
+	
+		textureSize = TerrainTexturePhysics.Length;
+		currentTextureLevel = new float[textureSize];
+	
+		coefX = terrainData.alphamapWidth / terrainData.size.x;
+		coefZ = terrainData.alphamapHeight / terrainData.size.z;
 	}
 
 }
