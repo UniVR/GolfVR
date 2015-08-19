@@ -130,7 +130,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 32
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -256,7 +256,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -416,7 +416,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -496,7 +496,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -560,7 +560,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -626,7 +626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAction: 0
-  currentMovement: 0
   CardboardGameObject: {fileID: 801960631}
   Player: {fileID: 1563345029}
   Club: {fileID: 739911297}
@@ -1155,7 +1154,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 32
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -2193,7 +2192,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 32
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -2436,7 +2435,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 32
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -2506,7 +2505,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 150
+  m_HeightmapPixelError: 1
   m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
