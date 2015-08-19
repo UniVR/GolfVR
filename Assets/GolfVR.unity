@@ -977,10 +977,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadePlane: {fileID: 1235611204}
-  FadeSpeed: 5
+  FadeSpeed: 1
   ScoreHUD: {fileID: 49201478}
   InformationsHUD: {fileID: 1082363640}
-  InformationShowTime: 5
+  InformationShowTime: 3
   PowerBar: {fileID: 942483153}
 --- !u!114 &1023647755
 MonoBehaviour:

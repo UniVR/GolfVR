@@ -43,18 +43,18 @@ public class HudScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(fadeDirection == FadeDirection.FadeOut) {
-			fadeAlphaValue += Time.deltaTime / FadeSpeed;
 			fadePlaneMaterial.color = new Color(fadePlaneMaterial.color.r, fadePlaneMaterial.color.g, fadePlaneMaterial.color.b, fadeAlphaValue);
 			if(fadeAlphaValue>=1f)
 				fadeDirection = FadeDirection.FadeIn;
+			fadeAlphaValue += Time.deltaTime / FadeSpeed;
 		}
 		else if (fadeDirection == FadeDirection.FadeIn) {
-			fadeAlphaValue -= Time.deltaTime / FadeSpeed;
 			fadePlaneMaterial.color = new Color(fadePlaneMaterial.color.r, fadePlaneMaterial.color.g, fadePlaneMaterial.color.b, fadeAlphaValue);
 			if(fadeAlphaValue<=0f){
 				FadePlane.SetActive (false);
 				fadeDirection = FadeDirection.None;	
 			}
+			fadeAlphaValue -= Time.deltaTime / FadeSpeed;
 		}
 
 
@@ -67,14 +67,18 @@ public class HudScript : MonoBehaviour {
 
 	
 	public void FadeOut(){
+		fadeAlphaValue = 0;
+		FadePlane.SetActive (true);
 		fadeDirection = FadeDirection.FadeOut;
 	}
 
-	public bool IsFadedOut(){
-		return fadeDirection == FadeDirection.FadeIn;
+	public bool IsFadingOut(){
+		return fadeDirection == FadeDirection.FadeOut;
 	}
 
-
+	public bool IsFadingIn(){
+		return fadeDirection == FadeDirection.FadeIn;
+	}
 
 	public void SetPowerBarAmount(float amount){
 		if (amount == 0) {
