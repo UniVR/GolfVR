@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 414582}
   - 33: {fileID: 3342208}
   - 23: {fileID: 2382218}
-  - 114: {fileID: 11406928}
+  - 114: {fileID: 11446904}
   m_Layer: 0
   m_Name: Putter
   m_TagString: Untagged
@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170924}
   m_Mesh: {fileID: 4300000, guid: ede00b8d61999d34196a4f039e0c2f07, type: 3}
---- !u!114 &11406928
+--- !u!114 &11446904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -69,18 +69,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 170924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b863a989eb0fca543950fecf1ccc64af, type: 3}
+  m_Script: {fileID: 11500000, guid: 22fd876d47de949458c2d99499941623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clubForceCoef: 20
+  ClubImage: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  clubForceCoef: 0
   clubAngle: 0
+  velocityLoading: 0
+  velocityShooting: 0
+  minAngle: 0
+  midAngle: 0
+  maxAngle: 0
+  LoadingTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ClubImage
+      value: 
+      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170924}

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 489150}
   - 33: {fileID: 3308324}
   - 23: {fileID: 2359892}
+  - 114: {fileID: 11472992}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Untagged
@@ -60,13 +61,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191882}
   m_Mesh: {fileID: 4300000, guid: 775ca8b389f48e340b26b11b339e4c1b, type: 3}
+--- !u!114 &11472992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fd876d47de949458c2d99499941623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClubImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  clubForceCoef: 0
+  clubAngle: 0
+  velocityLoading: 0
+  velocityShooting: 0
+  minAngle: 0
+  midAngle: 0
+  maxAngle: 0
+  LoadingTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ClubImage
+      value: 
+      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191882}

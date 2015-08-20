@@ -5,6 +5,8 @@ public class ClubScript : MonoBehaviour {
 	/*
 	 * 	Club properties
 	 */
+	public Sprite ClubImage;
+		
 	public float clubForceCoef;
 	public float clubAngle;
 
