@@ -18,11 +18,19 @@ public class ClubScript : MonoBehaviour {
 	public float LoadingTime;
 
 	private Quaternion clubDefaultRotation;
+	private bool reset = false;
 
 	void Start () {
 		clubDefaultRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
 	}
 
+	void Update () {
+		if (reset && transform.localRotation.z < midAngle) {
+			transform.localRotation = Quaternion.RotateTowards (transform.localRotation, clubDefaultRotation, 5f);
+		} else if (reset) {
+			reset = false;
+		}
+	}
 	/*
 	 * 	LOAD
 	 */
@@ -56,6 +64,6 @@ public class ClubScript : MonoBehaviour {
 
 	public void Reset(){
 		LoadingTime = 0;
-		transform.localRotation = Quaternion.RotateTowards(transform.localRotation, clubDefaultRotation, 10f);
+		reset = true;
 	}
 }

@@ -12,7 +12,7 @@ public class EnterHoleTrigger : MonoBehaviour {
 
 	void OnTriggerEnter (Collider collider)
 	{
-		if(collider.gameObject==holeScript.HolesListScript.MainScript.Ball)
+		if(collider.gameObject==holeScript.HolesListScript.MainScript.Ball.gameObject)
 			holeScript.EnterHole();
 	}
 
