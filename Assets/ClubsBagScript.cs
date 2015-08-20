@@ -10,9 +10,13 @@ public class ClubsBagScript : MonoBehaviour {
 	public List<GameObject> Clubs;
 
 	private List<GameObject> buttons;
+	private bool bagWatched;
+	private bool canvasWatched;
 
 	void Start(){
 		buttons = new List<GameObject> ();
+		bagWatched = false;
+		canvasWatched = false;
 
 		var canvasRect = Menu.GetComponent<RectTransform>();
 		var canvasSizeX = canvasRect.sizeDelta.x;
@@ -36,7 +40,9 @@ public class ClubsBagScript : MonoBehaviour {
 			var clubButtonConverted = clubButton.GetComponent<Button>();
 			clubButtonConverted.image.overrideSprite = clubScript.ClubImage;
 
-
+			//Associate the clubScript to the button
+			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
+			buttonScript.ClubScript = clubScript;
 
 
 			//TODO
@@ -44,14 +50,31 @@ public class ClubsBagScript : MonoBehaviour {
 			//clubButton.onClick.AddListener(delegate() {/* StartGame("Level1"); */});
 			buttons.Add(clubButton);
 		}
+
+		Menu.enabled = false;
 	}
 
-	public void OpenMenu(){
-
+	void FixedUpdate(){
+		if (bagWatched || canvasWatched) {
+			Menu.enabled = true;
+		} else {
+			Menu.enabled = false;
+		}			
 	}
 
-	public void CloseMenu(){
-
+	public void WatchBag(){
+		bagWatched = true;
 	}
 
+	public void UnWatchBag(){
+		bagWatched = false;
+	}
+
+	public void WatchCanvas(){
+		canvasWatched = true;
+	}
+	
+	public void UnWatchCanvas(){
+		canvasWatched = false;
+	}
 }
