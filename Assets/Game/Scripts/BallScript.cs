@@ -12,8 +12,10 @@ public class BallScript : MonoBehaviour {
 	private TrailRenderer trail;
 	private float oldTrailTime;
 	private AudioSource audioSource;
-	private bool ballIsOnGround;
+
+	private bool isOnGround;
 	private bool isShooted;
+	private bool isLocked;
 
 	void Start(){
 		mainScript = MainScript.Get ();
@@ -23,11 +25,12 @@ public class BallScript : MonoBehaviour {
 		trail = GetComponent<TrailRenderer> ();
 		oldTrailTime = trail.time;
 		isShooted = false;
-		ballIsOnGround = true;
+		isOnGround = true;
+		isLocked = true;
 	}
 
 	void FixedUpdate () {
-		if (ballIsOnGround && isShooted) {
+		if (!isLocked && isOnGround && isShooted) {
 			detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody);
 		}
 	}
@@ -35,7 +38,13 @@ public class BallScript : MonoBehaviour {
 	public void Shoot (float magnitude, float angle, float orientation)
 	{
 		isShooted = true;
+		isLocked = false;
 		oldPos = transform.position;
+
+		trail.enabled = true;
+		trail.time = oldTrailTime;
+
+		detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody);
 
 		Vector3 direction = Quaternion.Euler(0, orientation, -angle) * new Vector3 (-1, 0, 0);
 		rigidBody.AddForce(direction * magnitude, ForceMode.Impulse);
@@ -45,11 +54,15 @@ public class BallScript : MonoBehaviour {
 
 	public void Stop(){
 		isShooted = false;
+		isOnGround = true;
+		isLocked = true;
+
 		rigidBody.velocity = new Vector3(0f, 0f, 0f);
-		rigidBody.angularDrag = 20f;		
+		rigidBody.drag = 100f;	
+		rigidBody.angularDrag = 100f;		
+
 		trail.enabled = false;
 		trail.time = 0;
-		ballIsOnGround = true;
 	}
 
 	public void StopAndMove(Vector3 position){
@@ -65,7 +78,6 @@ public class BallScript : MonoBehaviour {
 	public bool IsStopped(){
 		var stopped = rigidBody.velocity.magnitude < 0.1f;
 		if (stopped) {
-			isShooted = false;
 			Stop();
 		}
 		return stopped;
@@ -76,20 +88,24 @@ public class BallScript : MonoBehaviour {
 	}
 
 	public bool IsOnGround(){
-		return ballIsOnGround;
+		return isOnGround;
 	}
 
 	public bool IsOutOfBound(){
-		return detectTerrainType.IsOutOfBound (mainScript.CurrentTerrain, transform.position);
+		if(!isLocked && isOnGround && isShooted)
+			return detectTerrainType.IsOutOfBound (mainScript.CurrentTerrain, transform.position);
+		return false;
 	}
 
 	void OnCollisionEnter (Collision col)
 	{
-		ballIsOnGround = true;
+		if(col.collider.GetType() == typeof(UnityEngine.TerrainCollider))
+			isOnGround = true;
 	}
 
 	void OnCollisionExit (Collision col)
 	{
-		ballIsOnGround = false;
+		if(col.collider.GetType() == typeof(UnityEngine.TerrainCollider))
+			isOnGround = false;
 	}
 }

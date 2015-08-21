@@ -5,11 +5,14 @@ using System.Collections.Generic;
 
 public class ClubsBagScript : MonoBehaviour {
 
+	public MainScript MainScript;
+
 	public Canvas Menu;
 	public GameObject DefaultButton;
 	public List<GameObject> Clubs;
 
 	private List<GameObject> buttons;
+	private Vector2 canvasSize;
 	private bool bagWatched;
 	private bool canvasWatched;
 
@@ -21,6 +24,7 @@ public class ClubsBagScript : MonoBehaviour {
 		var canvasRect = Menu.GetComponent<RectTransform>();
 		var canvasSizeX = canvasRect.sizeDelta.x;
 		var buttonSpace = canvasSizeX/Clubs.Count;
+		canvasSize = canvasRect.sizeDelta;
 
 		var buttonRect = DefaultButton.GetComponent<RectTransform>();
 		var buttonSizeX = buttonRect.sizeDelta.x;
@@ -40,18 +44,29 @@ public class ClubsBagScript : MonoBehaviour {
 			var clubButtonConverted = clubButton.GetComponent<Button>();
 			clubButtonConverted.image.overrideSprite = clubScript.ClubImage;
 
+			clubButtonConverted.onClick.AddListener(delegate() { SelectClub(clubScript); });
+
 			//Associate the clubScript to the button
 			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
 			buttonScript.ClubScript = clubScript;
-
-
-			//TODO
-
-			//clubButton.onClick.AddListener(delegate() {/* StartGame("Level1"); */});
+			buttonScript.BagScript = this;
+				
 			buttons.Add(clubButton);
 		}
 
 		Menu.enabled = false;
+		canvasRect.sizeDelta = new Vector2 (0	,0);
+	}
+
+	public void DeactiveAllButton(){
+		foreach (GameObject button in buttons) {
+			var btn = button.GetComponent<ClubSelectionButtonScript>();
+			btn.Selected = false;
+		}
+	}
+
+	void SelectClub(ClubScript script){
+		MainScript.SetCurrentClub (script.gameObject);
 	}
 
 	void FixedUpdate(){

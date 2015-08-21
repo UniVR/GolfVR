@@ -28,8 +28,8 @@ public class MainScript : MonoBehaviour {
 	 * 	Public Properties
 	 */
 	public GameObject CardboardGameObject; 	//TODO script
-	public GameObject Player;				//TODO script
 
+	public PlayerScript Player;
 	public ClubScript Club;
 	public BallScript Ball;
 	public HolesScript Holes;
@@ -170,6 +170,11 @@ public class MainScript : MonoBehaviour {
 	}
 
 
+
+	public void SetCurrentClub(GameObject club){
+		this.Club = club.GetComponent<ClubScript> ();
+		Player.SetCurrentClub (Club.gameObject);
+	}
 
 
 	public HoleScript GetCurrentHole(){
