@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	public GameObject Club;
+	private GameObject CurrentClub;
 
 	public void SetCurrentClub(GameObject newClub){
 
@@ -11,7 +12,15 @@ public class PlayerScript : MonoBehaviour {
 			GameObject.Destroy(child.gameObject);
 		}
 
-		GameObject instantiateClub = (GameObject)GameObject.Instantiate(newClub);
-		instantiateClub.transform.SetParent(Club.transform, false);
+		GameObject instantiatedClub = (GameObject)GameObject.Instantiate(newClub);
+		instantiatedClub.transform.SetParent(Club.transform, false);
+		CurrentClub = instantiatedClub;
+	}
+
+	public GameObject GetCurrentClub(){
+		if (CurrentClub == null) {
+			CurrentClub = Club.transform.GetChild(0).gameObject;
+		}
+		return CurrentClub;
 	}
 }

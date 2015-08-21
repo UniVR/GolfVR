@@ -50,7 +50,10 @@ public class ClubsBagScript : MonoBehaviour {
 			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
 			buttonScript.ClubScript = clubScript;
 			buttonScript.BagScript = this;
-				
+			if(MainScript.GetCurrentClub().gameObject == clubScript.gameObject){
+				buttonScript.Selected = true;
+			}
+
 			buttons.Add(clubButton);
 		}
 

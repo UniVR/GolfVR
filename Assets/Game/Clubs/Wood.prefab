@@ -24,7 +24,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145166}
-  m_LocalRotation: {x: -.843391478, y: 2.25380063e-07, z: 2.24914402e-07, w: .537299514}
+  m_LocalRotation: {x: -.843391538, y: 2.24943136e-07, z: 2.24943136e-07, w: .537299454}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.50000024, z: 1.50000048}
   m_Children: []
@@ -72,15 +72,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fd876d47de949458c2d99499941623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClubImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  clubForceCoef: 0
-  clubAngle: 0
-  velocityLoading: 0
-  velocityShooting: 0
-  minAngle: 0
+  ClubImage: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  clubForceCoef: 30
+  clubAngle: 35
+  velocityLoading: 50
+  velocityShooting: 200
+  minAngle: -.699999988
   midAngle: 0
-  maxAngle: 0
-  LoadingTime: 0
+  maxAngle: .699999988
+  LoadingTime: 1.71999872
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -91,7 +91,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ClubImage
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -106,19 +106,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.x
-      value: -.843391478
+      value: -.843391538
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.y
-      value: 2.25380063e-07
+      value: 2.24943136e-07
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.z
-      value: 2.24914402e-07
+      value: 2.24943136e-07
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.w
-      value: .537299514
+      value: .537299454
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
@@ -131,6 +131,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1.50000048
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: clubForceCoef
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: clubAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: velocityLoading
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: velocityShooting
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minAngle
+      value: -.699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxAngle
+      value: .699999988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

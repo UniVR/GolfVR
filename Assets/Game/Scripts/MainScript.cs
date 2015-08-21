@@ -176,6 +176,10 @@ public class MainScript : MonoBehaviour {
 		Player.SetCurrentClub (Club.gameObject);
 	}
 
+	public GameObject GetCurrentClub(){
+		return Player.GetCurrentClub ();
+	}
+
 
 	public HoleScript GetCurrentHole(){
 		return Holes.CurrentHole;
