@@ -13,6 +13,7 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 
 	public float ScaleVelocity;
 
+	private bool isInit = false;
 	private Button button; 
 	private Color oldColor;
 	private bool watched = false;
@@ -20,6 +21,12 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	private float maxScale;
 
 	void Start(){
+		if (!isInit)
+			Init ();
+	}
+
+	public void Init(){
+		isInit = true;
 		Selected = false;
 		button = this.GetComponent<Button> ();
 		oldColor = button.image.color;
@@ -35,17 +42,23 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 			}
 			else{
 				BagScript.DeactiveAllButton();
+				Select (true);
 				button.onClick.Invoke();
-				button.image.color = Color.green;
-				this.transform.localScale = initialScale;
-				Selected = true;
 			}
 		}
-		if (Selected == false && button.image.color == Color.green) {
-			button.image.color = oldColor;
-		}
-		if (Selected) {
+
+	}
+
+	public void Select(bool isSelected){
+		if (isSelected) {
+			button.image.color = Color.green;
+			this.transform.localScale = initialScale;
+			Selected = true;
 			watched = false;
+		}
+		else{
+			button.image.color = oldColor;
+			Selected = false;
 		}
 	}
 

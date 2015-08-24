@@ -34,6 +34,7 @@ public class MainScript : MonoBehaviour {
 	public BallScript Ball;
 	public HolesScript Holes;
 	public HudScript Hud;
+	public ClubsBagScript Bag;
 
 	private int score;
 
@@ -135,6 +136,7 @@ public class MainScript : MonoBehaviour {
 				if(Hud.IsFadingIn()){
 					Player.transform.position = Ball.transform.position;
 					Club.Reset();	
+					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
 					currentAction = ActionState.Idle;
 				}
 			break;

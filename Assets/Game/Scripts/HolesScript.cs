@@ -16,10 +16,17 @@ public class HolesScript : MonoBehaviour {
 	/// </summary>
 	public List<HoleScript> Holes;
 
-	public void EnterHole(HoleScript enteredHole){
+	public HoleScript GetNext(){
 		var index = Holes.IndexOf (CurrentHole);
 		if (index + 1 < Holes.Count) {
-			CurrentHole = Holes [index + 1];
+			return Holes [index + 1];
+		}
+		return null;
+	}
+
+	public void EnterHole(HoleScript enteredHole){
+		CurrentHole = GetNext ();
+		if (CurrentHole != null) {
 			MainScript.EnterHole();
 		} else {
 			MainScript.Win();
