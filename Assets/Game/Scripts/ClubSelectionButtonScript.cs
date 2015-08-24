@@ -12,13 +12,18 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	public ClubsBagScript BagScript;
 
 	public float ScaleVelocity;
+	public float MaxScale;
+
+	public float MoveVelocity;
+	public float MaxMove;
 
 	private bool isInit = false;
 	private Button button; 
 	private Color oldColor;
 	private bool watched = false;
 	private Vector3 initialScale;
-	private float maxScale;
+	private Vector3 initialPosition;
+
 
 	void Start(){
 		if (!isInit)
@@ -31,14 +36,16 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 		button = this.GetComponent<Button> ();
 		oldColor = button.image.color;
 		initialScale = this.transform.localScale;
-		maxScale = 2.5f;
+		initialPosition = this.transform.localPosition;
 	}
 
 	void FixedUpdate () {
 		if (watched && !Selected) {
 			var scale = this.transform.localScale;
-			if(scale.x < maxScale && scale.y < maxScale && scale.z < maxScale){
-				this.transform.localScale = new Vector3 (scale.x + ScaleVelocity, scale.y + ScaleVelocity, scale.z + ScaleVelocity);
+			var pos = this.transform.localPosition;
+			if(scale.x < MaxScale && scale.y < MaxScale && scale.z < MaxScale && pos.z > -MaxMove){
+				//this.transform.localScale = new Vector3 (scale.x + ScaleVelocity, scale.y + ScaleVelocity, scale.z + ScaleVelocity);
+				this.transform.localPosition = new Vector3 (pos.x, pos.y, pos.z - MoveVelocity);
 			}
 			else{
 				BagScript.DeactiveAllButton();
@@ -53,6 +60,7 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 		if (isSelected) {
 			button.image.color = Color.green;
 			this.transform.localScale = initialScale;
+			this.transform.localPosition = initialPosition;
 			Selected = true;
 			watched = false;
 		}
@@ -69,5 +77,6 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	public void PointerExit(){
 		watched = false;
 		this.transform.localScale = initialScale;
+		this.transform.localPosition = initialPosition;
 	}
 }

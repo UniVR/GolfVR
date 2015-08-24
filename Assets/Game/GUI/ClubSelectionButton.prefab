@@ -69,7 +69,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClubScript: {fileID: 0}
+  Selected: 0
+  BagScript: {fileID: 0}
   ScaleVelocity: .00999999978
+  MaxScale: 2
+  MoveVelocity: .00999999978
+  MaxMove: 20
 --- !u!114 &11465264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +280,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ScaleVelocity
       value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MoveVelocity
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxScale
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxMove
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxMove
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
