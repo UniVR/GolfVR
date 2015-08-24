@@ -768,6 +768,7 @@ MonoBehaviour:
   Ball: {fileID: 1598460207}
   Holes: {fileID: 733752647}
   Hud: {fileID: 1023647754}
+  Bag: {fileID: 1846709168}
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
@@ -2314,7 +2315,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846709166}
-  m_LocalRotation: {x: -.000317829021, y: -.999092221, z: .0419212729, w: .00757468818}
+  m_LocalRotation: {x: .0379301757, y: -.411774009, z: .0178549569, w: .910321236}
   m_LocalPosition: {x: -70.0009995, y: 56.1599998, z: 86.2829971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2339,6 +2340,8 @@ MonoBehaviour:
   Clubs:
   - {fileID: 191882, guid: d7b705100debac040aad6c052f825f94, type: 2}
   - {fileID: 170924, guid: 3a9485f334eea1248bd8a1267880cdce, type: 2}
+  - {fileID: 145166, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
+  - {fileID: 145166, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
   - {fileID: 145166, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
 --- !u!1001 &1856785947
 Prefab:

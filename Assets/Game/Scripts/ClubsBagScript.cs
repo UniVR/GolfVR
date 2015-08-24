@@ -23,13 +23,16 @@ public class ClubsBagScript : MonoBehaviour {
 
 		var canvasRect = Menu.GetComponent<RectTransform>();
 		var canvasSizeX = canvasRect.sizeDelta.x;
-		var buttonSpace = canvasSizeX/Clubs.Count;
 		canvasSize = canvasRect.sizeDelta;
 
 		var buttonRect = DefaultButton.GetComponent<RectTransform>();
 		var buttonSizeX = buttonRect.sizeDelta.x;
 
-		var begin = -canvasSizeX / 2 + buttonSizeX / 2 + buttonSizeX / 2;
+		var begin = -canvasSizeX / 3 + buttonSizeX;
+		var buttonSpace = (2*canvasSizeX/3)/Clubs.Count;
+
+		var playerPos = MainScript.Get().Player.transform.position;
+		var maxDistance = Vector3.Distance(playerPos, Menu.transform.position);
 
 		for(var i=0; i<Clubs.Count; i++) {
 			var club = Clubs[i];
@@ -37,7 +40,10 @@ public class ClubsBagScript : MonoBehaviour {
 			//Instantiate the button and add it to the canvas at the good place
 			GameObject clubButton = (GameObject)GameObject.Instantiate(DefaultButton);
 			clubButton.transform.SetParent(Menu.transform, false);
-			clubButton.transform.localPosition = new Vector3(begin + (i*buttonSpace), 0f, -1.0f);
+			clubButton.transform.localPosition = new Vector3(begin + (i*buttonSpace), 0f, 0f);
+			var playerDistance = Vector3.Distance(playerPos, clubButton.transform.position);
+			clubButton.transform.localPosition = new Vector3(clubButton.transform.localPosition.x, clubButton.transform.localPosition.y, (maxDistance - playerDistance) * 7);
+			clubButton.transform.LookAt(2 * clubButton.transform.position - new Vector3(playerPos.x, clubButton.transform.position.y, playerPos.z));
 
 			//Set the button image depending on the club
 			var clubScript = club.GetComponent<ClubScript>();

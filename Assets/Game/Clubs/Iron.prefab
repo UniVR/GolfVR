@@ -24,7 +24,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191882}
-  m_LocalRotation: {x: -.843391538, y: 2.24943136e-07, z: 2.24943136e-07, w: .537299454}
+  m_LocalRotation: {x: -.468564481, y: .446748018, z: -.701253474, w: .298508197}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.50000024, z: 1.50000048}
   m_Children: []
@@ -80,7 +80,7 @@ MonoBehaviour:
   minAngle: -.699999988
   midAngle: 0
   maxAngle: .699999988
-  LoadingTime: 0
+  LoadingTime: 2.24999833
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
