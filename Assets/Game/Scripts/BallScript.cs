@@ -33,6 +33,10 @@ public class BallScript : MonoBehaviour {
 		if (!isLocked && isOnGround && isShooted) {
 			detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody);
 		}
+
+		if (!isOnGround) {
+			rigidBody.AddForce(mainScript.Wind.GetForce());
+		}
 	}
 
 	public void Shoot (float magnitude, float angle, float orientation)

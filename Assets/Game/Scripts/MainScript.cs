@@ -35,6 +35,7 @@ public class MainScript : MonoBehaviour {
 	public HolesScript Holes;
 	public HudScript Hud;
 	public ClubsBagScript Bag;
+	public WindScript Wind;
 
 	private int score;
 
