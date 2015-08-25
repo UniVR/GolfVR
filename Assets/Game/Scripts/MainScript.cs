@@ -173,9 +173,11 @@ public class MainScript : MonoBehaviour {
 
 
 
-	public void SetCurrentClub(GameObject club){
-		this.Club = club.GetComponent<ClubScript> ();
-		Player.SetCurrentClub (Club.gameObject);
+	public void SetCurrentClub(ClubScript clubScript){
+		//Instantiate the new Club with the properties of the old one
+		GameObject club = Club.InstantiateNewClub (clubScript.gameObject);
+		Club = club.GetComponent<ClubScript>();
+		Player.SetCurrentClub (club);
 	}
 
 	public GameObject GetCurrentClub(){

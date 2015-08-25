@@ -45,7 +45,7 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 			else{
 				BagScript.DeactiveAllButton();
 				Select (true);
-				button.onClick.Invoke();
+				BagScript.SelectClub(ClubScript);
 			}
 		}
 

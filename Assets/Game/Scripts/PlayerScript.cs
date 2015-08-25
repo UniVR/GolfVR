@@ -12,9 +12,8 @@ public class PlayerScript : MonoBehaviour {
 			GameObject.Destroy(child.gameObject);
 		}
 
-		GameObject instantiatedClub = (GameObject)GameObject.Instantiate(newClub);
-		instantiatedClub.transform.SetParent(Club.transform, false);
-		CurrentClub = instantiatedClub;
+		newClub.transform.SetParent(Club.transform, false);
+		CurrentClub = newClub;
 	}
 
 	public GameObject GetCurrentClub(){

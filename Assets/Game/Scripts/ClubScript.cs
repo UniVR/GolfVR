@@ -19,10 +19,12 @@ public class ClubScript : MonoBehaviour {
 	[HideInInspector]
 	public float LoadingTime;
 
+	private Vector3 clubDefaultPosition;
 	private Quaternion clubDefaultRotation;
 	private bool reset = false;
 
 	void Start () {
+		clubDefaultPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 		clubDefaultRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
 	}
 
@@ -67,5 +69,10 @@ public class ClubScript : MonoBehaviour {
 	public void Reset(){
 		LoadingTime = 0;
 		reset = true;
+	}
+
+
+	public GameObject InstantiateNewClub(GameObject newClubPrefb){
+		return (GameObject)GameObject.Instantiate(newClubPrefb, clubDefaultPosition, clubDefaultRotation);
 	}
 }

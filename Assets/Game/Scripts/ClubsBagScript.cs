@@ -50,8 +50,6 @@ public class ClubsBagScript : MonoBehaviour {
 			var clubButtonConverted = clubButton.GetComponent<Button>();
 			clubButtonConverted.image.overrideSprite = clubScript.ClubImage;
 
-			clubButtonConverted.onClick.AddListener(delegate() { SelectClub(clubScript); });
-
 			//Associate the clubScript to the button
 			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
 			buttonScript.Init();
@@ -77,8 +75,8 @@ public class ClubsBagScript : MonoBehaviour {
 		}
 	}
 
-	void SelectClub(ClubScript script){
-		MainScript.SetCurrentClub (script.gameObject);
+	public void SelectClub(ClubScript script){
+		MainScript.SetCurrentClub (script);
 	}
 
 	void FixedUpdate(){
