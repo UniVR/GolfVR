@@ -24,7 +24,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145166}
-  m_LocalRotation: {x: -.46107173, y: .449900836, z: -.706202507, w: .293734819}
+  m_LocalRotation: {x: -.442302465, y: .457484722, z: -.718107164, w: .281777352}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.50000024, z: 1.50000048}
   m_Children: []
@@ -73,14 +73,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClubImage: {fileID: 21300000, guid: 42dc0c5b95c686f47b45801b8c1ec531, type: 3}
-  clubForceCoef: 30
-  clubAngle: 35
+  clubForceCoef: 35
+  clubAngle: 14
   velocityLoading: 50
   velocityShooting: 200
   minAngle: -.699999988
   midAngle: 0
   maxAngle: .699999988
-  LoadingTime: 2.30999827
+  LoadingTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -135,11 +135,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubForceCoef
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubAngle
-      value: 35
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: velocityLoading
