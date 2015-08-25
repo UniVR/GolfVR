@@ -72,14 +72,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fd876d47de949458c2d99499941623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClubImage: {fileID: 21300000, guid: 42dc0c5b95c686f47b45801b8c1ec531, type: 3}
-  clubForceCoef: 12
+  ClubImage: {fileID: 21300000, guid: 3d7145e0aab00a94cb03f2784efa6778, type: 3}
+  clubForceCoef: 5
   clubAngle: 0
-  velocityLoading: 50
-  velocityShooting: 200
-  minAngle: -.699999988
+  velocityLoading: 10
+  velocityShooting: 100
+  minAngle: -.200000003
   midAngle: 0
-  maxAngle: .699999988
+  maxAngle: .200000003
   LoadingTime: 9.42012024
 --- !u!1001 &100100000
 Prefab:
@@ -91,7 +91,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ClubImage
       value: 
-      objectReference: {fileID: 21300000, guid: 42dc0c5b95c686f47b45801b8c1ec531,
+      objectReference: {fileID: 21300000, guid: 3d7145e0aab00a94cb03f2784efa6778,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
@@ -135,7 +135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubForceCoef
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubAngle
@@ -143,19 +143,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: velocityLoading
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: velocityShooting
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: minAngle
-      value: -.699999988
+      value: -.200000003
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxAngle
-      value: .699999988
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
