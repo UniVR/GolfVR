@@ -11,9 +11,6 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	[HideInInspector]
 	public ClubsBagScript BagScript;
 
-	public float ScaleVelocity;
-	public float MaxScale;
-
 	public float MoveVelocity;
 	public float MaxMove;
 
@@ -41,11 +38,9 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (watched && !Selected) {
-			var scale = this.transform.localScale;
 			var pos = this.transform.localPosition;
-			if(scale.x < MaxScale && scale.y < MaxScale && scale.z < MaxScale && pos.z > -MaxMove){
-				//this.transform.localScale = new Vector3 (scale.x + ScaleVelocity, scale.y + ScaleVelocity, scale.z + ScaleVelocity);
-				this.transform.localPosition = new Vector3 (pos.x, pos.y, pos.z - MoveVelocity);
+			if(pos.z > -MaxMove){
+				this.transform.position =  Vector3.MoveTowards(transform.position, MainScript.Get().CardboardGameObject.transform.position, MoveVelocity/3);//new Vector3 (pos.x, pos.y, pos.z - MoveVelocity);
 			}
 			else{
 				BagScript.DeactiveAllButton();
@@ -59,7 +54,6 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	public void Select(bool isSelected){
 		if (isSelected) {
 			button.image.color = Color.green;
-			this.transform.localScale = initialScale;
 			this.transform.localPosition = initialPosition;
 			Selected = true;
 			watched = false;
@@ -76,7 +70,6 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 
 	public void PointerExit(){
 		watched = false;
-		this.transform.localScale = initialScale;
 		this.transform.localPosition = initialPosition;
 	}
 }
