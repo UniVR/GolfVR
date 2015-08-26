@@ -16,7 +16,6 @@ public class AnemoScript : MonoBehaviour {
 
 	public void SetOrientation(float angle){
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
-		Debug.Log("angle: " + angle + ", euler: " + transform.eulerAngles + ", " +  Quaternion.AngleAxis(angle, Vector3.up)  );
 	}
 
 	void FixedUpdate(){

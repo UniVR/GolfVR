@@ -8,12 +8,12 @@ public class WindScript : MonoBehaviour {
 	public float Angle;
 
 	void Start(){
-		transform.eulerAngles = Quaternion.AngleAxis(Angle, Vector3.up) * Vector3.forward;
+		transform.rotation = Quaternion.AngleAxis(Angle, Vector3.up);
 	}
 
 	public void SetOrientation(float angle){
 		this.Angle = angle;
-		transform.eulerAngles = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
+		transform.rotation = Quaternion.AngleAxis(Angle, Vector3.up);
 	}
 
 	public float GetOrientation(){
