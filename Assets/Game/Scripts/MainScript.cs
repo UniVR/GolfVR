@@ -36,6 +36,7 @@ public class MainScript : MonoBehaviour {
 	public HudScript Hud;
 	public ClubsBagScript Bag;
 	public WindScript Wind;
+	public AnemoScript Anemometer;
 
 	private int score;
 
@@ -54,6 +55,8 @@ public class MainScript : MonoBehaviour {
 
 		score = 0;
 		currentAction = ActionState.Idle;
+
+		SetWind ();
 	}
 
 	/*
@@ -138,6 +141,7 @@ public class MainScript : MonoBehaviour {
 					Player.transform.position = Ball.transform.position;
 					Club.Reset();	
 					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
+					SetWind ();
 					currentAction = ActionState.Idle;
 				}
 			break;
@@ -188,6 +192,16 @@ public class MainScript : MonoBehaviour {
 
 	public HoleScript GetCurrentHole(){
 		return Holes.CurrentHole;
+	}
+
+	public void SetWind(){
+		var orientation = Random.Range (0, 360);
+		var force = Random.Range (0, 10);
+
+		Wind.SetOrientation (orientation);
+		Wind.SetVelocity(force);
+		Anemometer.SetOrientation (orientation-180); //Invert from wind
+		Anemometer.SetRotationSpeed (force);
 	}
 
 	/*

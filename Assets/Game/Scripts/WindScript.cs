@@ -20,6 +20,10 @@ public class WindScript : MonoBehaviour {
 		return Angle;
 	}
 
+	public void SetVelocity(float velocity){
+		Velocity = velocity;
+	}
+
 	public Vector3 GetForce(){
 		var direction = Quaternion.AngleAxis(Angle, Vector3.up) * Vector3.forward;
 		return direction * Velocity;
