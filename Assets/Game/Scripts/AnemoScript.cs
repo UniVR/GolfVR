@@ -6,10 +6,6 @@ public class AnemoScript : MonoBehaviour {
 	public GameObject Rotor;
 	private float rotationSpeed;
 
-	void Start(){
-		rotationSpeed = 0f;
-	}
-
 	public void SetRotationSpeed(float speed){
 		rotationSpeed = speed;
 	}
