@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 6f53d5f03bde5cf4fa9639ea0d47c994, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
@@ -1406,7 +1406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9687488, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
       propertyPath: m_Autodestruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
@@ -2262,6 +2262,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2303196, guid: 24a4172c6b81e2e47a1adb1f3a8e8ff9, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe7cbc8c32e4214ea220a9fbb20ccaa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24a4172c6b81e2e47a1adb1f3a8e8ff9, type: 2}
   m_IsPrefabParent: 0
