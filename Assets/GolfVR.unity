@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 1
     m_FinalGatherRayCount: 256
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: de3a24bc4893dc34fad54f512b199698,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -97,7 +98,7 @@ GameObject:
   - 4: {fileID: 3436933}
   - 218: {fileID: 3436932}
   - 154: {fileID: 3436931}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +143,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &3436933
@@ -293,7 +294,7 @@ GameObject:
   - 4: {fileID: 162472779}
   - 218: {fileID: 162472777}
   - 154: {fileID: 162472778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TerrainE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +329,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &162472778
@@ -532,6 +533,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2382278, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384656, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
   m_IsPrefabParent: 0
@@ -549,7 +558,7 @@ GameObject:
   - 4: {fileID: 257986216}
   - 218: {fileID: 257986214}
   - 154: {fileID: 257986215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TerrainD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +593,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &257986215
@@ -619,7 +628,7 @@ GameObject:
   - 4: {fileID: 295359736}
   - 218: {fileID: 295359735}
   - 154: {fileID: 295359734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TerrainB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +673,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &295359736
@@ -748,7 +757,7 @@ GameObject:
   - 4: {fileID: 439576640}
   - 218: {fileID: 439576638}
   - 154: {fileID: 439576639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TerrainC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +792,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &439576639
@@ -994,6 +1003,10 @@ Prefab:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2384656, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382278, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_PreserveUVs
       value: 1
       objectReference: {fileID: 0}
@@ -1507,7 +1520,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 804225127}
   - 114: {fileID: 804225128}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,6 +1765,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2384656, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382278, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
   m_IsPrefabParent: 0
@@ -1975,7 +1996,7 @@ GameObject:
   - 4: {fileID: 1209720515}
   - 218: {fileID: 1209720513}
   - 154: {fileID: 1209720514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2031,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &1209720514
@@ -2104,7 +2125,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1439804819}
   - 108: {fileID: 1439804818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,17 +2148,17 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
-    m_Resolution: 0
-    m_Strength: .136999995
+    m_Resolution: 1
+    m_Strength: .574000001
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_Lightmapping: 4
   m_BounceIntensity: 1
   m_ShadowRadius: 0
@@ -2171,7 +2192,7 @@ GameObject:
   - 4: {fileID: 1493610892}
   - 218: {fileID: 1493610890}
   - 154: {fileID: 1493610891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2227,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &1493610891
@@ -2339,7 +2360,7 @@ Prefab:
     - target: {fileID: 2303196, guid: 24a4172c6b81e2e47a1adb1f3a8e8ff9, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cbe7cbc8c32e4214ea220a9fbb20ccaa, type: 2}
+      objectReference: {fileID: 2100000, guid: d9f8362db4926e64085a886302ceb6fe, type: 2}
     - target: {fileID: 116700, guid: 24a4172c6b81e2e47a1adb1f3a8e8ff9, type: 2}
       propertyPath: m_Layer
       value: 9
@@ -2428,7 +2449,7 @@ GameObject:
   - 4: {fileID: 1779961517}
   - 218: {fileID: 1779961515}
   - 154: {fileID: 1779961516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2484,7 @@ Terrain:
     rgba: 4286545791
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &1779961516
@@ -2498,7 +2519,7 @@ GameObject:
   - 4: {fileID: 1802236285}
   - 218: {fileID: 1802236283}
   - 154: {fileID: 1802236284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TerrainA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2533,7 +2554,7 @@ Terrain:
     rgba: 4294967295
   m_LegacyShininess: .189999998
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0365714282
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!154 &1802236284
@@ -2739,6 +2760,10 @@ Prefab:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2384656, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_PreserveUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382278, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_PreserveUVs
       value: 1
       objectReference: {fileID: 0}
