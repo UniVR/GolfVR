@@ -31,19 +31,12 @@ public class ClubsBagScript : MonoBehaviour {
 		var begin = -canvasSizeX / 3 + buttonSizeX;
 		var buttonSpace = (2*canvasSizeX/3)/Clubs.Count;
 
-		var playerPos = MainScript.Get().Player.transform.position;
-		var maxDistance = Vector3.Distance(playerPos, Menu.transform.position);
-
 		for(var i=0; i<Clubs.Count; i++) {
 			var club = Clubs[i];
 
 			//Instantiate the button and add it to the canvas at the good place
 			GameObject clubButton = (GameObject)GameObject.Instantiate(DefaultButton);
 			clubButton.transform.SetParent(Menu.transform, false);
-			clubButton.transform.localPosition = new Vector3(begin + (i*buttonSpace), 0f, 0f);
-			var playerDistance = Vector3.Distance(playerPos, clubButton.transform.position);
-			clubButton.transform.localPosition = new Vector3(clubButton.transform.localPosition.x, clubButton.transform.localPosition.y, (maxDistance - playerDistance) * 7);
-			clubButton.transform.LookAt(2 * clubButton.transform.position - new Vector3(playerPos.x, clubButton.transform.position.y, playerPos.z));
 
 			//Set the button image depending on the club
 			var clubScript = club.GetComponent<ClubScript>();
@@ -52,7 +45,7 @@ public class ClubsBagScript : MonoBehaviour {
 
 			//Associate the clubScript to the button
 			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
-			buttonScript.Init();
+			buttonScript.Init(Menu, begin + (i*buttonSpace));
 			buttonScript.ClubScript = clubScript;
 			buttonScript.BagScript = this;
 			if(MainScript.GetCurrentClub().gameObject.name == clubScript.gameObject.name){

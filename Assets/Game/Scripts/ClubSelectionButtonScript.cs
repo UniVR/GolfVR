@@ -18,22 +18,21 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 	private Button button; 
 	private Color oldColor;
 	private bool watched = false;
-	private Vector3 initialScale;
 	private Vector3 initialPosition;
-
-
-	void Start(){
-		if (!isInit)
-			Init ();
-	}
-
-	public void Init(){
+	
+	public void Init(Canvas menu, float posX){
 		isInit = true;
 		Selected = false;
 		button = this.GetComponent<Button> ();
 		oldColor = button.image.color;
-		initialScale = this.transform.localScale;
-		initialPosition = this.transform.localPosition;
+		transform.localPosition = new Vector3(posX, 0f, 0f);
+		initialPosition = transform.localPosition;
+
+		var playerDistance = Vector3.Distance(MainScript.Get().Player.transform.position, transform.position);
+		var playerPosition = MainScript.Get().Player.transform.position;
+		var maxDistance = Vector3.Distance(playerPosition, menu.transform.position);
+		transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, (maxDistance - playerDistance) * 7);
+		transform.LookAt(2 * transform.position - new Vector3(playerPosition.x, transform.position.y, playerPosition.z));
 	}
 
 	void FixedUpdate () {
