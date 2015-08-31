@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+public enum Difficulty{
+	Easy,
+	Medium,
+	Hard
+}
 
 public enum ActionState{
 	Idle,
@@ -37,6 +41,8 @@ public class MainScript : MonoBehaviour {
 	public ClubsBagScript Bag;
 	public WindScript Wind;
 	public AnemoScript Anemometer;
+
+	public Difficulty Difficulty;
 
 	private int score;
 
@@ -198,7 +204,9 @@ public class MainScript : MonoBehaviour {
 
 	public void SetWind(){
 		var orientation = Random.Range (0, 360);
-		var force = Random.Range (0, 10);
+
+		var currentHole = GetCurrentHole ();
+		var force = currentHole.GetWindPower ();
 
 		Wind.SetOrientation (orientation);
 		Wind.SetVelocity(force);

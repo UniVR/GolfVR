@@ -655,7 +655,7 @@ WindZone:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 400427939}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Mode: 0
   m_Radius: 20
   m_WindMain: 100
@@ -794,6 +794,7 @@ MonoBehaviour:
   Bag: {fileID: 1846709168}
   Wind: {fileID: 400427942}
   Anemometer: {fileID: 1079715586}
+  Difficulty: 0
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
@@ -2638,6 +2639,10 @@ Prefab:
     - target: {fileID: 2382278, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_PreserveUVs
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476540, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: WindMax
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
