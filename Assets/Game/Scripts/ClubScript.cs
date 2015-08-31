@@ -12,7 +12,7 @@ public class ClubScript : MonoBehaviour {
 
 	public float velocityLoading;
 	public float velocityShooting;	
-	public float minAngle;
+	private float minAngle;
 	public float midAngle;
 	public float maxAngle;
 
@@ -42,6 +42,7 @@ public class ClubScript : MonoBehaviour {
 	public void Load(){
 		LoadingTime += Time.deltaTime;
 		transform.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
+		minAngle = -transform.localRotation.z;
 	}
 
 	public bool IsLoaded(){

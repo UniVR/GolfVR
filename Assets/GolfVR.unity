@@ -794,7 +794,7 @@ MonoBehaviour:
   Bag: {fileID: 1846709168}
   Wind: {fileID: 400427942}
   Anemometer: {fileID: 1079715586}
-  Difficulty: 0
+  Difficulty: 2
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClubImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  clubForceCoef: 100
+  clubForceCoef: 25
   clubAngle: 35
   velocityLoading: 50
   velocityShooting: 200
