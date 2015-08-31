@@ -24,6 +24,7 @@ public class ClubScript : MonoBehaviour {
 	private bool reset = false;
 
 	void Start () {
+		LoadingTime = 0f;
 		clubDefaultPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 		clubDefaultRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
 	}
