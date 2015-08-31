@@ -107,6 +107,9 @@ public class BallScript : MonoBehaviour {
 	}
 
 	public bool IsOutOfBound(){
+		if (transform.position.y <= 0)
+			return true;
+
 		if(!isLocked && isOnGround && isShooted)
 			return detectTerrainType.IsOutOfBound (mainScript.CurrentTerrain, transform.position);
 		return false;

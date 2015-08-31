@@ -33,6 +33,7 @@ public class DetectTerrainType : MonoBehaviour {
 	private float coefZ;
 
 	public void SetBallDrag(Terrain terrain, Vector3 ballPos, Rigidbody ball, float addedDrag = 0f){
+		try{
 		InitTerrainData (terrain);
 		var splatmapData = getSplatMapData (ballPos);		
 		float drag = addedDrag;
@@ -46,14 +47,22 @@ public class DetectTerrainType : MonoBehaviour {
 		
 		Debug_CurrentDrag = ball.drag = drag;
 		Debug_CurrentAngularDrag = ball.angularDrag = angularDrag;
+		}catch(Exception e){
+			Debug.Log("Ball out of the current terrain");
+		}
 	}
 
 	public bool IsOutOfBound(Terrain terrain, Vector3 ballPos){
-		InitTerrainData (terrain);
-		var splatmapData = getSplatMapData (ballPos);	
-		if (splatmapData[0, 0, textureSize - 1] > 0.1) 
+		try{
+			InitTerrainData (terrain);
+			var splatmapData = getSplatMapData (ballPos);	
+			if (splatmapData[0, 0, textureSize - 1] > 0.1) 
+				return true;
+			return false;
+		}
+		catch(Exception e){
 			return true;
-		return false;
+		}
 	}
 
 	private float[,,] getSplatMapData(Vector3 pos){
