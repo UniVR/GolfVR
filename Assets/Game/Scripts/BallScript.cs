@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class BallScript : MonoBehaviour {
 
+	public float TimeBeforeSlowing;
+	public float AddedDragAfterTime;
+
 	private MainScript mainScript;
 	private DetectTerrainType detectTerrainType;
 
@@ -13,6 +16,8 @@ public class BallScript : MonoBehaviour {
 	private float oldTrailTime;
 	private AudioSource audioSource;
 
+	private float timeFromShoot;
+	private float addedDrag;
 	private bool isOnGround;
 	private bool isShooted;
 	private bool isLocked;
@@ -31,7 +36,11 @@ public class BallScript : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (!isLocked && isOnGround && isShooted) {
-			detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody);
+			timeFromShoot += Time.deltaTime;
+			if(timeFromShoot>TimeBeforeSlowing){
+				addedDrag += AddedDragAfterTime;
+			}
+			detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody, addedDrag);
 		}
 
 		if (!isOnGround) {
@@ -41,6 +50,8 @@ public class BallScript : MonoBehaviour {
 
 	public void Shoot (float magnitude, float angle, float orientation)
 	{
+		timeFromShoot = 0f;
+		addedDrag = 0f;
 		isShooted = true;
 		isLocked = false;
 		oldPos = transform.position;

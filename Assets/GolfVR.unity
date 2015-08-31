@@ -1340,6 +1340,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11482918, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: TimeBeforeSlowing
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482918, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: AddedDragAfterTime
+      value: .0500000007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
   m_IsPrefabParent: 0

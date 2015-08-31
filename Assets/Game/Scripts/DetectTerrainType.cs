@@ -32,11 +32,11 @@ public class DetectTerrainType : MonoBehaviour {
 	private float coefX;
 	private float coefZ;
 
-	public void SetBallDrag(Terrain terrain, Vector3 ballPos, Rigidbody ball){
+	public void SetBallDrag(Terrain terrain, Vector3 ballPos, Rigidbody ball, float addedDrag = 0f){
 		InitTerrainData (terrain);
 		var splatmapData = getSplatMapData (ballPos);		
-		float drag = 0;
-		float angularDrag = 0;
+		float drag = addedDrag;
+		float angularDrag = addedDrag;
 		
 		for (int i=0; i<textureSize; i++) {
 			currentTextureLevel[i] = splatmapData[0,0,i];
