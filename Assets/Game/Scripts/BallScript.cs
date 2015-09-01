@@ -6,6 +6,9 @@ public class BallScript : MonoBehaviour {
 	public float TimeBeforeSlowing;
 	public float AddedDragAfterTime;
 
+	public float TimeMagnitudeCoef;
+	public float WidthMagnitudeCoef;
+
 	private MainScript mainScript;
 	private DetectTerrainType detectTerrainType;
 
@@ -56,8 +59,9 @@ public class BallScript : MonoBehaviour {
 		isLocked = false;
 		oldPos = transform.position;
 
-		trail.enabled = true;
-		trail.time = oldTrailTime;
+		//trail.time = oldTrailTime;
+		trail.time = magnitude * TimeMagnitudeCoef;
+		trail.startWidth = magnitude * WidthMagnitudeCoef;
 
 		detectTerrainType.SetBallDrag(mainScript.CurrentTerrain, transform.position, rigidBody);
 
@@ -76,7 +80,6 @@ public class BallScript : MonoBehaviour {
 		rigidBody.drag = 100f;	
 		rigidBody.angularDrag = 100f;		
 
-		trail.enabled = false;
 		trail.time = 0;
 	}
 

@@ -1323,7 +1323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9687488, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
       propertyPath: m_EndWidth
-      value: .0500000007
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 9687488, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
       propertyPath: m_Time
@@ -1349,6 +1349,18 @@ Prefab:
       propertyPath: AddedDragAfterTime
       value: .0500000007
       objectReference: {fileID: 0}
+    - target: {fileID: 11482918, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: TimeMagnitudeCoef
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482918, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: WidthMagnitudeCoef
+      value: .0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 9687488, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77d08210df254d845885518314593544, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
   m_IsPrefabParent: 0
