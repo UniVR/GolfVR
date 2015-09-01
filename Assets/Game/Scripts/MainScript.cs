@@ -152,36 +152,6 @@ public class MainScript : MonoBehaviour {
 				}
 			break;
 		}
-
-
-		/*
-		 * 	Rotation system
-		 */
-		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;		// Head rotation
-
-		var forwardRotationThresholdMin = 10; 							// Player look in direction of the ground/ball
-		var forwardRotationThresholdMax = 90; 	
-
-		// Player look at the horizon (normal rotation around the ball)
-		var lookHorizontally = headRotation.x < forwardRotationThresholdMin || headRotation.x > forwardRotationThresholdMax;
-		if (lookHorizontally) {
-			Player.transform.eulerAngles = new Vector3 (0, headRotation.y, 0);
-			var cardboardRotation = CardboardGameObject.transform.eulerAngles;		//Gameobject parent to the Cardboard head (cancel SDK rotations)
-			CardboardGameObject.transform.eulerAngles = new Vector3 (headRotation.x, cardboardRotation.y, headRotation.z);
-		}  // Player look at the ground we follow his neck direction (Horizontal projection of the neck vector)
-		else { 
-			var neckVector = Cardboard.SDK.HeadPose.Orientation * Vector3.up;		// Neck vector
-			var direction = new Vector3 (neckVector.x, 0, neckVector.z);
-			Player.transform.rotation = Quaternion.LookRotation (direction); // TODO: add a little threshold?
-			CardboardGameObject.transform.eulerAngles = new Vector3 (headRotation.x, headRotation.y, headRotation.z);
-		}
-
-		//Cardboard top/bottom rotation
-		//var cardboardRotation = CardboardGameObject.transform.eulerAngles;		//Gameobject parent to the Cardboard head (cancel SDK rotations)
-		//CardboardGameObject.transform.eulerAngles = new Vector3 (forwardNeckRotation, cardboardRotation.y, cardboardRotation.z);
-		//Debug.Log("NECK: " + Cardboard.SDK.HeadPose.Orientation  * Vector3.up);
-
-
 	}
 
 
