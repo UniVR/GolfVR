@@ -794,7 +794,7 @@ MonoBehaviour:
   Bag: {fileID: 1846709168}
   Wind: {fileID: 400427942}
   Anemometer: {fileID: 1079715586}
-  Difficulty: 2
+  Difficulty: 0
 --- !u!4 &496065656
 Transform:
   m_ObjectHideFlags: 0
