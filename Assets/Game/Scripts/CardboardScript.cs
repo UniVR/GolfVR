@@ -17,7 +17,6 @@ public class CardboardScript : MonoBehaviour {
 	 * 	Rotation system
 	 */
 	void Update () {
-		return;
 		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;				// Head rotation
 		
 		var forwardRotationThresholdMin = 10; 											// Player look in direction of the ground/ball
