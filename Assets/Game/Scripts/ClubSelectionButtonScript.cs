@@ -39,7 +39,7 @@ public class ClubSelectionButtonScript : MonoBehaviour {
 		if (watched && !Selected) {
 			var pos = this.transform.localPosition;
 			if(pos.z > -MaxMove){
-				this.transform.position =  Vector3.MoveTowards(transform.position, MainScript.Get().CardboardGameObject.transform.position, MoveVelocity/3);//new Vector3 (pos.x, pos.y, pos.z - MoveVelocity);
+				this.transform.position =  Vector3.MoveTowards(transform.position, MainScript.Get().Cardboard.transform.position, MoveVelocity/3);//new Vector3 (pos.x, pos.y, pos.z - MoveVelocity);
 			}
 			else{
 				BagScript.DeactiveAllButton();

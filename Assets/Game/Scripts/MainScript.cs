@@ -31,8 +31,7 @@ public class MainScript : MonoBehaviour {
 	/*
 	 * 	Public Properties
 	 */
-	public GameObject CardboardGameObject; 	//TODO script
-
+	public CardboardScript Cardboard;
 	public PlayerScript Player;
 	public ClubScript Club;
 	public BallScript Ball;
