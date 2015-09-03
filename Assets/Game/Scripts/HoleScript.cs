@@ -37,4 +37,9 @@ public class HoleScript : MonoBehaviour {
 	public void EnterHole(){
 		HolesListScript.EnterHole(this);
 	}
+
+	public void Enable(bool enable){
+		var flag = transform.Find ("Flag");
+		flag.gameObject.SetActive (enable);
+	}
 }

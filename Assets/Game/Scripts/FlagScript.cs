@@ -4,8 +4,10 @@ using System.Collections;
 
 public class FlagScript : MonoBehaviour {
 
-	public float objectScale; 
-	public float heightScale; 
+	public float distanceFactor;
+
+	public float scaleFactor; 
+	public float heightFactor; 
 
 	private HoleScript hole;
 	private BallScript ball;
@@ -29,11 +31,14 @@ public class FlagScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Show the distance between the ball and the hole
-		float distance = Vector3.Distance(hole.transform.position, ball.transform.position);
+		float distance = Vector3.Distance(hole.transform.position, ball.transform.position) * distanceFactor;
 		text.text = "Distance:\n" + distance.ToString("0.00") + "m";
 
+		//Scale the GUI depending on the camera distance
 		distance = Vector3.Distance(hole.transform.position, player.transform.position);
-		transform.localScale = initialScale * distance * objectScale; 
-		transform.position = new Vector3 (transform.position.x, initialHeight + distance * heightScale, transform.position.z);
+		var scale = distance * scaleFactor;
+		transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+		transform.localScale = new Vector3 (initialScale.x + scale, initialScale.y + scale, initialScale.z + scale); 
+		transform.position = new Vector3 (transform.position.x, initialHeight + distance * heightFactor, transform.position.z);
 	}
 }

@@ -25,7 +25,9 @@ public class HolesScript : MonoBehaviour {
 	}
 
 	public void EnterHole(HoleScript enteredHole){
+		CurrentHole.Enable(false);
 		CurrentHole = GetNext ();
+		CurrentHole.Enable(true);
 		if (CurrentHole != null) {
 			MainScript.EnterHole();
 		} else {
