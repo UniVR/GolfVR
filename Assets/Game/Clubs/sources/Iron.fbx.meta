@@ -6,10 +6,19 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Circle
+    100004: Circle.001
     400000: //RootNode
+    400002: Circle
+    400004: Circle.001
     2300000: //RootNode
+    2300002: Circle
+    2300004: Circle.001
     3300000: //RootNode
+    3300002: Circle
+    3300004: Circle.001
     4300000: Circle
+    4300002: Circle.001
   materials:
     importMaterials: 1
     materialName: 0
@@ -19,6 +28,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

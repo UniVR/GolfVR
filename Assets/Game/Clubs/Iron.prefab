@@ -77,7 +77,6 @@ MonoBehaviour:
   clubAngle: 35
   velocityLoading: 50
   velocityShooting: 200
-  minAngle: -.699999988
   midAngle: 0
   maxAngle: .699999988
   LoadingTime: 2.26999831
@@ -161,6 +160,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 775ca8b389f48e340b26b11b339e4c1b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191882}

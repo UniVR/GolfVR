@@ -16,9 +16,11 @@ ModelImporter:
     2300000: Circle
     2300002: Circle.001
     2300004: Trigger
+    2300006: //RootNode
     3300000: Circle
     3300002: Circle.001
     3300004: Trigger
+    3300006: //RootNode
     4300000: Circle.001
     4300002: Circle
     4300004: Trigger
@@ -31,6 +33,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
