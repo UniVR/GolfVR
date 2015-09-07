@@ -4,12 +4,12 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 6
   m_QualitySettings:
   - serializedVersion: 2
     name: Fastest
     pixelLightCount: 0
-    shadows: 0
+    shadows: 1
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
@@ -143,6 +143,29 @@ QualitySettings:
     lodBias: 2
     maximumLODLevel: 0
     particleRaycastBudget: 4096
+    excludedTargetPlatforms: []
+  - serializedVersion: 2
+    name: GolfVR
+    pixelLightCount: 0
+    shadows: 1
+    shadowResolution: 0
+    shadowProjection: 1
+    shadowCascades: 2
+    shadowDistance: 10
+    shadowCascade2Split: .333333343
+    shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
+    blendWeights: 1
+    textureQuality: 1
+    anisotropicTextures: 0
+    antiAliasing: 0
+    softParticles: 0
+    softVegetation: 1
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 0
+    vSyncCount: 0
+    lodBias: .300000012
+    maximumLODLevel: 0
+    particleRaycastBudget: 4
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 0
