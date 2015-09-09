@@ -10,6 +10,8 @@ public enum Difficulty{
 
 public enum ActionState{
 	Idle,
+	Locking,
+	UnLocking,
 	Loading,
 	Loaded,
 	Firing,
@@ -44,6 +46,8 @@ public class MainScript : MonoBehaviour {
 	public Difficulty Difficulty;
 
 	private int score;
+	private bool locked;
+	private bool watchBall;
 
 
 	// Singleton
@@ -59,6 +63,8 @@ public class MainScript : MonoBehaviour {
 		instance = this;
 
 		score = 0;
+		locked = false;
+		watchBall = false;
 		currentAction = ActionState.Idle;
 
 		SetWind ();
@@ -69,12 +75,44 @@ public class MainScript : MonoBehaviour {
 	 */
 	void FixedUpdate () {
 
+		if (!locked && Cardboard.WatchDown ()) {
+			currentAction = ActionState.Locking;
+		} 
+		else if (currentAction == ActionState.Locking && !locked && !Cardboard.WatchDown ()) {
+			currentAction = ActionState.UnLocking;
+		}
+		else if (locked && watchBall) 
+		{
+			currentAction = ActionState.Loading;
+		} 
+		else if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded && !watchBall) {
+			currentAction = ActionState.Firing;
+		}
+
 		switch (currentAction) 
 		{
 			case ActionState.Idle:
-				//Do nothing
 			break;
 
+
+			case ActionState.Locking:
+				if(!Player.isOnTheBall()){
+					Player.MoveForward();
+				}
+				else{
+					locked = true;
+					Cardboard.Lock(true);
+				}
+			break;
+
+
+			case ActionState.UnLocking:
+				Player.MoveBackward();
+				if(Player.isFarFromBall()){
+					Player.Reset();
+					currentAction = ActionState.Idle;
+				}
+			break;
 
 
 			case ActionState.Loading:
@@ -144,10 +182,13 @@ public class MainScript : MonoBehaviour {
 			case ActionState.MoveToTheBall:	
 				if(Hud.IsFadingIn()){
 					Player.transform.position = Ball.transform.position;
+					Player.Reset();
 					Club.Reset();	
 					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
 					SetWind ();
 					currentAction = ActionState.Idle;
+					Cardboard.Lock(false);
+					locked = false;
 				}
 			break;
 		}
@@ -187,19 +228,11 @@ public class MainScript : MonoBehaviour {
 	 * Watching ball (shoot/release)
 	 */
 	public void LoadShoot(){
-		if (currentAction == ActionState.Idle)
-			currentAction = ActionState.Loading;
-		/*
-		 * TODO: Sounds
-		 */
+		watchBall = true;
 	}
 
 	public void ReleaseShoot(){
-		if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded)
-			currentAction = ActionState.Firing;
-		/*
-		 * TODO: Sounds
-		 */
+		watchBall = false;
 	}
 
 
