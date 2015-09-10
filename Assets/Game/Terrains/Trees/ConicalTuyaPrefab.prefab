@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3378892}
   - 23: {fileID: 2311250}
   - 65: {fileID: 6568992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConicalTuyaLOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 478378}
   - 205: {fileID: 20567908}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConicalTuyaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 33: {fileID: 3379226}
   - 23: {fileID: 2321182}
   - 65: {fileID: 6529038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConicalTuyaLOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 33: {fileID: 3358472}
   - 23: {fileID: 2311776}
   - 65: {fileID: 6502314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConicalTuyaLOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
