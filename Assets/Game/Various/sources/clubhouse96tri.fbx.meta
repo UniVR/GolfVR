@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d67584ff71983c54d8a83b49ad5f8401
-timeCreated: 1427883111
+guid: a0172ed36abf4d2498886254f100a9c0
+timeCreated: 1441969848
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Circle
+    4300000: ClubHouse6Ktri.003
   materials:
     importMaterials: 0
     materialName: 0
@@ -33,7 +33,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .0500000007
+    globalScale: 4.3499999
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
