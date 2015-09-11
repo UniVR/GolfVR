@@ -118,11 +118,7 @@ public class MainScript : MonoBehaviour {
 					currentAction = ActionState.Firing;	
 				}
 
-				if(!Club.IsLoaded())
-				{
-					Club.Load();
-				}
-				
+				Club.Load();
 				Hud.SetPowerBarAmount(Club.LoadingAmount());
 			break;
 

@@ -22,11 +22,13 @@ public class ClubScript : MonoBehaviour {
 	private Vector3 clubDefaultPosition;
 	private Quaternion clubDefaultRotation;
 	private bool reset = false;
+	private int currentDirection;
 
 	void Start () {
 		LoadingTime = 0f;
 		clubDefaultPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 		clubDefaultRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
+		currentDirection = 1;
 	}
 
 	void Update () {
@@ -40,13 +42,22 @@ public class ClubScript : MonoBehaviour {
 	 * 	LOAD
 	 */
 	public void Load(){
-		LoadingTime += Time.deltaTime;
-		transform.Rotate (Vector3.down * Time.deltaTime * velocityLoading);
+		LoadingTime += Time.deltaTime * currentDirection;
+		transform.Rotate (Vector3.down * Time.deltaTime * velocityLoading * currentDirection);
 		minAngle = -transform.localRotation.z;
+		if (IsMaxLoad ()) {
+			currentDirection = -1;
+		} else if (IsMinLoad ()) {
+			currentDirection = 1;
+		}
 	}
 
-	public bool IsLoaded(){
+	public bool IsMaxLoad(){
 		return transform.localRotation.z > maxAngle;
+	}
+
+	public bool IsMinLoad(){
+		return transform.localRotation.z <= midAngle;
 	}
 	
 	public float LoadingAmount(){			//Progression of the loading
