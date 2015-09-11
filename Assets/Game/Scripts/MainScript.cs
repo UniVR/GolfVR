@@ -13,7 +13,6 @@ public enum ActionState{
 	Locking,
 	UnLocking,
 	Loading,
-	Loaded,
 	Firing,
 	Fired, 
 	Won,
@@ -74,7 +73,7 @@ public class MainScript : MonoBehaviour {
 	 * 	Action
 	 */
 	void FixedUpdate () {
-
+		/*
 		if (!locked && Cardboard.WatchDown ()) {
 			currentAction = ActionState.Locking;
 		} 
@@ -87,53 +86,45 @@ public class MainScript : MonoBehaviour {
 		} 
 		else if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded && !watchBall) {
 			currentAction = ActionState.Firing;
-		}
+		}*/
 
 		switch (currentAction) 
 		{
 			case ActionState.Idle:
+				if(watchBall){
+					currentAction = ActionState.Loading;
+				}
 			break;
 
 
 			case ActionState.Locking:
-				if(!Player.isOnTheBall()){
-					Player.MoveForward();
-				}
-				else{
-					locked = true;
-					Cardboard.Lock(true);
+				if(!watchBall){
+					currentAction = ActionState.Idle;
+				}else{
+					currentAction = ActionState.Loading;
 				}
 			break;
 
 
 			case ActionState.UnLocking:
-				Player.MoveBackward();
-				if(Player.isFarFromBall()){
-					Player.Reset();
-					currentAction = ActionState.Idle;
+				if(watchBall){
+					currentAction = ActionState.Locking;
 				}
 			break;
 
 
 			case ActionState.Loading:
+				if(!watchBall){
+					currentAction = ActionState.Firing;	
+				}
+
 				if(!Club.IsLoaded())
 				{
 					Club.Load();
-					Hud.SetPowerBarAmount(Club.LoadingAmount());
 				}
-				else
-				{
-					currentAction = ActionState.Loaded;
-				}
+				
+				Hud.SetPowerBarAmount(Club.LoadingAmount());
 			break;
-
-
-
-			case ActionState.Loaded:
-				//Wait
-			break;
-
-
 
 			case ActionState.Firing:
 				Hud.SetPowerBarAmount(0);				
@@ -182,12 +173,10 @@ public class MainScript : MonoBehaviour {
 			case ActionState.MoveToTheBall:	
 				if(Hud.IsFadingIn()){
 					Player.transform.position = Ball.transform.position;
-					Player.Reset();
 					Club.Reset();	
 					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
 					SetWind ();
 					currentAction = ActionState.Idle;
-					Cardboard.Lock(false);
 					locked = false;
 				}
 			break;
@@ -227,11 +216,11 @@ public class MainScript : MonoBehaviour {
 	/*
 	 * Watching ball (shoot/release)
 	 */
-	public void LoadShoot(){
+	public void WatchBall(){
 		watchBall = true;
 	}
 
-	public void ReleaseShoot(){
+	public void UnWatchBall(){
 		watchBall = false;
 	}
 

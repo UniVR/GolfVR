@@ -53,15 +53,4 @@ public class CardboardScript : MonoBehaviour {
 			lastRotation = headRotation.y;
 		}
 	}
-
-	public bool WatchDown ()
-	{
-		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;
-		angle = headRotation.x;
-		return headRotation.x > WatchDownAngle && headRotation.x<180;
-	}
-
-	public void Lock(bool locked){
-		this.locked = locked;
-	}
 }
