@@ -30,6 +30,11 @@ public class HudScript : MonoBehaviour {
 	//Powerbar
 	public Image PowerBar;
 
+	//reticle
+	public Image Reticule;
+	public float ReticleScaleSpeed;
+	public float ReticleMaxSize;
+	private Vector3 reticleInitialScale;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +42,9 @@ public class HudScript : MonoBehaviour {
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		fadeDirection = FadeDirection.None;
 		PowerBar.enabled = false;
+		//Reticule.enabled = false;
 		ScoreHUD.text = Localization.Score + 0;	
+		reticleInitialScale = Reticule.transform.localScale;
 	}
 	
 	// Update is called once per frame
@@ -65,6 +72,35 @@ public class HudScript : MonoBehaviour {
 		}
 	}
 
+	public bool Locking(){
+		var scale = Time.deltaTime * ReticleScaleSpeed;
+		Reticule.transform.localScale = new Vector3 (Reticule.transform.localScale.x+scale, Reticule.transform.localScale.y+scale, Reticule.transform.localScale.z+scale);
+		if (Reticule.transform.localScale.x > ReticleMaxSize) {
+			Reticule.enabled = false;
+			return true;
+		} else {
+			Reticule.enabled = true;
+			return false;
+		}
+	}
+
+	public bool UnLocking(){
+		var scale = Time.deltaTime * ReticleScaleSpeed;
+		Reticule.transform.localScale = new Vector3 (Reticule.transform.localScale.x-scale, Reticule.transform.localScale.y-scale, Reticule.transform.localScale.z-scale);
+		if (Reticule.transform.localScale.x <= reticleInitialScale.x) {
+			//Reticule.enabled = false;
+			return true;
+		} else {
+			Reticule.enabled = true;
+			return false;
+		}
+	}
+
+	public void EnableReticle(bool enable){
+		if (enable)
+			Reticule.transform.localScale = reticleInitialScale;
+		Reticule.enabled = enable;
+	}
 	
 	public void FadeOut(){
 		fadeAlphaValue = 0;

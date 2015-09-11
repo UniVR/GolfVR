@@ -46,6 +46,7 @@ public class MainScript : MonoBehaviour {
 
 	private int score;
 	private bool locked;
+	private bool watchBallLock;
 	private bool watchBall;
 
 
@@ -73,49 +74,41 @@ public class MainScript : MonoBehaviour {
 	 * 	Action
 	 */
 	void FixedUpdate () {
-		/*
-		if (!locked && Cardboard.WatchDown ()) {
-			currentAction = ActionState.Locking;
-		} 
-		else if (currentAction == ActionState.Locking && !locked && !Cardboard.WatchDown ()) {
-			currentAction = ActionState.UnLocking;
-		}
-		else if (locked && watchBall) 
-		{
-			currentAction = ActionState.Loading;
-		} 
-		else if (currentAction == ActionState.Loading || currentAction == ActionState.Loaded && !watchBall) {
-			currentAction = ActionState.Firing;
-		}*/
-
 		switch (currentAction) 
 		{
 			case ActionState.Idle:
-				if(watchBall){
-					currentAction = ActionState.Loading;
-				}
-			break;
-
-
-			case ActionState.Locking:
-				if(!watchBall){
-					currentAction = ActionState.Idle;
-				}else{
-					currentAction = ActionState.Loading;
-				}
-			break;
-
-
-			case ActionState.UnLocking:
-				if(watchBall){
+				if(watchBallLock){
 					currentAction = ActionState.Locking;
 				}
 			break;
 
 
+			case ActionState.Locking:
+				if(!watchBallLock){
+					currentAction = ActionState.UnLocking;
+				}else{
+					if(Hud.Locking()){
+						Ball.WatchBall.SetActive(true);	
+						currentAction = ActionState.Loading;
+					}
+				}
+			break;
+
+
+			case ActionState.UnLocking:
+				if(watchBallLock){
+					currentAction = ActionState.Locking;
+				}
+				if(Hud.UnLocking()){
+					currentAction = ActionState.Idle;
+				}
+			break;
+
+
 			case ActionState.Loading:
-				if(!watchBall){
+				if(!watchBall && !watchBallLock){
 					currentAction = ActionState.Firing;	
+					Ball.WatchBall.SetActive(false);
 				}
 
 				Club.Load();
@@ -168,10 +161,11 @@ public class MainScript : MonoBehaviour {
 
 			case ActionState.MoveToTheBall:	
 				if(Hud.IsFadingIn()){
+					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
 					Player.transform.position = Ball.transform.position;
 					Club.Reset();	
-					Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
 					SetWind ();
+					Hud.EnableReticle(true);
 					currentAction = ActionState.Idle;
 					locked = false;
 				}
@@ -218,6 +212,14 @@ public class MainScript : MonoBehaviour {
 
 	public void UnWatchBall(){
 		watchBall = false;
+	}
+
+	public void WatchBallLock(){
+		watchBallLock = true;
+	}
+	
+	public void UnWatchBallLock(){
+		watchBallLock = false;
 	}
 
 

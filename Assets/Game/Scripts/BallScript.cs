@@ -9,6 +9,9 @@ public class BallScript : MonoBehaviour {
 	public float TimeMagnitudeCoef;
 	public float WidthMagnitudeCoef;
 
+	public GameObject WatchBall;
+	public GameObject WatchBallLock;
+
 	private MainScript mainScript;
 	private DetectTerrainType detectTerrainType;
 
