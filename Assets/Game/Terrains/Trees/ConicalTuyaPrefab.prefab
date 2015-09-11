@@ -262,18 +262,14 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: .439359248
+  - screenRelativeHeight: .0250969902
     fadeTransitionWidth: 1
     renderers:
     - renderer: {fileID: 2321182}
-  - screenRelativeHeight: .136202723
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2311250}
   - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 2311776}
+    - renderer: {fileID: 2311250}
   m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
@@ -283,12 +279,20 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_LODs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: .439359248
+      value: .0250969902
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: .136202723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_StaticEditorFlags
@@ -322,6 +326,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 2311776}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108024}
