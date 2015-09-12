@@ -2,9 +2,9 @@
 
 **The first Golf Game for Virtual Reality Headsets !**
 
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/GolfVR.jpg)
-
 *With this game, we want to provide an immersive and interactive experience to the largest amount of people using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and shot !*
+
+![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/GolfVR.jpg)
 
 This game uses the **CardBoard SDK**, it is designed to be played with a **VR headset** and a **Wii Controller** (Wii controller support is still in development).
 
