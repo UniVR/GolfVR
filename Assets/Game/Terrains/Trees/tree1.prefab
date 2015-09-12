@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 499410}
   - 33: {fileID: 3332492}
   - 23: {fileID: 2375226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &194906
 GameObject:
@@ -26,12 +26,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 421206}
   - 205: {fileID: 20520328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &421206
 Transform:
@@ -116,7 +116,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194906}
