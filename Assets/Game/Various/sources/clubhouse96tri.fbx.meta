@@ -6,10 +6,35 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: ClubHouse6Ktri
+    100004: ClubHouse6Ktri.002
+    100006: Plane.001
+    100008: Plane.011
+    100010: Plane.019
     400000: //RootNode
+    400002: ClubHouse6Ktri
+    400004: ClubHouse6Ktri.002
+    400006: Plane.001
+    400008: Plane.011
+    400010: Plane.019
     2300000: //RootNode
+    2300002: ClubHouse6Ktri
+    2300004: ClubHouse6Ktri.002
+    2300006: Plane.001
+    2300008: Plane.011
+    2300010: Plane.019
     3300000: //RootNode
+    3300002: ClubHouse6Ktri
+    3300004: ClubHouse6Ktri.002
+    3300006: Plane.001
+    3300008: Plane.011
+    3300010: Plane.019
     4300000: ClubHouse6Ktri.003
+    4300002: ClubHouse6Ktri.002
+    4300004: ClubHouse6Ktri
+    4300006: Plane.019
+    4300008: Plane.011
+    4300010: Plane.001
   materials:
     importMaterials: 0
     materialName: 0
