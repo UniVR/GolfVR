@@ -10,7 +10,7 @@ This game uses the **CardBoard SDK**, it is designed to be played with a **VR he
 
 You can find Virtual Reality headset from a few to a hundred dollars. [A lot of comparatives talks about them !](http://heavy.com/tech/2015/07/best-vr-virtual-reality-headset-glasses-goggles-oculus-rift-specs-review/)
 
-This game was developed by two young french guys: [Ludovic Feltz](http://feltz.fr) (developer) and [Mathieu Genoud](https://fr.linkedin.com/pub/mathieu-genoud/105/258/54b) (graphics designer)
+This game was developed by two french guys: [Ludovic Feltz](http://feltz.fr) (developer) and [Mathieu Genoud](https://fr.linkedin.com/pub/mathieu-genoud/105/258/54b) (graphics designer)
 
 This game is developed in C# with [**Unity 3D**](https://unity3d.com/) and it is compatible with Android and iOS.
 Graphical assets are created with [**Blender**](http://www.blender.org/) and [**The Gimp**](http://www.gimp.org/)
