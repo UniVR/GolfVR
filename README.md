@@ -4,12 +4,16 @@
 
 ![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/GolfVR.jpg)
 
-This game is developed with [**Unity 3D**](https://unity3d.com/) and compatible with Android and iOS.
-It should be played with a **VR headset** and a **Wii Controller** (wii controller support is still in development).
+*With this game, we want to provide an immersive and interactive experience to the largest amount of people using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and shot !*
 
-There are a lot of Virtual Reality headset from few to hundred dollars. [A lot of comparatifs speak about it !](http://heavy.com/tech/2015/07/best-vr-virtual-reality-headset-glasses-goggles-oculus-rift-specs-review/)
+This game uses the **CardBoard SDK**, it is designed to be played with a **VR headset** and a **Wii Controller** (Wii controller support is still in development).
 
-This game was developed by two french: [Ludovic Feltz](http://feltz.fr) (developer) and Mathieu Genoud (graphics designer)
+You can find Virtual Reality headset from a few to a hundred dollars. [A lot of comparatives talks about them !](http://heavy.com/tech/2015/07/best-vr-virtual-reality-headset-glasses-goggles-oculus-rift-specs-review/)
+
+This game was developed by two young french guys: [Ludovic Feltz](http://feltz.fr) (developer) and [Mathieu Genoud](https://fr.linkedin.com/pub/mathieu-genoud/105/258/54b) (graphics designer)
+
+This game is developed in C# with [**Unity 3D**](https://unity3d.com/) and it is compatible with Android and iOS.
+Graphical assets are created with [**Blender**](http://www.blender.org/) and [**The Gimp**](http://www.gimp.org/)
 
 Fell free to contribute !
 
