@@ -36,6 +36,7 @@ public class MainScript : MonoBehaviour {
 	public PlayerScript Player;
 	public ClubScript Club;
 	public BallScript Ball;
+	public BallInfoScript BallInfo;
 	public HolesScript Holes;
 	public HudScript Hud;
 	public ClubsBagScript Bag;
@@ -146,15 +147,15 @@ public class MainScript : MonoBehaviour {
 
 			case ActionState.Won:	
 				Ball.StopAndMove(Holes.CurrentHole.BeginPosition.transform.position); //Go to next hole
-				Hud.ShowInformation(Localization.Hole);
+				BallInfo.ShowInformation(Ball.transform.position, Localization.Hole);
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;
 			break;
 
 			case ActionState.OutOfBound:	
+				BallInfo.ShowInformation(Ball.transform.position, Localization.OutOfZone);	
 				Ball.StopAndGetBackToOldPos();
 				Hud.UpdateScore(score++);
-				Hud.ShowInformation(Localization.OutOfZone);
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;				
 			break;

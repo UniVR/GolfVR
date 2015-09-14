@@ -23,9 +23,10 @@ public class HudScript : MonoBehaviour {
 	public Text ScoreHUD;
 
 	//Informations
-	public Text InformationsHUD;
-	public float InformationShowTime;
-	private float InformationTimeShowed;
+	//public Canvas InformationsCanvas;
+	//public Text InformationsHUD;
+	//public float InformationShowTime;
+	//private float InformationTimeShowed;
 
 	//Powerbar
 	public Image PowerBar;
@@ -65,11 +66,12 @@ public class HudScript : MonoBehaviour {
 		}
 
 
-		if (InformationTimeShowed > 0) {
-			InformationTimeShowed -= Time.deltaTime;
-		} else {
-			InformationsHUD.enabled = false;
-		}
+		//if (InformationTimeShowed > 0) {
+		//	InformationTimeShowed -= Time.deltaTime;
+		//} else {
+		//	InformationsHUD.enabled = false;
+		//	InformationsCanvas.enabled = false;
+		//}
 	}
 
 	public bool Locking(){
@@ -127,11 +129,5 @@ public class HudScript : MonoBehaviour {
 
 	public void UpdateScore(int score){
 		ScoreHUD.text = Localization.Score + score;	
-	}
-	
-	public void ShowInformation(string text){
-		InformationsHUD.text = text;
-		InformationsHUD.enabled = true;
-		InformationTimeShowed = InformationShowTime;
 	}
 }

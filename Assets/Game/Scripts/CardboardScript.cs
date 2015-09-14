@@ -24,7 +24,7 @@ public class CardboardScript : MonoBehaviour {
 		var neckVector = Cardboard.SDK.HeadPose.Orientation * Vector3.up;			// Neck vector
 
 		var direction = new Vector3 (neckVector.x, 0, neckVector.z);
-		Debug.Log("direction" + direction + "; Headrotation: " + headRotation);
+		//Debug.Log("direction" + direction + "; Headrotation: " + headRotation);
 		
 		var lookHorizontally = headRotation.x < ForwardRotationThresholdMin || headRotation.x > ForwardRotationThresholdMax;
 		if (!lookHorizontally) {
