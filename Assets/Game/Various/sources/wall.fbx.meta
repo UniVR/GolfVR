@@ -1,35 +1,15 @@
 fileFormatVersion: 2
-guid: c2d86878a83556840977d8c9bdad293f
-timeCreated: 1441715460
+guid: a8f8e406a8b5ab043b9316b0cf3fef00
+timeCreated: 1442239932
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane.001
-    100004: Plane.011
-    100006: Plane.014
-    100008: Plane.019
     400000: //RootNode
-    400002: Plane.001
-    400004: Plane.011
-    400006: Plane.014
-    400008: Plane.019
-    2300000: Plane.001
-    2300002: Plane.011
-    2300004: Plane.014
-    2300006: Plane.019
-    2300008: //RootNode
-    3300000: Plane.001
-    3300002: Plane.011
-    3300004: Plane.014
-    3300006: Plane.019
-    3300008: //RootNode
-    4300000: Plane.014
-    4300002: Plane.019
-    4300004: Plane.011
-    4300006: Plane.001
-    4300008: ClubHouse6Ktri
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Wall
   materials:
     importMaterials: 0
     materialName: 0
@@ -53,7 +33,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
