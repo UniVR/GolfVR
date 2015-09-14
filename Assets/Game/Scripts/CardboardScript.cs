@@ -3,32 +3,52 @@ using System.Collections;
 
 public class CardboardScript : MonoBehaviour {
 
-	public float WatchDownAngle;
-	public float angle;
+	public float SmoothFactor;
+	public float ForwardRotationThresholdMin;
+	public float ForwardRotationThresholdMax; 	
 
 	private PlayerScript player;
-
 	private bool lookDown;
 	private float lastRotation;
-	private bool locked;
 
 	void Start () {
 		player = MainScript.Get ().Player;
 		lookDown = false;
-		locked = false;
 	}
 	
 	/*
 	 * 	Rotation system
 	 */
 	void Update () {
-		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;				// Head rotation
-			
-		if (locked) {
-			transform.eulerAngles = new Vector3 (headRotation.x, headRotation.y, headRotation.z);
-			return;
+		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;				// Head rotation			
+		var neckVector = Cardboard.SDK.HeadPose.Orientation * Vector3.up;			// Neck vector
+
+		var direction = new Vector3 (neckVector.x, 0, neckVector.z);
+		Debug.Log("direction" + direction + "; Headrotation: " + headRotation);
+		
+		var lookHorizontally = headRotation.x < ForwardRotationThresholdMin || headRotation.x > ForwardRotationThresholdMax;
+		if (!lookHorizontally) {
+			lookDown = true;
+			var playerTarget = Quaternion.LookRotation (direction);
+			player.transform.rotation = Quaternion.Slerp(player.transform.rotation, playerTarget, Time.deltaTime * SmoothFactor);
+		} else {
+			if(lookDown){ //Fix the jump glitch
+				lookDown = false;
+				transform.eulerAngles = new Vector3 (headRotation.x, lastRotation, headRotation.z);
+			}
+			player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.Euler (0, headRotation.y, 0), Time.deltaTime * SmoothFactor);
 		}
 
+		var target = Quaternion.Euler (headRotation.x, headRotation.y, headRotation.z);
+		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * SmoothFactor);
+		lastRotation = transform.rotation.y;
+		//transform.eulerAngles = new Vector3 (headRotation.x, headRotation.y, headRotation.z);
+
+		return;
+		/*
+		 * 	OLD SYSTEM
+		 *
+		var headRotation = Cardboard.SDK.HeadPose.Orientation.eulerAngles;				// Head rotation
 		var forwardRotationThresholdMin = 10; 											// Player look in direction of the ground/ball
 		var forwardRotationThresholdMax = 90; 	
 
@@ -51,6 +71,6 @@ public class CardboardScript : MonoBehaviour {
 			player.transform.rotation = Quaternion.LookRotation (direction); 			// TODO: add a little threshold?
 			transform.eulerAngles = new Vector3 (headRotation.x, headRotation.y, headRotation.z);
 			lastRotation = headRotation.y;
-		}
+		}*/
 	}
 }

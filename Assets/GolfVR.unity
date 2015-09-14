@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 8900000, guid: e3753214bd9dfbe499f5bc60bc3c425a, type: 3}
   m_Sun: {fileID: 1439804818}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -66,7 +69,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 112000001, guid: 35ea626331019b048b00eea6d3e93f1c,
     type: 2}
   m_RuntimeCPUUsage: 25
@@ -204,12 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6f53d5f03bde5cf4fa9639ea0d47c994, type: 3}
     m_FontSize: 0
@@ -1679,8 +1675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1826a83bf1ab646a572a66b8c782ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WatchDownAngle: 40
-  angle: 0
+  SmoothFactor: 20
+  ForwardRotationThresholdMin: 10
+  ForwardRotationThresholdMax: 90
 --- !u!1 &804225126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,12 +1812,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .764705896, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: bae9cd1faed980247a4a64276065f6bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1882,12 +1873,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 3e490a39bd5f9da4fb11a176e2499636, type: 2}
   m_Color: {r: 1, g: .765517235, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: a40e9e3d6add37042b3dffe2fa57bd58, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -1943,19 +1928,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .532675207
+      value: .532675147
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .0703404546
+      value: .0703404471
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .836132765
+      value: .836132646
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.110415146
+      value: -.110415131
       objectReference: {fileID: 0}
     - target: {fileID: 469942, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2395,12 +2380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 0
@@ -2408,7 +2387,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
@@ -3505,7 +3484,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400012, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: deviceType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_Layer
