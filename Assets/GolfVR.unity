@@ -769,6 +769,7 @@ GameObject:
   - 4: {fileID: 400427941}
   - 182: {fileID: 400427940}
   - 114: {fileID: 400427942}
+  - 82: {fileID: 400427943}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -814,6 +815,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: 10
   Angle: .100000001
+--- !u!82 &400427943
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 400427939}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fb10a4df344321540a60940f3d2d4b38, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &439576637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1701,10 @@ Prefab:
       propertyPath: WatchBallLock
       value: 
       objectReference: {fileID: 1089324908}
+    - target: {fileID: 8217318, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0eaf6da20b95b9e4f81b0e9f31ac20ef, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4bae5a923bd1634ca63df87e54ec482, type: 2}
   m_IsPrefabParent: 0
@@ -1676,9 +1750,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1826a83bf1ab646a572a66b8c782ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothFactor: 10
+  SmoothFactor: 5
   ForwardRotationThresholdMin: 10
   ForwardRotationThresholdMax: 90
+  OldSystem: 0
 --- !u!1 &804225126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,7 +3681,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400012, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: deviceType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_Layer
