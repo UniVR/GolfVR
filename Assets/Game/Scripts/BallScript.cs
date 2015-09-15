@@ -31,8 +31,8 @@ public class BallScript : MonoBehaviour {
 	void Start(){
 		mainScript = MainScript.Get ();
 		detectTerrainType = GetComponent<DetectTerrainType> ();
-		rigidBody = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource> ();
+		rigidBody = GetComponent<Rigidbody> ();
 		trail = GetComponent<TrailRenderer> ();
 		oldTrailTime = trail.time;
 		isShooted = false;
@@ -70,8 +70,6 @@ public class BallScript : MonoBehaviour {
 
 		Vector3 direction = Quaternion.Euler(0, orientation, -angle) * new Vector3 (-1, 0, 0);
 		rigidBody.AddForce(direction * magnitude, ForceMode.Impulse);
-
-		audioSource.Play();
 	}
 
 	public void Stop(){
@@ -123,8 +121,11 @@ public class BallScript : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.collider.GetType() == typeof(UnityEngine.TerrainCollider))
+		if (col.collider.GetType () == typeof(UnityEngine.TerrainCollider)) {
+			if(!isOnGround)
+				audioSource.Play();
 			isOnGround = true;
+		}
 	}
 
 	void OnCollisionExit (Collision col)

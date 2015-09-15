@@ -1,0 +1,26 @@
+Files naming convention
+
+
+[prefix]_[snd]_[suffix].format
+
+- Prefix is the value that determine destination of a given sound
+- Suffix is the role of that sound
+
+
+Prefixes
+
+mn = menu
+int = interactions
+env = environement
+
+
+
+Example
+
+./golfVR/github.com/Assets/Game/Sounds/menus/mn_snd_cancel.mp3
+Is for menu cancel action
+
+
+./Assets/Game/Sounds/environment
+./Assets/Game/Sounds/interactions
+./Assets/Game/Sounds/menus

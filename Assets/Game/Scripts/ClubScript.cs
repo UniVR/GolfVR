@@ -24,10 +24,13 @@ public class ClubScript : MonoBehaviour {
 	private bool reset = false;
 	private int currentDirection;
 
+	private AudioSource audioSource;
+
 	void Start () {
 		LoadingTime = 0f;
 		clubDefaultPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 		clubDefaultRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
+		audioSource = GetComponent<AudioSource> ();
 		currentDirection = 1;
 	}
 
@@ -69,6 +72,7 @@ public class ClubScript : MonoBehaviour {
 	 */
 	public void Fire(){
 		transform.Rotate (-Vector3.down * Time.deltaTime * velocityShooting * LoadingTime);
+		audioSource.Play ();
 	}
 
 	public bool IsFired(){
