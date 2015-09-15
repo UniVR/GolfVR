@@ -78,7 +78,7 @@ public class HudScript : MonoBehaviour {
 		var scale = Time.deltaTime * ReticleScaleSpeed;
 		Reticule.transform.localScale = new Vector3 (Reticule.transform.localScale.x+scale, Reticule.transform.localScale.y+scale, Reticule.transform.localScale.z+scale);
 		if (Reticule.transform.localScale.x > ReticleMaxSize) {
-			Reticule.enabled = false;
+			//Reticule.enabled = false;
 			return true;
 		} else {
 			Reticule.enabled = true;
@@ -121,6 +121,7 @@ public class HudScript : MonoBehaviour {
 	public void SetPowerBarAmount(float amount){
 		if (amount == 0) {
 			PowerBar.enabled = false;
+			Reticule.enabled = false;
 		} else {
 			PowerBar.enabled = true;
 			PowerBar.fillAmount = amount;
