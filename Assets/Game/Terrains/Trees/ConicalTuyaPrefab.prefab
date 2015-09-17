@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 430938}
   - 33: {fileID: 3378892}
   - 23: {fileID: 2311250}
-  - 65: {fileID: 6568992}
   m_Layer: 10
   m_Name: ConicalTuyaLOD1
   m_TagString: Untagged
@@ -44,7 +43,6 @@ GameObject:
   - 4: {fileID: 490664}
   - 33: {fileID: 3379226}
   - 23: {fileID: 2321182}
-  - 65: {fileID: 6529038}
   m_Layer: 10
   m_Name: ConicalTuyaLOD0
   m_TagString: Untagged
@@ -62,7 +60,6 @@ GameObject:
   - 4: {fileID: 410284}
   - 33: {fileID: 3358472}
   - 23: {fileID: 2311776}
-  - 65: {fileID: 6502314}
   m_Layer: 10
   m_Name: ConicalTuyaLOD2
   m_TagString: Untagged
@@ -214,42 +211,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112322}
   m_Mesh: {fileID: 4300004, guid: 1adbf8e8b5cfb134c93acd0dc22a74a4, type: 3}
---- !u!65 &6502314
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.19615269, y: 4.49999905, z: 6.74138498}
-  m_Center: {x: -1.1920929e-07, y: .749999762, z: 3.37069249}
---- !u!65 &6529038
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.72819042, y: 4.72818947, z: 9.66881275}
-  m_Center: {x: 0, y: -2.38418551e-07, z: 4.11276293}
---- !u!65 &6568992
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.50923967, y: 6.36152077, z: 10.3569212}
-  m_Center: {x: 0, y: 0, z: 3.62271094}
 --- !u!205 &20567908
 LODGroup:
   m_ObjectHideFlags: 1

@@ -125,6 +125,7 @@ public class HudScript : MonoBehaviour {
 		} else {
 			PowerBar.enabled = true;
 			PowerBar.fillAmount = amount;
+			Reticule.enabled = true;
 		}
 	}
 
