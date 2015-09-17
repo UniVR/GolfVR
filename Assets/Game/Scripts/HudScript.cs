@@ -31,6 +31,9 @@ public class HudScript : MonoBehaviour {
 	//Powerbar
 	public Image PowerBar;
 
+	//aiming arrow
+	public Image AimingArrow;
+
 	//reticle
 	public Image Reticule;
 	public float ReticleScaleSpeed;
@@ -43,7 +46,7 @@ public class HudScript : MonoBehaviour {
 		fadePlaneMaterial = FadePlane.GetComponent<Renderer>().material;
 		fadeDirection = FadeDirection.None;
 		PowerBar.enabled = false;
-		//Reticule.enabled = false;
+		AimingArrow.enabled = false;
 		ScoreHUD.text = Localization.Score + 0;	
 		reticleInitialScale = Reticule.transform.localScale;
 	}
@@ -103,7 +106,8 @@ public class HudScript : MonoBehaviour {
 			Reticule.transform.localScale = reticleInitialScale;
 		Reticule.enabled = enable;
 	}
-	
+
+
 	public void FadeOut(){
 		fadeAlphaValue = 0;
 		FadePlane.SetActive (true);
@@ -122,9 +126,11 @@ public class HudScript : MonoBehaviour {
 		if (amount == 0) {
 			PowerBar.enabled = false;
 			Reticule.enabled = false;
+			AimingArrow.enabled = false;
 		} else {
 			PowerBar.enabled = true;
 			PowerBar.fillAmount = amount;
+			AimingArrow.enabled = true;
 			Reticule.enabled = true;
 		}
 	}
