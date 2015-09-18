@@ -295,6 +295,10 @@ Prefab:
       propertyPath: m_ScaleInLightmap
       value: .0250969902
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6bfaae8b7b5dc249b1b06a9c792eb31, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108024}
