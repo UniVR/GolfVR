@@ -32,7 +32,8 @@ public class FlagScript : MonoBehaviour {
 	void Update () {
 		//Show the distance between the ball and the hole
 		float distance = Vector3.Distance(hole.transform.position, ball.transform.position) * distanceFactor;
-		text.text = "Distance:\n" + distance.ToString("0.00") + "m";
+		text.text = distance.ToString("0") + " m";
+		//text.text = "Distance:\n" + distance.ToString("0.00") + "m";
 
 		//Scale the GUI depending on the camera distance
 		distance = Vector3.Distance(hole.transform.position, player.transform.position);
