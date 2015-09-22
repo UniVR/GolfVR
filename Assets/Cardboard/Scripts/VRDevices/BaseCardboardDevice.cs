@@ -18,9 +18,9 @@ using AOT;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
-public abstract class VRDevice :
+public abstract class BaseCardboardDevice :
 #if UNITY_ANDROID
-AndroidBaseVRDevice
+BaseAndroidDevice
 #else
 BaseVRDevice
 #endif
@@ -71,16 +71,16 @@ BaseVRDevice
     EnableAlignmentMarker(enabled);
   }
 
-  public override void SetSettingsButtonEnabled(bool enabled) {
-    EnableSettingsButton(enabled);
-  }
-
   public override void SetNeckModelScale(float scale) {
     SetNeckModelFactor(scale);
   }
 
   public override void SetAutoDriftCorrectionEnabled(bool enabled) {
     EnableAutoDriftCorrection(enabled);
+  }
+
+  public void SetElectronicDisplayStabilizationEnabled(bool enabled) {
+    EnableElectronicDisplayStabilization(enabled);
   }
 
   public override void Init() {
@@ -183,8 +183,6 @@ BaseVRDevice
     return i;
   }
 
-  public abstract void LaunchSettingsDialog();
-
   protected virtual void ProcessEvents() {
     int[] events = null;
     lock (eventQueue) {
@@ -209,16 +207,13 @@ BaseVRDevice
         case kProfileChanged:
           UpdateScreenData();
           break;
-        case kLaunchSettingsDialog:
-          LaunchSettingsDialog();
-          break;
       }
     }
   }
 
   [MonoPInvokeCallback(typeof(VREventCallback))]
   private static void OnVREvent(int eventID) {
-    VRDevice device = GetDevice() as VRDevice;
+    BaseCardboardDevice device = GetDevice() as BaseCardboardDevice;
     // This function is called back from random native code threads.
     lock(device.eventQueue) {
       device.eventQueue.Enqueue(eventID);
@@ -249,10 +244,10 @@ BaseVRDevice
   private static extern void EnableAlignmentMarker(bool enable);
 
   [DllImport(dllName)]
-  private static extern void EnableSettingsButton(bool enable);
+  private static extern void EnableAutoDriftCorrection(bool enable);
 
   [DllImport(dllName)]
-  private static extern void EnableAutoDriftCorrection(bool enable);
+  private static extern void EnableElectronicDisplayStabilization(bool enable);
 
   [DllImport(dllName)]
   private static extern void SetNeckModelFactor(float factor);

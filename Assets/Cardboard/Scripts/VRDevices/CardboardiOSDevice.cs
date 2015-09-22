@@ -16,7 +16,7 @@
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
-public class iOSVRDevice : VRDevice {
+public class CardboardiOSDevice : BaseCardboardDevice {
   // Native code libraries use OpenGL, but Unity picks Metal for iOS by default.
   bool isOpenGL = false;
 
@@ -42,10 +42,30 @@ public class iOSVRDevice : VRDevice {
     setVRModeEnabled(enabled);
   }
 
+  public override void SetSettingsButtonEnabled(bool enabled) {
+    setSettingsButtonEnabled(enabled);
+  }
+
+  public override void SetAutoDriftCorrectionEnabled(bool enabled){
+    // For iOS don't use Drift Correction.
+    base.SetAutoDriftCorrectionEnabled(false);
+  }
+
+  public override void SetTapIsTrigger(bool enabled) {
+    // Not supported on iOS.
+  }
+
+  public override bool SetDefaultDeviceProfile(System.Uri uri) {
+    byte[] profile = System.Text.Encoding.UTF8.GetBytes(uri.ToString());
+    return setDefaultDeviceProfile(profile, profile.Length);
+  }
+
   public override void Init() {
     isOpenGL = isOpenGLAPI();
     setSyncWithCardboardEnabled(Cardboard.SDK.SyncWithCardboardApp);
     base.Init();
+    // For iOS don't use Drift Correction.
+    SetAutoDriftCorrectionEnabled(false);
   }
 
   public override void PostRender(bool vrMode) {
@@ -68,7 +88,7 @@ public class iOSVRDevice : VRDevice {
     }
   }
 
-  public override void LaunchSettingsDialog() {
+  public override void ShowSettingsDialog() {
     launchSettingsDialog();
   }
 
@@ -79,19 +99,25 @@ public class iOSVRDevice : VRDevice {
   private static extern void setVRModeEnabled(bool enabled);
 
   [DllImport("__Internal")]
+  private static extern void setSettingsButtonEnabled(bool enabled);
+
+  [DllImport("__Internal")]
   private static extern void setSyncWithCardboardEnabled(bool enabled);
 
   [DllImport("__Internal")]
   private static extern void readProfile();
 
   [DllImport("__Internal")]
+  private static extern bool setDefaultDeviceProfile(byte[] profileData, int size);
+
+  [DllImport("__Internal")]
   private static extern bool isOnboardingDone();
 
   [DllImport("__Internal")]
-  private static extern void launchOnboardingDialog();
+  private static extern void launchSettingsDialog();
 
   [DllImport("__Internal")]
-  private static extern void launchSettingsDialog();
+  private static extern void launchOnboardingDialog();
 }
 
 #endif

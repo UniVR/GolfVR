@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 
 // Android device using the Google Cardboard SDK for Android.
-public class CardboardAndroidDevice : AndroidBaseVRDevice {
+public class LegacyCardboardAndroidDevice : BaseAndroidDevice {
   [DllImport("RenderingPlugin")]
   private static extern void InitFromUnity(int textureID);
 
@@ -41,48 +41,52 @@ public class CardboardAndroidDevice : AndroidBaseVRDevice {
   protected override void ConnectToActivity() {
     try {
       using (AndroidJavaClass player = new AndroidJavaClass(cardboardClass)) {
-        cardboardActivity = player.CallStatic<AndroidJavaObject>("getActivity");
+        androidActivity = player.CallStatic<AndroidJavaObject>("getActivity");
       }
     } catch (AndroidJavaException e) {
-      cardboardActivity = null;
+      androidActivity = null;
       Debug.LogError("Cannot access UnityCardboardActivity. "
         + "Verify that the jar is in Assets/Plugins/Android. " + e);
     }
   }
 
   public override void SetDistortionCorrectionEnabled(bool enabled) {
-    CallActivityMethod("setDistortionCorrectionEnabled", enabled);
+    CallObjectMethod(androidActivity, "setDistortionCorrectionEnabled", enabled);
   }
 
   public override void SetVRModeEnabled(bool enabled) {
-    CallActivityMethod("setVRModeEnabled", enabled);
+    CallObjectMethod(androidActivity, "setVRModeEnabled", enabled);
   }
 
   public override void SetAlignmentMarkerEnabled(bool enabled) {
-    CallActivityMethod("setAlignmentMarkerEnabled", enabled);
+    CallObjectMethod(androidActivity, "setAlignmentMarkerEnabled", enabled);
   }
 
   public override void SetSettingsButtonEnabled(bool enabled) {
-    CallActivityMethod("setSettingsButtonEnabled", enabled);
+    CallObjectMethod(androidActivity, "setSettingsButtonEnabled", enabled);
+  }
+
+  public override void SetTapIsTrigger(bool enabled) {
+    CallObjectMethod(androidActivity, "setTapIsTrigger", enabled);
   }
 
   public override void SetNeckModelScale(float scale) {
-    CallActivityMethod("setNeckModelFactor", scale);
+    CallObjectMethod(androidActivity, "setNeckModelFactor", scale);
   }
 
   public override void SetAutoDriftCorrectionEnabled(bool enabled) {
-    CallActivityMethod("setGyroBiasEstimationEnabled", enabled);
+    CallObjectMethod(androidActivity, "setGyroBiasEstimationEnabled", enabled);
   }
 
   public override void SetStereoScreen(RenderTexture stereoScreen) {
-    if (cardboardActivity != null) {
+    if (androidActivity != null) {
       InitFromUnity(stereoScreen != null ? stereoScreen.GetNativeTextureID() : 0);
     }
   }
 
   public override void UpdateState() {
     // Pass nominal clip distances - will correct later for each camera.
-    if (!CallActivityMethod(ref frameInfo, "getFrameParams", 1.0f /* near */, 1000.0f /* far */)) {
+	if (!CallObjectMethod(ref frameInfo, androidActivity, "getFrameParams", 1.0f /* near */, 1000.0f /* far */)) {
       return;
     }
 
@@ -134,7 +138,7 @@ public class CardboardAndroidDevice : AndroidBaseVRDevice {
     CardboardProfile.Screen screen = new CardboardProfile.Screen();
 
     float[] lensData = null;
-    if (CallActivityMethod(ref lensData, "getLensParameters")) {
+	if (CallObjectMethod(ref lensData, androidActivity, "getLensParameters")) {
       device.lenses.separation = lensData[0];
       device.lenses.offset = lensData[1];
       device.lenses.screenDistance = lensData[2];
@@ -142,26 +146,26 @@ public class CardboardAndroidDevice : AndroidBaseVRDevice {
     }
 
     float[] screenSize = null;
-    if (CallActivityMethod(ref screenSize, "getScreenSizeMeters")) {
+	if (CallObjectMethod(ref screenSize, androidActivity, "getScreenSizeMeters")) {
       screen.width = screenSize[0];
       screen.height = screenSize[1];
       screen.border = screenSize[2];
     }
 
     float[] distCoeff = null;
-    if (CallActivityMethod(ref distCoeff, "getDistortionCoefficients")) {
+	if (CallObjectMethod(ref distCoeff, androidActivity, "getDistortionCoefficients")) {
       device.distortion.k1 = distCoeff[0];
       device.distortion.k2 = distCoeff[1];
     }
 
     float[] invDistCoeff = null;
-    if (CallActivityMethod(ref invDistCoeff, "getInverseDistortionCoefficients")) {
+	if (CallObjectMethod(ref invDistCoeff, androidActivity, "getInverseDistortionCoefficients")) {
       device.inverse.k1 = invDistCoeff[0];
       device.inverse.k2 = invDistCoeff[1];
     }
 
     float[] maxFov = null;
-    if (CallActivityMethod(ref maxFov, "getLeftEyeMaximumFOV")) {
+	if (CallObjectMethod(ref maxFov, androidActivity, "getLeftEyeMaximumFOV")) {
       device.maxFOV.outer = maxFov[0];
       device.maxFOV.upper = maxFov[1];
       device.maxFOV.inner = maxFov[2];
@@ -173,11 +177,11 @@ public class CardboardAndroidDevice : AndroidBaseVRDevice {
   }
 
   public override void Recenter() {
-    CallActivityMethod("resetHeadTracker");
+    CallObjectMethod(androidActivity, "resetHeadTracker");
   }
 
   public override void SetTouchCoordinates(int x, int y) {
-    CallActivityMethod("setTouchCoordinates", x, y);
+    CallObjectMethod(androidActivity, "setTouchCoordinates", x, y);
   }
 
   public override void PostRender(bool vrMode) {

@@ -15,21 +15,20 @@
 
 using UnityEngine;
 
-public class AndroidVRDevice : VRDevice {
-  private AndroidJavaObject activityListener;
+public class CardboardAndroidDevice : BaseCardboardDevice {
+  private static AndroidJavaObject activityListener;
 
   public override void Init() {
-#if UNITY_5
-    debugDisableNativeDistortion = true;
-#endif
     base.Init();
     ConnectToActivity();
   }
 
   protected override void ConnectToActivity() {
     base.ConnectToActivity();
-    if (cardboardActivity != null) {
-      activityListener = Create("com.google.vr.platform.unity.UnityVrActivityListener");
+    if (androidActivity != null && activityListener == null) {
+      TextAsset button = Resources.Load<TextAsset>("CardboardSettingsButton.png");
+      activityListener = Create("com.google.vr.platform.unity.UnityVrActivityListener",
+                                button.bytes);
     }
   }
 
@@ -37,12 +36,26 @@ public class AndroidVRDevice : VRDevice {
     CallObjectMethod(activityListener, "setVRModeEnabled", enabled);
   }
 
+  public override void SetSettingsButtonEnabled(bool enabled) {
+    CallObjectMethod(activityListener, "setSettingsButtonEnabled", enabled);
+  }
+
+  public override void SetTapIsTrigger(bool enabled) {
+    CallObjectMethod(activityListener, "setTapIsTrigger", enabled);
+  }
+
   public override void SetTouchCoordinates(int x, int y) {
     CallObjectMethod(activityListener, "setTouchCoordinates", x, y);
   }
 
-  public override void LaunchSettingsDialog() {
-    CallObjectMethod(activityListener, "launchSettingsDialog");
+  public override bool SetDefaultDeviceProfile(System.Uri uri) {
+    bool result = false;
+    CallObjectMethod(ref result, activityListener, "setDefaultDeviceProfile", uri.ToString());
+    return result;
+  }
+
+  public override void ShowSettingsDialog() {
+    CallObjectMethod(activityListener, "launchConfigureActivity");
   }
 
   protected override void ProcessEvents() {
@@ -52,16 +65,9 @@ public class AndroidVRDevice : VRDevice {
         CallObjectMethod(activityListener, "injectSingleTap");
       }
       if (tilted) {
-        CallObjectMethod(activityListener, "injectKeypress", 111);  // Escape key.
+        CallObjectMethod(activityListener, "injectKeyPress", 111);  // Escape key.
       }
     }
-  }
-
-  public override void Destroy() {
-    if (activityListener != null) {
-      activityListener.Dispose();
-    }
-    base.Destroy();
   }
 }
 

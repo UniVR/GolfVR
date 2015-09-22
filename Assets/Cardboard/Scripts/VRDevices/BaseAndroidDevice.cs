@@ -16,21 +16,21 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public abstract class AndroidBaseVRDevice : BaseVRDevice {
-  protected AndroidJavaObject cardboardActivity;
+public abstract class BaseAndroidDevice : BaseVRDevice {
+  protected AndroidJavaObject androidActivity;
 
   public override bool SupportsNativeDistortionCorrection(List<string> diagnostics) {
     bool support = base.SupportsNativeDistortionCorrection(diagnostics);
-    if (cardboardActivity == null) {
+    if (androidActivity == null) {
       diagnostics.Add("Cannot access Activity");
     }
     return support;
   }
 
   public override void Destroy() {
-    if (cardboardActivity != null) {
-      cardboardActivity.Dispose();
-      cardboardActivity = null;
+    if (androidActivity != null) {
+      androidActivity.Dispose();
+      androidActivity = null;
     }
     base.Destroy();
   }
@@ -38,20 +38,12 @@ public abstract class AndroidBaseVRDevice : BaseVRDevice {
   protected virtual void ConnectToActivity() {
     try {
       using (AndroidJavaClass player = new AndroidJavaClass("com.unity3d.player.UnityPlayer")) {
-        cardboardActivity = player.GetStatic<AndroidJavaObject>("currentActivity");
+        androidActivity = player.GetStatic<AndroidJavaObject>("currentActivity");
       }
     } catch (AndroidJavaException e) {
-      cardboardActivity = null;
+      androidActivity = null;
       Debug.LogError("Exception while connecting to the Activity: " + e);
     }
-  }
-
-  protected virtual bool CallActivityMethod(string name, params object[] args) {
-    return CallObjectMethod(cardboardActivity, name, args);
-  }
-
-  protected virtual bool CallActivityMethod<T>(ref T result, string name, params object[] args) {
-    return CallObjectMethod(ref result, cardboardActivity, name, args);
   }
 
   protected AndroidJavaObject Create(string className, params object[] args) {
