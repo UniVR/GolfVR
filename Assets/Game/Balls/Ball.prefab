@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &161028
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +134,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.0266571
@@ -320,6 +321,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584fce82b6391914d8b8bca1e58abe79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeBeforeSlowing: 0
+  AddedDragAfterTime: 0
+  TimeMagnitudeCoef: 0
+  WidthMagnitudeCoef: 0
+  WatchBall: {fileID: 0}
+  WatchBallLock: {fileID: 0}
 --- !u!114 &11490436
 MonoBehaviour:
   m_ObjectHideFlags: 1
