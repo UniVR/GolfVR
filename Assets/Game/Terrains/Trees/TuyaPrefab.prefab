@@ -29,7 +29,7 @@ GameObject:
   - 23: {fileID: 2366966}
   m_Layer: 9
   m_Name: ConicalTuyaLOD0
-  m_TagString: Untagged
+  m_TagString: TreeChild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: .0873966441
+  - screenRelativeHeight: .0244307462
     fadeTransitionWidth: 1
     renderers:
     - renderer: {fileID: 2366966}
@@ -181,6 +181,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: TreeChild
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: .0244307462
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
