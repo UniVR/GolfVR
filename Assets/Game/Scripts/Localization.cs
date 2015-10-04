@@ -12,7 +12,7 @@ using System;
 public class Localization
 {
 	public static string Score = "Score: ";
-	public static string OutOfZone = "Hors zone !";
+	public static string OutOfZone = "Out-of-bounds !";
 
 	public static string Hole = "Hole !";
 	public static string Bogey = "Bogey !";
