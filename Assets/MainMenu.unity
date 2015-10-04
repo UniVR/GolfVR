@@ -50,12 +50,12 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
+    m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 3
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_BakeResolution: 12
     m_TextureWidth: 512
     m_TextureHeight: 1024
     m_AOMaxDistance: 1
@@ -236,7 +236,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &74023184
 Transform:
@@ -267,7 +267,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -462,7 +462,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &87152236
 Transform:
@@ -493,7 +493,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -524,7 +524,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &137030896
 Transform:
@@ -555,7 +555,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -622,7 +622,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &224956111
 Transform:
@@ -653,7 +653,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -684,7 +684,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &240512222
 Transform:
@@ -715,7 +715,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -746,7 +746,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &270018228
 Transform:
@@ -777,7 +777,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1138,7 +1138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &388134822
 Transform:
@@ -1169,7 +1169,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1200,7 +1200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &406730846
 Transform:
@@ -1231,7 +1231,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1262,7 +1262,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &408910621
 Transform:
@@ -1293,7 +1293,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1386,7 +1386,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &458766569
 Transform:
@@ -1417,7 +1417,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1496,7 +1496,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &517448078
 Transform:
@@ -1527,7 +1527,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1716,7 +1716,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &567998198
 Transform:
@@ -1747,7 +1747,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1778,7 +1778,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &656234429
 Transform:
@@ -1809,7 +1809,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1866,7 +1866,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 173934, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 450926, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
       propertyPath: m_LocalScale.x
@@ -1879,6 +1879,10 @@ Prefab:
     - target: {fileID: 450926, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
       propertyPath: m_LocalScale.z
       value: 4.74326468
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316472, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
+      propertyPath: m_ScaleInLightmap
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
@@ -1902,7 +1906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &687669383
 Transform:
@@ -1933,7 +1937,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -1964,7 +1968,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &695892831
 Transform:
@@ -1995,7 +1999,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2026,7 +2030,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &777607101
 Transform:
@@ -2057,7 +2061,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2118,7 +2122,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &807375860
 Transform:
@@ -2149,7 +2153,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2180,7 +2184,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &905979143
 Transform:
@@ -2211,7 +2215,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2242,7 +2246,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &909587277
 Transform:
@@ -2273,7 +2277,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2304,7 +2308,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &958581822
 Transform:
@@ -2335,7 +2339,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2479,7 +2483,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1009604085
 Transform:
@@ -2510,7 +2514,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2541,7 +2545,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1024713648
 Transform:
@@ -2572,7 +2576,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2603,7 +2607,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1048544816
 Transform:
@@ -2634,7 +2638,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2771,7 +2775,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1093745283
 Transform:
@@ -2802,7 +2806,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2833,7 +2837,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1098718683
 Transform:
@@ -2864,7 +2868,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -2894,7 +2898,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!108 &1104491789
 Light:
@@ -2911,7 +2915,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_Strength: .236000001
     m_Bias: .0500000007
@@ -2923,7 +2927,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 8.5
@@ -2934,7 +2938,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104491788}
-  m_LocalRotation: {x: .882862449, y: -.23030293, z: -.214561939, w: .348536432}
+  m_LocalRotation: {x: .50855118, y: .0642511621, z: -.752900362, w: .412781477}
   m_LocalPosition: {x: 250, y: 140.300003, z: 156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3141,7 +3145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1241703873
 Transform:
@@ -3172,7 +3176,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3203,7 +3207,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1253005544
 Transform:
@@ -3234,7 +3238,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3265,7 +3269,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!154 &1328305884
 TerrainCollider:
@@ -3306,7 +3310,7 @@ Terrain:
   m_LegacyShininess: .078125
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
-  m_ScaleInLightmap: .0511999987
+  m_ScaleInLightmap: 1
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &1328305886
 Transform:
@@ -3398,7 +3402,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1343483384
 Transform:
@@ -3429,7 +3433,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3461,7 +3465,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1347480258
 Transform:
@@ -3492,7 +3496,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 1
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3536,7 +3540,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1347760334
 Transform:
@@ -3567,7 +3571,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3598,7 +3602,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1383006515
 Transform:
@@ -3629,7 +3633,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3660,7 +3664,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1383341467
 Transform:
@@ -3691,7 +3695,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3722,7 +3726,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1400968269
 Transform:
@@ -3753,7 +3757,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3784,7 +3788,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1419762284
 Transform:
@@ -3815,7 +3819,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3846,7 +3850,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1422850735
 Transform:
@@ -3877,7 +3881,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3908,7 +3912,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1429758943
 Transform:
@@ -3939,7 +3943,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -3970,7 +3974,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1435096012
 Transform:
@@ -4001,7 +4005,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4032,7 +4036,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1475504748
 Transform:
@@ -4063,7 +4067,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4094,7 +4098,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1476915949
 Transform:
@@ -4125,7 +4129,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4292,7 +4296,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1545425287
 Transform:
@@ -4323,7 +4327,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4354,7 +4358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1556787247
 Transform:
@@ -4385,7 +4389,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4416,7 +4420,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1556829117
 Transform:
@@ -4447,7 +4451,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4478,7 +4482,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1619866177
 Transform:
@@ -4509,7 +4513,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4540,7 +4544,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1631143978
 Transform:
@@ -4571,7 +4575,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4664,7 +4668,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1701522120
 Transform:
@@ -4697,7 +4701,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 1
   m_AutoUVMaxDistance: .5
@@ -4846,7 +4850,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1712858303
 Transform:
@@ -4877,7 +4881,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -4908,7 +4912,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &1739667050
 MeshRenderer:
@@ -4927,7 +4931,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5077,7 +5081,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1813721998
 Transform:
@@ -5108,7 +5112,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5201,7 +5205,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1842313678
 Transform:
@@ -5232,7 +5236,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5429,7 +5433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5438,7 +5442,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 13
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5448,11 +5452,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome in GolfVR,
+  m_Text: '[Instructions to come before release]
+
+    Welcome to GolfVR,
 
     The first GOLF experience
 
-    in Virtual Reality !'
+    in Virtual Reality ! [Instructions to come before release]'
 --- !u!222 &1967307153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5542,7 +5548,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2044591191
 Transform:
@@ -5573,7 +5579,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5604,7 +5610,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2078676396
 Transform:
@@ -5635,7 +5641,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5666,7 +5672,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2086958795
 Transform:
@@ -5697,7 +5703,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5846,7 +5852,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2107139377
 Transform:
@@ -5877,7 +5883,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -5979,7 +5985,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2109641344
 Transform:
@@ -6010,7 +6016,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -6162,7 +6168,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2113049340
 Transform:
@@ -6193,7 +6199,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -6224,7 +6230,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2132647269
 Transform:
@@ -6255,7 +6261,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
@@ -6286,7 +6292,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2141571910
 Transform:
@@ -6317,7 +6323,7 @@ MeshRenderer:
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: .200000003
   m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
