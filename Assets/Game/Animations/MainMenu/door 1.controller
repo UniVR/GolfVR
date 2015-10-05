@@ -480,7 +480,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: OpenDoor
-  m_Speed: .200000003
+  m_Speed: .5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110116032}
