@@ -21,6 +21,7 @@ Graphical assets are created with [**Blender**](http://www.blender.org/) and [**
 
 Fell free to contribute !
 
+[GitHub page](http://univr.github.io/GolfVR/)
 
 ## Some usefull notes ##
 This project use wiidevicelibrary in order to connect to the wiimote https://github.com/FrozenCow/wiidevicelibrary. Wiimote libs are inspired by coding4Fun article: http://channel9.msdn.com/coding4fun/articles/Managed-Library-for-Nintendos-Wiimote
