@@ -1,4 +1,4 @@
-# GolfVR #
+#[GolfVR](http://univr.github.io/GolfVR/)#
 
 **The first Golf Game for Virtual Reality Headsets !**
 
@@ -20,7 +20,6 @@ This game is developed in C# with [**Unity 3D**](https://unity3d.com/) and it is
 Graphical assets are created with [**Blender**](http://www.blender.org/) and [**The Gimp**](http://www.gimp.org/)
 
 Fell free to contribute !
-
 
 ## Some usefull notes ##
 This project use wiidevicelibrary in order to connect to the wiimote https://github.com/FrozenCow/wiidevicelibrary. Wiimote libs are inspired by coding4Fun article: http://channel9.msdn.com/coding4fun/articles/Managed-Library-for-Nintendos-Wiimote
