@@ -1,4 +1,4 @@
-#[GolfVR](http://univr.github.io/GolfVR/)#
+#[GolfVR](http://www.golf-vr.com)#
 
 **The first Golf Game for Virtual Reality Headsets !**
 
