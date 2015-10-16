@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: 261aaff689ae44136aca395fab560fe0
+timeCreated: 1443473776
+licenseType: Pro
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Android:
+      enabled: 1
+      settings: {}
+    Any:
+      enabled: 0
+      settings: {}
+    BlackBerry:
+      enabled: 1
+      settings: {}
+    Editor:
+      enabled: 1
+      settings:
+        DefaultValueInitialized: true
+    GLESEmu:
+      enabled: 1
+      settings: {}
+    Linux:
+      enabled: 1
+      settings: {}
+    Linux64:
+      enabled: 1
+      settings: {}
+    LinuxUniversal:
+      enabled: 1
+      settings: {}
+    OSXIntel:
+      enabled: 1
+      settings: {}
+    OSXIntel64:
+      enabled: 1
+      settings: {}
+    OSXUniversal:
+      enabled: 1
+      settings: {}
+    PS3:
+      enabled: 1
+      settings: {}
+    PS4:
+      enabled: 1
+      settings: {}
+    PSM:
+      enabled: 1
+      settings: {}
+    PSP2:
+      enabled: 1
+      settings: {}
+    SamsungTV:
+      enabled: 1
+      settings: {}
+    Tizen:
+      enabled: 1
+      settings: {}
+    WP8:
+      enabled: 0
+      settings: {}
+    Web:
+      enabled: 1
+      settings: {}
+    WebGL:
+      enabled: 1
+      settings: {}
+    WebStreamed:
+      enabled: 1
+      settings: {}
+    Win:
+      enabled: 1
+      settings: {}
+    Win64:
+      enabled: 1
+      settings: {}
+    WindowsStoreApps:
+      enabled: 0
+      settings: {}
+    Xbox360:
+      enabled: 1
+      settings: {}
+    XboxOne:
+      enabled: 1
+      settings: {}
+    iOS:
+      enabled: 1
+      settings: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

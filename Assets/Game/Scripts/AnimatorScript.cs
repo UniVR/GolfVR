@@ -4,41 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Animation))]
 public class AnimatorScript : MonoBehaviour {
 	public GameObject WatchPanel;
 
-	private Animation animation;
-	private float currentTime;
+	private Animator animator;
 	private bool watched;
 
 	void Start () {
-		animation = GetComponent<Animation> ();
-		animation.wrapMode = WrapMode.Once;
-		currentTime = 0f;
+		animator = GetComponent<Animator> ();
 
+		//Add the event trigger to the panel
 		var watchPanel = WatchPanel;
 		watchPanel.AddComponent(typeof(EventTrigger));
 		EventTrigger trigger = watchPanel.GetComponent<EventTrigger>();
 
+		//Pointer enter
 		EventTrigger.Entry entry = new EventTrigger.Entry();
 		entry.eventID = EventTriggerType.PointerEnter;
 		entry.callback.AddListener( (eventData) => 
        	{ 
 			watched = true; 
-			animation[animation.clip.name].speed = 1f;
-			animation.Play();
+			animator.SetBool("Watched", true);
 		});
 		trigger.triggers.Add(entry);
 
+		//Pointer exit
 		entry = new EventTrigger.Entry();
 		entry.eventID = EventTriggerType.PointerExit;
 		entry.callback.AddListener( (eventData) => 
 		{ 
 			watched = false;
-			animation[animation.clip.name].speed = -1f;
-			animation[animation.clip.name].time = 1f;
-			animation.Play();
+			animator.SetBool("Watched", false);
+
 		} );
 		trigger.triggers.Add(entry);
 	}
