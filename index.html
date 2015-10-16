@@ -1,4 +1,8 @@
-<html class="no-js lang-en" lang="en">
+<html class="no-js lang-en" lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+	xmlns:fb="https://www.facebook.com/2008/fbml">
+	
     <head>
         <meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +13,20 @@
 		
 		<title>GolfVR | UniVR</title>		
 		
+		<!-- Facebook informations -->
 		<meta property="og:site_name" content="Golf VR">
 		<meta property="og:url" content="http://golf-vr.com">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="Golf VR">
-		<meta property="og:description" content="Play Golf as you where there !">
+		<meta property="og:description" content="Come discover (or rediscover) Golf in an immersive 3D universe ! GolfVR dive you in an immersive and pleasant environment where birds and water falls sound will relax you while you play your Golf course. Only the wind in your hair is missing !">
 		<meta property="og:locale" content="en_US" />
-		<!-- TODO
-		<meta property="fb:app_id" content="1416261031932199">
-		<meta property="og:image" content=""> 
-		-->
+		<meta property="og:image" content="http://golf-vr.com/Pictures/GolfVR-Enter.jpg"> 
+		<meta property="og:image" content="http://golf-vr.com/Pictures/Baneer.png"> 
+		<meta property="og:image" content="http://golf-vr.com/Pictures/golfvr-ball.png"> 
+		<meta property="article:author" content="https://www.facebook.com/UniVR.GolfVR" />
+		<meta property="article:publisher" content="https://www.facebook.com/UniVR.GolfVR" />
+		<!-- TODO: 		<meta property="fb:app_id" content="1416261031932199"> 		-->
+		
 		
 		<!-- bootstrap 3.3.5 style -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -30,13 +38,16 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		
-		<link rel="icon" type="image/x-icon" href="">
-		<link rel="stylesheet" href="style.css" />
+		<!-- Google fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+		
+		<link rel="icon" type="image/x-icon" href="Pictures/golf.ico">
+		<link rel="stylesheet" href="style.css" />		
 		
 	</head>	
 	<body>
 	    <!-- Full Page Image Background Carousel Header -->
-		<header id="myCarousel" class="carousel slide">
+		<header id="myCarousel" class="carousel carousel-fade slide">
 		
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -92,13 +103,13 @@
 					<h1>Download Golf VR now !</h1>
 				</div>		
 			
-				<div class="col-md-2 col-md-offset-4">
-					<a class="" href="https://play.google.com/store/apps/details?id=com.UniVR.GolfVR">
+				<div class="col-xs-6">
+					<a class="img-center" href="https://play.google.com/store/apps/details?id=com.UniVR.GolfVR">
 						<img class="img-responsive" src="Pictures/google-en.png" alt="">
 					</a>
 				</div>
-				<div class="col-md-2">
-					<a class="" href="javascript:fbShare('golf-vr.com', 'Share GolfVR on Facebook', 'Facebook share popup', 'Pictures/golfvr-ball.png', 520, 350)">
+				<div class="col-xs-6">
+					<a class="img-center" href="javascript:fbShare('golf-vr.com', 'Share GolfVR on Facebook', 'Facebook share popup', 'golf-vr.com/Pictures/golfvr-ball.png', 1000, 800)">
 						<img class="img-responsive" src="Pictures/share-button.png" alt="">
 					</a>
 				</div>
@@ -106,7 +117,7 @@
 			
 			<hr>
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3">			
+				<div class="col-md-12">			
 					<p>
 						Come discover (or rediscover) Golf in an immersive 3D universe !<br/>
 						GolfVR dive you in an immersive and pleasant environment where birds and water falls sound will relax you while you play your Golf course. Only the wind in your hair is missing !<br/>
@@ -175,6 +186,14 @@
 				var winLeft = (screen.width / 2) - (winWidth / 2);
 				window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
 			}
-			</script>
+			
+			//Google analytics
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-68800435-2', 'auto');
+			ga('send', 'pageview');
+		</script>
 	</body>	
 </html>

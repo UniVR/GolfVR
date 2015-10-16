@@ -6,11 +6,24 @@
 
 html,
 body {
+	font-family: 'Slabo 29px', serif;
     height: 100%;
 }
 
 p, ul, li{
-	font-size: 20px;
+	font-size: 16px;
+	line-height:1.7;
+}
+
+h1{
+font-family: 'Slabo 27px', serif;
+font-size:48px;
+margin-bottom:50px;
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .carousel,
@@ -21,6 +34,15 @@ p, ul, li{
 
 .carousel-inner {
     height: 100%;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.img-center{
+display:table;
+margin:0 auto;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
@@ -38,3 +60,54 @@ p, ul, li{
 footer {
     margin: 50px 0;
 }
+
+
+
+@media screen and (max-width: 767px) {
+h2 {
+    font-size: 20px;
+}
+}
+
+
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+.item:nth-child(1) {
+  background: darkred;
+}
+.item:nth-child(2) {
+  background: red;
+}
+.item:nth-child(3) {
+  background: orange;
+} 
