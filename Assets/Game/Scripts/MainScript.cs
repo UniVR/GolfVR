@@ -51,6 +51,7 @@ public class MainScript : MonoBehaviour {
 	private bool watchBallLock;
 	private bool watchBall;
 
+	private AudioSource applause;
 
 	// Singleton
 	private static MainScript instance;
@@ -70,6 +71,8 @@ public class MainScript : MonoBehaviour {
 		currentAction = ActionState.Idle;
 
 		SetWind ();
+
+		applause = GetComponent<AudioSource> ();
 	}
 
 	/*
@@ -266,6 +269,7 @@ public class MainScript : MonoBehaviour {
 	public void EnterHole()
 	{
 		currentAction = ActionState.Won;
+		applause.Play ();
 	}
 
 	public void Win(){
