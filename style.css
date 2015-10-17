@@ -103,11 +103,11 @@ body,
   height: 100%;
 }
 .item:nth-child(1) {
-  background: darkred;
+  background: black;
 }
 .item:nth-child(2) {
-  background: red;
+  background: black;
 }
 .item:nth-child(3) {
-  background: orange;
+  background: black;
 } 
