@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClubImage: {fileID: 21300000, guid: 3d7145e0aab00a94cb03f2784efa6778, type: 3}
-  clubForceCoef: 12
+  clubForceCoef: 8
   clubAngle: 0
   velocityLoading: 10
   velocityShooting: 100
@@ -205,7 +205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubForceCoef
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: clubAngle
