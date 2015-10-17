@@ -14,11 +14,14 @@ public class HoleScript : MonoBehaviour {
 
 	public float WindMin;
 	public float WindMax;
+
+	private AudioSource audio;
 	private bool WindIsInit = false;
 
 	// Use this for initialization
 	void Start () {
 		HolesListScript = GetComponentInParent<HolesScript> ();
+		audio = GetComponent<AudioSource> ();
 	}
 
 	public float GetWindPower(){
@@ -36,6 +39,7 @@ public class HoleScript : MonoBehaviour {
 
 	public void EnterHole(){
 		HolesListScript.EnterHole(this);
+		audio.Play ();
 	}
 
 	public void Enable(bool enable){
