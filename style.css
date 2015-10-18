@@ -7,7 +7,7 @@
 html,
 body {
 	/*font-family: 'Slabo 29px', serif;*/
-	font-family: 'Rajdhani 29px', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
     height: 100%;
 }
 
@@ -18,7 +18,7 @@ p, ul, li{
 
 h1{
 /*font-family: 'Slabo 27px', serif;*/
-font-family: 'Rajdhani 27px', sans-serif;
+font-family: 'Rajdhani', sans-serif;
 font-size:48px;
 margin-bottom:50px;
 }
