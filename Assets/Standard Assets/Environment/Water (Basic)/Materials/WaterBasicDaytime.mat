@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: WaterBasicDaytime
   m_Shader: {fileID: 4800000, guid: 9dccc8e8f0da4494991c26ef59019551, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -109,12 +111,12 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
-          name: _MainTex_ST
-        second: {r: 1, g: 1, b: 0, a: 0}
-      data:
-        first:
           name: _SpecColor
         second: {r: 0, g: 0, b: 0, a: .400000006}
+      data:
+        first:
+          name: _MainTex_ST
+        second: {r: 1, g: 1, b: 0, a: 0}
       data:
         first:
           name: _BumpMap_ST
@@ -126,7 +128,7 @@ Material:
       data:
         first:
           name: _horizonColor
-        second: {r: 0, g: .125133663, b: .191176474, a: 0}
+        second: {r: .178416952, g: .542918265, b: .735294104, a: 0}
       data:
         first:
           name: _ColorControl_ST

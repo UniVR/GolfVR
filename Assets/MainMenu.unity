@@ -227,6 +227,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .996523798
       objectReference: {fileID: 0}
+    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: far clip plane
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
   m_IsPrefabParent: 0
@@ -606,9 +610,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 159263988}
-  - 33: {fileID: 159263991}
   - 64: {fileID: 159263990}
-  - 23: {fileID: 159263989}
   m_Layer: 9
   m_Name: EoleWatch
   m_TagString: Untagged
@@ -628,30 +630,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 558576094}
   m_RootOrder: 0
---- !u!23 &159263989
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 159263987}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!64 &159263990
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -664,13 +642,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &159263991
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 159263987}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &163772896 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
@@ -680,35 +651,35 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1516973550}
+    m_TransformParent: {fileID: 1985697823}
     m_Modifications:
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.560564
+      value: -.254213482
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.26246834
+      value: .559624791
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.74424887
+      value: .362496257
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.200742632
+      value: -.191581249
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .0848649219
+      value: .535077572
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.0970604569
+      value: .818450153
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .971122861
+      value: .0844281763
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_RootOrder
@@ -716,15 +687,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalScale.x
-      value: 6.36697578
+      value: .377271354
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5.73609018
+      value: .426049769
       objectReference: {fileID: 0}
     - target: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5.91730738
+      value: .402539372
       objectReference: {fileID: 0}
     - target: {fileID: 145166, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_Name
@@ -1129,7 +1100,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5054d9ad2893ffd48a8ad1f48d0a6fd7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2144,6 +2115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WatchPanel: {fileID: 159263987}
+--- !u!4 &559850673 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 417980, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
+  m_PrefabInternal: {fileID: 217303934}
 --- !u!1 &567998197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,9 +2305,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 626038685}
-  - 33: {fileID: 626038688}
   - 64: {fileID: 626038687}
-  - 23: {fileID: 626038686}
   m_Layer: 9
   m_Name: BagWatch
   m_TagString: Untagged
@@ -2352,30 +2325,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1963268485}
   m_RootOrder: 0
---- !u!23 &626038686
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 626038684}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!64 &626038687
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2387,13 +2336,6 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &626038688
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 626038684}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &656234428
 GameObject:
@@ -3885,12 +3827,12 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .995868623, b: .940095186, a: 1}
-  m_Intensity: 1.23000002
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_Strength: .236000001
     m_Bias: .0500000007
@@ -4652,7 +4594,7 @@ GameObject:
   - 4: {fileID: 1328305886}
   - 218: {fileID: 1328305885}
   - 154: {fileID: 1328305884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4684,7 +4626,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 60
+  m_HeightmapPixelError: 120
   m_SplatMapDistance: 64
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
@@ -4983,7 +4925,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1355263140}
-  - 33: {fileID: 1355263143}
   - 64: {fileID: 1355263142}
   m_Layer: 9
   m_Name: BallWatch
@@ -5015,13 +4956,6 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1355263143
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1355263139}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1383006514
 GameObject:
@@ -6671,7 +6605,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1829319265}
-  - 33: {fileID: 1829319269}
   - 64: {fileID: 1829319268}
   m_Layer: 0
   m_Name: InfoWatch
@@ -6703,13 +6636,6 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1829319269
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1829319264}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1842313677
 GameObject:
@@ -7213,7 +7139,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .0794546083, y: .530001223, z: -.0793682262}
   m_LocalScale: {x: 15, y: 15, z: 15}
-  m_Children: []
+  m_Children:
+  - {fileID: 559850673}
   m_Father: {fileID: 406984115}
   m_RootOrder: 2
 --- !u!23 &1985697824
@@ -7639,7 +7566,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2110454418}
   - 64: {fileID: 2110454419}
-  - 33: {fileID: 2110454420}
   m_Layer: 9
   m_Name: BallWatch
   m_TagString: Untagged
@@ -7670,13 +7596,6 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &2110454420
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2110454417}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2113049339
 GameObject:
