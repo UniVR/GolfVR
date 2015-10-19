@@ -2,7 +2,7 @@
 
 **The first Golf Game for Virtual Reality Headsets !**
 
->*With this game, we want to provide an immersive and interactive experience to the largest amount of people, using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and shot !*
+>*With this game, we want to provide an immersive and interactive experience to the largest amount of people, using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and stroke!*
 
 We now are on the [Google Play store !](https://play.google.com/store/apps/details?id=com.UniVR.GolfVR)
 
