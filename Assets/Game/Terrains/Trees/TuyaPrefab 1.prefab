@@ -1,74 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &104698
+--- !u!1 &125120
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 461678}
-  - 205: {fileID: 20555562}
+  - 4: {fileID: 409744}
+  - 33: {fileID: 3319080}
+  - 23: {fileID: 2378706}
   m_Layer: 9
-  m_Name: Tree3
+  m_Name: ConicalTuyaLOD0
+  m_TagString: TreeChild
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 1
+  m_IsActive: 1
+--- !u!1 &174870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417246}
+  - 205: {fileID: 20528878}
+  m_Layer: 9
+  m_Name: TuyaPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &185978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 414024}
-  - 33: {fileID: 3313744}
-  - 23: {fileID: 2377446}
-  m_Layer: 9
-  m_Name: tree3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &414024
+--- !u!4 &409744
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185978}
+  m_GameObject: {fileID: 125120}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .199551955}
+  m_LocalPosition: {x: 0, y: .610000014, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 461678}
+  m_Father: {fileID: 417246}
   m_RootOrder: 0
---- !u!4 &461678
+--- !u!4 &417246
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104698}
+  m_GameObject: {fileID: 174870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 379.481476, y: 59.0001488, z: 305.187927}
+  m_LocalPosition: {x: -96.356369, y: 53.314167, z: 418.437469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 414024}
+  - {fileID: 409744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2377446
+--- !u!23 &2378706
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185978}
+  m_GameObject: {fileID: 125120}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: df37b43fc3da7ef4e91d676f8b239e97, type: 2}
+  - {fileID: 2100000, guid: a6bfaae8b7b5dc249b1b06a9c792eb31, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -82,33 +82,32 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3313744
+--- !u!33 &3319080
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185978}
-  m_Mesh: {fileID: 4300000, guid: 6d3f7502f3ac98546aebdc3377e27435, type: 3}
---- !u!205 &20555562
+  m_GameObject: {fileID: 125120}
+  m_Mesh: {fileID: 4300004, guid: 1adbf8e8b5cfb134c93acd0dc22a74a4, type: 3}
+--- !u!205 &20528878
 LODGroup:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104698}
+  m_GameObject: {fileID: 174870}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 12.5429783, z: -1.43051147e-06}
-  m_Size: 25.0859566
+  m_LocalReferencePoint: {x: .395976424, y: 4.34085751, z: 3.68648505}
+  m_Size: 12.10116
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: .198480621
-    fadeTransitionWidth: 0
+  - screenRelativeHeight: .0217296742
+    fadeTransitionWidth: 1
     renderers:
-    - renderer: {fileID: 2377446}
+    - renderer: {fileID: 2378706}
   - screenRelativeHeight: 0
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2377446}
+    renderers: []
   m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
@@ -119,5 +118,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 104698}
+  m_RootGameObject: {fileID: 174870}
   m_IsPrefabParent: 1

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1113 &111300000
+LightmapParameters:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Treez
+  serializedVersion: 3
+  resolution: .0500000007
+  clusterResolution: 1
+  irradianceBudget: 64
+  irradianceQuality: 2048
+  backFaceTolerance: .5
+  isTransparent: 0
+  modellingTolerance: .00999999978
+  systemTag: 0
+  edgeStitching: 1
+  blurRadius: 2
+  directLightQuality: 32
+  antiAliasingSamples: 4
+  bakedLightmapTag: 0
+  pushoff: 9.99999975e-05
+  AOQuality: 128
+  AOAntiAliasingSamples: 16

@@ -9,7 +9,7 @@ QualitySettings:
   - serializedVersion: 2
     name: Fastest
     pixelLightCount: 0
-    shadows: 1
+    shadows: 0
     shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 1
