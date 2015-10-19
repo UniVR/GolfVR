@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Cloud.Analytics;
+using UnityEngine.Analytics;
 
 public enum Difficulty{
 	Easy,
@@ -26,6 +26,9 @@ public class MainScript : MonoBehaviour {
 	[HideInInspector]
 	public ActionState currentAction;
 		
+	[HideInInspector]
+	public int Score;
+
 	public Terrain CurrentTerrain{
 		get{ return GetCurrentHole ().Terrain; }
 	}
@@ -46,7 +49,6 @@ public class MainScript : MonoBehaviour {
 
 	public Difficulty Difficulty;
 
-	private int score;
 	private bool locked;
 	private bool watchBallLock;
 	private bool watchBall;
@@ -65,7 +67,7 @@ public class MainScript : MonoBehaviour {
 	void Start () {
 		instance = this;
 
-		score = 0;
+		Score = 0;
 		locked = false;
 		watchBall = false;
 		currentAction = ActionState.Idle;
@@ -73,6 +75,19 @@ public class MainScript : MonoBehaviour {
 		SetWind ();
 
 		applause = GetComponent<AudioSource> ();
+
+		InitPlayerPosition ();
+	}
+
+	private void InitPlayerPosition(){
+		//Set the player on the first hole
+		Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
+		Player.transform.position = Ball.transform.position;
+		Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);
+		var rigidBody = Ball.GetComponent<Rigidbody> ();
+		rigidBody.velocity = new Vector3(0f, 0f, 0f);
+		rigidBody.drag = 100f;	
+		rigidBody.angularDrag = 100f;		
 	}
 
 	/*
@@ -127,12 +142,12 @@ public class MainScript : MonoBehaviour {
 				if(!Ball.IsShooted() && Club.HasShooted())							//Shoot now
 				{
 					Ball.Shoot(Club.LoadingTime * Club.clubForceCoef, Club.clubAngle, Player.transform.eulerAngles.y);
-					Hud.UpdateScore(score++);
+					Hud.UpdateScore(Score++);
 
-					UnityAnalytics.CustomEvent("Shoot", new Dictionary<string, object>
+					Analytics.CustomEvent("Shoot", new Dictionary<string, object>
 					{
 						{ "TimeElapsed", Time.timeSinceLevelLoad },
-						{ "Score", score },
+						{ "Score", Score },
 						{ "ClubUsed", Club.name },
 						{ "LoadingTime", Club.LoadingTime }
 					});
@@ -163,24 +178,24 @@ public class MainScript : MonoBehaviour {
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;
 
-				UnityAnalytics.CustomEvent("Won", new Dictionary<string, object>
+				Analytics.CustomEvent("Won", new Dictionary<string, object>
                 {
 					{ "TimeElapsed", Time.timeSinceLevelLoad },
-					{ "Score", score }
+					{ "Score", Score }
 				});
 			break;
 
 			case ActionState.OutOfBound:	
 				BallInfo.ShowInformation(Ball.transform.position, Localization.OutOfZone);	
 				Ball.StopAndGetBackToOldPos();
-				Hud.UpdateScore(score++);
+				Hud.UpdateScore(Score++);
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;	
 
-				UnityAnalytics.CustomEvent("OutOfBound", new Dictionary<string, object>
+			Analytics.CustomEvent("OutOfBound", new Dictionary<string, object>
                 {
 					{ "TimeElapsed", Time.timeSinceLevelLoad },
-					{ "Score", score }
+					{ "Score", Score }
 				});
 			break;
 
@@ -206,7 +221,7 @@ public class MainScript : MonoBehaviour {
 		Club = club.GetComponent<ClubScript>();
 		Player.SetCurrentClub (club);
 
-		UnityAnalytics.CustomEvent("ChangeClub", new Dictionary<string, object>
+		Analytics.CustomEvent("ChangeClub", new Dictionary<string, object>
         {
 			{ "TimeElapsed", Time.timeSinceLevelLoad },
 			{ "Club", clubScript.name }
@@ -233,7 +248,7 @@ public class MainScript : MonoBehaviour {
 		Anemometer.SetOrientation (orientation-180); //Invert from wind
 		Anemometer.SetRotationSpeed (force);
 
-		UnityAnalytics.CustomEvent("Wind", new Dictionary<string, object>
+		Analytics.CustomEvent("Wind", new Dictionary<string, object>
         {
 			{ "TimeElapsed", Time.timeSinceLevelLoad },
 			{ "Orientation", orientation },
@@ -274,6 +289,6 @@ public class MainScript : MonoBehaviour {
 
 	public void Win(){
 		// TODO : Adding condition
-		// Application.LoadLevel ("Exit");
+		Application.LoadLevel ("Exit");
 	}
 }

@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAction: 0
+  Score: 0
   Cardboard: {fileID: 801960633}
   Player: {fileID: 1563345031}
   Club: {fileID: 739911297}
