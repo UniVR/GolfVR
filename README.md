@@ -6,9 +6,9 @@
 
 We now are on the [Google Play store !](https://play.google.com/store/apps/details?id=com.UniVR.GolfVR)
 
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/GolfVR.jpg)
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/Loading.jpg)
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/Shoot.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/ClubSelect1730.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/Loading1730.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/Shoot1730.jpg)
 
 This game uses the **CardBoard SDK**, it is designed to be played with a **VR headset** and a **Wii Controller** (Wii controller support is still in development).
 
