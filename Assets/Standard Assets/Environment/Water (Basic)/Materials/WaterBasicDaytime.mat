@@ -124,7 +124,7 @@ Material:
       data:
         first:
           name: WaveSpeed
-        second: {r: 9, g: 4.5, b: -8, a: -3.5}
+        second: {r: 9, g: 4.5, b: -24, a: -12}
       data:
         first:
           name: _horizonColor

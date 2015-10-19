@@ -273,6 +273,7 @@ public class MainScript : MonoBehaviour {
 	}
 
 	public void Win(){
-		// TODO
+		// TODO : Adding condition
+		// Application.LoadLevel ("Exit");
 	}
 }
