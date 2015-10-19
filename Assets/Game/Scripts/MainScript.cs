@@ -87,7 +87,8 @@ public class MainScript : MonoBehaviour {
 		var rigidBody = Ball.GetComponent<Rigidbody> ();
 		rigidBody.velocity = new Vector3(0f, 0f, 0f);
 		rigidBody.drag = 100f;	
-		rigidBody.angularDrag = 100f;		
+		rigidBody.angularDrag = 100f;	
+		GetCurrentHole ().Enable (true);
 	}
 
 	/*

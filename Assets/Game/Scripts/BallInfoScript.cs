@@ -50,11 +50,9 @@ public class BallInfoScript : MonoBehaviour {
 	}
 
 	public void ShowInformation(Vector3 position, string informations){
-		if (InformationTimeShowed <= 0) {
-			Show (position);
-			text.text = informations;
-			canvas.enabled = true;
-			InformationTimeShowed = InformationShowTime;
-		}
+		Show (position);
+		text.text = informations;
+		canvas.enabled = true;
+		InformationTimeShowed = InformationShowTime;
 	}
 }

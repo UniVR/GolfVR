@@ -44,6 +44,7 @@ public class HoleScript : MonoBehaviour {
 
 	public void Enable(bool enable){
 		var flag = transform.Find ("Flag");
-		flag.gameObject.SetActive (enable);
+		var flagScript = flag .GetComponentInChildren<FlagScript> ();
+		flagScript.SetActive (enable);
 	}
 }
