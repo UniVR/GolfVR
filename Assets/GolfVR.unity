@@ -1513,6 +1513,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415784, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -84.8300018
+      objectReference: {fileID: 0}
+    - target: {fileID: 415784, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 86.3600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 415784, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.5137997
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476540, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: Terrain
+      value: 
+      objectReference: {fileID: 1802236283}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
   m_IsPrefabParent: 0
@@ -2381,7 +2397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainScript: {fileID: 496065655}
-  CurrentHole: {fileID: 1080539271}
+  CurrentHole: {fileID: 1435787994}
   Holes:
   - {fileID: 1080539271}
   - {fileID: 1435787994}
@@ -4573,6 +4589,10 @@ Prefab:
     - target: {fileID: 114684, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415784, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.9477997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
