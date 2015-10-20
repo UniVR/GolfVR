@@ -29,3 +29,5 @@ If you are using the new Wiimote Controller on windows (with wii motion included
 Configure Unity projects for GitHub Thanks to this post: http://www.strichnet.com/using-git-with-3d-games/
 
 Remove file from commit (file > 100 Mb): http://stackoverflow.com/questions/12481639/remove-files-from-git-commit
+
+Test the site on [github.io](http://univr.github.io/GolfVR/)
