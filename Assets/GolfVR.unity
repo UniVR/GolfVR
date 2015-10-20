@@ -437,6 +437,10 @@ Prefab:
       propertyPath: m_ScaleInLightmap
       value: .639999986
       objectReference: {fileID: 0}
+    - target: {fileID: 191138, guid: 8374a35cc8bf71742b68900d48732a37, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8374a35cc8bf71742b68900d48732a37, type: 2}
   m_IsPrefabParent: 0
@@ -1024,6 +1028,14 @@ Prefab:
     - target: {fileID: 190748, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 195538, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
@@ -1925,11 +1937,6 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 191138, guid: 8374a35cc8bf71742b68900d48732a37, type: 2}
   m_PrefabInternal: {fileID: 166175953}
---- !u!23 &562645567 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2337528, guid: 8374a35cc8bf71742b68900d48732a37,
-    type: 2}
-  m_PrefabInternal: {fileID: 166175953}
 --- !u!64 &562645569
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2555,7 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainScript: {fileID: 496065655}
-  CurrentHole: {fileID: 1084863126}
+  CurrentHole: {fileID: 1080539271}
   Holes:
   - {fileID: 1080539271}
   - {fileID: 1435787994}
@@ -2758,35 +2765,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 138212082}
   m_RootOrder: 2
---- !u!1 &807024226 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 119614, guid: 8374a35cc8bf71742b68900d48732a37, type: 2}
-  m_PrefabInternal: {fileID: 166175953}
 --- !u!4 &807024227 stripped
 Transform:
   m_PrefabParentObject: {fileID: 428270, guid: 8374a35cc8bf71742b68900d48732a37, type: 2}
   m_PrefabInternal: {fileID: 166175953}
---- !u!205 &807024228
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 807024226}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: .1509552, y: 11.9562435, z: .0424251556}
-  m_Size: 57.8508339
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: .465323269
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1164935561}
-  - screenRelativeHeight: 0
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 562645567}
-  m_Enabled: 1
 --- !u!1 &825190264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,6 +4497,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 195538, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
   m_IsPrefabParent: 0
@@ -4828,6 +4814,10 @@ Prefab:
     - target: {fileID: 426412, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
       propertyPath: m_LocalPosition.y
       value: -.0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 195538, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2313624, guid: 85da3aa8d9f616a41b2e00c73a055bd0, type: 2}
@@ -5740,7 +5730,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
