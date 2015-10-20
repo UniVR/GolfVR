@@ -33,7 +33,7 @@ public class MainScript : MonoBehaviour {
 		get{ 
 			var hole = GetCurrentHole ();
 			if(hole==null)
-				hole = Holes[0];
+				hole = Holes.Holes[0];
 			return hole.Terrain; 
 		}
 	}

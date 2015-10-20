@@ -120,7 +120,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 3, y: -103}
+  m_AnchoredPosition: {x: 3, y: -182}
   m_SizeDelta: {x: 1000, y: 360}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &343651515
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .0520112328, g: .136857301, b: .544117689, a: 1}
+  m_Color: {r: 0, g: .0976167843, b: .566176474, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -156,9 +156,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Wanna help us ?
 
+    Share us with your friends
 
-
-    Or meet us at the Octocat''s !'
+    Or meet us at the Octocat''s ;)'
 --- !u!222 &343651516
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ GameObject:
   - 114: {fileID: 666613089}
   - 114: {fileID: 666613092}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &830777765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -906,12 +906,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 666613092}
+        m_MethodName: Replay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1027,8 +1027,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2052762452}
-        m_MethodName: 
+      - m_Target: {fileID: 666613092}
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1760955264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1578,7 +1578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1989301460
 RectTransform:
   m_ObjectHideFlags: 0
