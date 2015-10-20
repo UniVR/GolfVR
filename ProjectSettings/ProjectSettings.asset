@@ -86,14 +86,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.UniVR.GolfVR
-  bundleVersion: 2.15.10.2015
+  bundleVersion: 151020.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: cf97b928b03ef4744a6314aeba387abe
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 151020
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -149,8 +149,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/DEV/PERSO/ludovicFeltzKeystore.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/DEV/PERSO/GolfVR/keystore.keystore
+  AndroidKeyaliasName: golfvr
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0
