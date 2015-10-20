@@ -30,7 +30,12 @@ public class MainScript : MonoBehaviour {
 	public int Score;
 
 	public Terrain CurrentTerrain{
-		get{ return GetCurrentHole ().Terrain; }
+		get{ 
+			var hole = GetCurrentHole ();
+			if(hole==null)
+				hole = Holes[0];
+			return hole.Terrain; 
+		}
 	}
 
 	/*
