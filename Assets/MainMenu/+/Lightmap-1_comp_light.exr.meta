@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a06895bfacd66141b7cd9e0ecf2c638
+guid: ca8d58c65baa369468b482d6d18f1799
 timeCreated: 1445269292
 licenseType: Free
 TextureImporter:
@@ -32,9 +32,9 @@ TextureImporter:
     filterMode: 1
     aniso: 3
     mipBias: 0
-    wrapMode: 1
+    wrapMode: 0
   nPOTScale: 1
-  lightmap: 1
+  lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
@@ -46,7 +46,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
-  textureType: 6
+  textureType: 0
   buildTargetSettings: []
   spriteSheet:
     sprites: []

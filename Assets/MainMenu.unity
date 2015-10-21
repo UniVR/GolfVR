@@ -66,8 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 128
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 112000001, guid: c51fa744c6584e94b98b2181f2b8d39b,
-    type: 2}
+  m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -245,7 +244,7 @@ GameObject:
   - 4: {fileID: 74023184}
   - 33: {fileID: 74023186}
   - 23: {fileID: 74023185}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +453,7 @@ GameObject:
   - 4: {fileID: 87152236}
   - 33: {fileID: 87152238}
   - 23: {fileID: 87152237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +516,7 @@ GameObject:
   - 4: {fileID: 137030896}
   - 33: {fileID: 137030898}
   - 23: {fileID: 137030897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +577,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 140556783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PillarsL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +728,7 @@ GameObject:
   - 4: {fileID: 224956111}
   - 33: {fileID: 224956113}
   - 23: {fileID: 224956112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +791,7 @@ GameObject:
   - 4: {fileID: 240512222}
   - 33: {fileID: 240512224}
   - 23: {fileID: 240512223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +854,7 @@ GameObject:
   - 4: {fileID: 270018228}
   - 33: {fileID: 270018230}
   - 23: {fileID: 270018229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +915,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 282182142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PillarsR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,6 +998,10 @@ Prefab:
     - target: {fileID: 100000, guid: 5954d71224605e54a9f73d253ae0ede3, type: 3}
       propertyPath: m_Name
       value: gate2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5954d71224605e54a9f73d253ae0ede3, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5954d71224605e54a9f73d253ae0ede3, type: 3}
@@ -1161,7 +1164,7 @@ GameObject:
   - 4: {fileID: 379380066}
   - 33: {fileID: 379380068}
   - 23: {fileID: 379380067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1227,7 @@ GameObject:
   - 4: {fileID: 388134822}
   - 33: {fileID: 388134824}
   - 23: {fileID: 388134823}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1290,7 @@ GameObject:
   - 4: {fileID: 406730846}
   - 33: {fileID: 406730848}
   - 23: {fileID: 406730847}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1414,7 @@ GameObject:
   - 4: {fileID: 408910621}
   - 33: {fileID: 408910623}
   - 23: {fileID: 408910622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1549,7 @@ GameObject:
   - 4: {fileID: 436951358}
   - 33: {fileID: 436951360}
   - 23: {fileID: 436951359}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1612,7 @@ GameObject:
   - 4: {fileID: 458766569}
   - 33: {fileID: 458766571}
   - 23: {fileID: 458766570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1704,7 @@ GameObject:
   - 4: {fileID: 517448078}
   - 33: {fileID: 517448080}
   - 23: {fileID: 517448079}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,7 +1829,7 @@ GameObject:
   - 4: {fileID: 534014318}
   - 33: {fileID: 534014320}
   - 23: {fileID: 534014319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1955,7 +1958,7 @@ GameObject:
   - 4: {fileID: 552358660}
   - 33: {fileID: 552358662}
   - 23: {fileID: 552358661}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2158,7 @@ GameObject:
   - 4: {fileID: 567998198}
   - 33: {fileID: 567998200}
   - 23: {fileID: 567998199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2216,7 +2219,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 584942569}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2377,7 @@ GameObject:
   - 4: {fileID: 656234429}
   - 33: {fileID: 656234431}
   - 23: {fileID: 656234430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2554,6 +2557,10 @@ Prefab:
       value: 
       objectReference: {fileID: 111300000, guid: c6443d3386135b246aec71bb6ffef140,
         type: 2}
+    - target: {fileID: 173934, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db5d5ea20fcfde0498543e4d6329988c, type: 2}
   m_IsPrefabParent: 0
@@ -2571,7 +2578,7 @@ GameObject:
   - 4: {fileID: 687669383}
   - 33: {fileID: 687669385}
   - 23: {fileID: 687669384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2641,7 @@ GameObject:
   - 4: {fileID: 695892831}
   - 33: {fileID: 695892833}
   - 23: {fileID: 695892832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2770,7 +2777,7 @@ GameObject:
   - 4: {fileID: 777607101}
   - 33: {fileID: 777607103}
   - 23: {fileID: 777607102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2899,7 +2906,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 800446744}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClubHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2931,7 +2938,7 @@ GameObject:
   - 4: {fileID: 807375860}
   - 33: {fileID: 807375862}
   - 23: {fileID: 807375861}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +3005,7 @@ GameObject:
   - 4: {fileID: 905979143}
   - 33: {fileID: 905979145}
   - 23: {fileID: 905979144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3061,7 +3068,7 @@ GameObject:
   - 4: {fileID: 909587277}
   - 33: {fileID: 909587279}
   - 23: {fileID: 909587278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3197,7 +3204,7 @@ GameObject:
   - 4: {fileID: 958581822}
   - 33: {fileID: 958581824}
   - 23: {fileID: 958581823}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3258,7 +3265,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1005183321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rightPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3299,7 +3306,7 @@ GameObject:
   - 4: {fileID: 1009604085}
   - 33: {fileID: 1009604087}
   - 23: {fileID: 1009604086}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3362,7 +3369,7 @@ GameObject:
   - 4: {fileID: 1024713648}
   - 33: {fileID: 1024713650}
   - 23: {fileID: 1024713649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3425,7 +3432,7 @@ GameObject:
   - 4: {fileID: 1048544816}
   - 33: {fileID: 1048544818}
   - 23: {fileID: 1048544817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3531,7 +3538,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170924, guid: 3a9485f334eea1248bd8a1267880cdce, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2382218, guid: 3a9485f334eea1248bd8a1267880cdce, type: 2}
       propertyPath: m_LightmapParameters
@@ -3551,7 +3558,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1068410673}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: leftPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3598,7 +3605,7 @@ GameObject:
   - 4: {fileID: 1069909391}
   - 33: {fileID: 1069909393}
   - 23: {fileID: 1069909392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,7 +3744,7 @@ GameObject:
   - 4: {fileID: 1093745283}
   - 33: {fileID: 1093745285}
   - 23: {fileID: 1093745284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3804,7 +3811,7 @@ GameObject:
   - 4: {fileID: 1098718683}
   - 33: {fileID: 1098718685}
   - 23: {fileID: 1098718684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3866,7 +3873,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1104491790}
   - 108: {fileID: 1104491789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3883,7 +3890,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .995868623, b: .940095186, a: 1}
-  m_Intensity: 1
+  m_Intensity: .879999995
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -3900,7 +3907,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 512
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 4.5
@@ -4123,6 +4130,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5954d71224605e54a9f73d253ae0ede3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5954d71224605e54a9f73d253ae0ede3, type: 3}
   m_IsPrefabParent: 0
@@ -4179,7 +4190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 145166, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2360932, guid: 0c36733aff02a8f40ab9f778c6a57a87, type: 2}
       propertyPath: m_LightmapParameters
@@ -4267,7 +4278,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1182559461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PillarsR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4399,7 +4410,7 @@ GameObject:
   - 4: {fileID: 1196015764}
   - 33: {fileID: 1196015766}
   - 23: {fileID: 1196015765}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4480,7 +4491,7 @@ GameObject:
   - 4: {fileID: 1241703873}
   - 33: {fileID: 1241703875}
   - 23: {fileID: 1241703874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4543,7 +4554,7 @@ GameObject:
   - 4: {fileID: 1253005544}
   - 33: {fileID: 1253005546}
   - 23: {fileID: 1253005545}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4649,7 +4660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 191882, guid: d7b705100debac040aad6c052f825f94, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359892, guid: d7b705100debac040aad6c052f825f94, type: 2}
       propertyPath: m_LightmapParameters
@@ -4676,7 +4687,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &1328305884
 TerrainCollider:
@@ -4710,12 +4721,12 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialType: 1
+  m_MaterialType: 3
   m_LegacySpecular:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: .078125
-  m_MaterialTemplate: {fileID: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 8703736608119a54898f8fd4b2ba3141, type: 2}
   m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: 1
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
@@ -4742,7 +4753,7 @@ GameObject:
   - 4: {fileID: 1336980900}
   - 33: {fileID: 1336980902}
   - 23: {fileID: 1336980901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4805,7 +4816,7 @@ GameObject:
   - 4: {fileID: 1343483384}
   - 33: {fileID: 1343483386}
   - 23: {fileID: 1343483385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4869,7 +4880,7 @@ GameObject:
   - 33: {fileID: 1347480261}
   - 65: {fileID: 1347480260}
   - 23: {fileID: 1347480259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4945,7 +4956,7 @@ GameObject:
   - 4: {fileID: 1347760334}
   - 33: {fileID: 1347760336}
   - 23: {fileID: 1347760335}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5048,7 +5059,7 @@ GameObject:
   - 4: {fileID: 1383006515}
   - 33: {fileID: 1383006517}
   - 23: {fileID: 1383006516}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5111,7 +5122,7 @@ GameObject:
   - 4: {fileID: 1383341467}
   - 33: {fileID: 1383341469}
   - 23: {fileID: 1383341468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5174,7 +5185,7 @@ GameObject:
   - 4: {fileID: 1400968269}
   - 33: {fileID: 1400968271}
   - 23: {fileID: 1400968270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5237,7 +5248,7 @@ GameObject:
   - 4: {fileID: 1419762284}
   - 33: {fileID: 1419762286}
   - 23: {fileID: 1419762285}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5300,7 +5311,7 @@ GameObject:
   - 4: {fileID: 1422850735}
   - 33: {fileID: 1422850737}
   - 23: {fileID: 1422850736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5431,7 +5442,7 @@ GameObject:
   - 4: {fileID: 1429758943}
   - 33: {fileID: 1429758945}
   - 23: {fileID: 1429758944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5494,7 +5505,7 @@ GameObject:
   - 4: {fileID: 1435096012}
   - 33: {fileID: 1435096014}
   - 23: {fileID: 1435096013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5630,7 +5641,7 @@ GameObject:
   - 4: {fileID: 1475504748}
   - 33: {fileID: 1475504750}
   - 23: {fileID: 1475504749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5693,7 +5704,7 @@ GameObject:
   - 4: {fileID: 1476915949}
   - 33: {fileID: 1476915951}
   - 23: {fileID: 1476915950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5887,7 +5898,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1532645392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5917,7 +5928,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1539111011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collumns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5954,7 +5965,7 @@ GameObject:
   - 4: {fileID: 1545425287}
   - 33: {fileID: 1545425289}
   - 23: {fileID: 1545425288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6017,7 +6028,7 @@ GameObject:
   - 4: {fileID: 1556787247}
   - 33: {fileID: 1556787249}
   - 23: {fileID: 1556787248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6080,7 +6091,7 @@ GameObject:
   - 4: {fileID: 1556829117}
   - 33: {fileID: 1556829119}
   - 23: {fileID: 1556829118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6143,7 +6154,7 @@ GameObject:
   - 4: {fileID: 1619866177}
   - 33: {fileID: 1619866179}
   - 23: {fileID: 1619866178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6206,7 +6217,7 @@ GameObject:
   - 4: {fileID: 1631143978}
   - 33: {fileID: 1631143980}
   - 23: {fileID: 1631143979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6269,7 +6280,7 @@ GameObject:
   - 4: {fileID: 1681245048}
   - 33: {fileID: 1681245050}
   - 23: {fileID: 1681245049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6332,7 +6343,7 @@ GameObject:
   - 4: {fileID: 1701522120}
   - 33: {fileID: 1701522122}
   - 23: {fileID: 1701522121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: clubhouse6ktri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6397,7 +6408,7 @@ GameObject:
   - 4: {fileID: 1712858303}
   - 33: {fileID: 1712858305}
   - 23: {fileID: 1712858304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6460,7 +6471,7 @@ GameObject:
   - 4: {fileID: 1739667052}
   - 33: {fileID: 1739667051}
   - 23: {fileID: 1739667050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6523,7 +6534,7 @@ GameObject:
   - 4: {fileID: 1813721998}
   - 33: {fileID: 1813722000}
   - 23: {fileID: 1813721999}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6586,7 +6597,7 @@ GameObject:
   - 4: {fileID: 1816705647}
   - 33: {fileID: 1816705649}
   - 23: {fileID: 1816705648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6757,7 +6768,7 @@ GameObject:
   - 4: {fileID: 1842313678}
   - 33: {fileID: 1842313680}
   - 23: {fileID: 1842313679}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6975,7 +6986,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1936221577}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rightPart (Angle)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7298,7 +7309,7 @@ GameObject:
   - 4: {fileID: 2044591191}
   - 33: {fileID: 2044591193}
   - 23: {fileID: 2044591192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7361,7 +7372,7 @@ GameObject:
   - 4: {fileID: 2078676396}
   - 33: {fileID: 2078676398}
   - 23: {fileID: 2078676397}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7424,7 +7435,7 @@ GameObject:
   - 4: {fileID: 2086958795}
   - 33: {fileID: 2086958797}
   - 23: {fileID: 2086958796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7487,7 +7498,7 @@ GameObject:
   - 4: {fileID: 2107139377}
   - 33: {fileID: 2107139379}
   - 23: {fileID: 2107139378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7621,7 +7632,7 @@ GameObject:
   - 4: {fileID: 2109641344}
   - 33: {fileID: 2109641346}
   - 23: {fileID: 2109641345}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7724,7 +7735,7 @@ GameObject:
   - 4: {fileID: 2113049340}
   - 33: {fileID: 2113049342}
   - 23: {fileID: 2113049341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7787,7 +7798,7 @@ GameObject:
   - 4: {fileID: 2132647269}
   - 33: {fileID: 2132647271}
   - 23: {fileID: 2132647270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillars (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7850,7 +7861,7 @@ GameObject:
   - 4: {fileID: 2141571910}
   - 33: {fileID: 2141571912}
   - 23: {fileID: 2141571911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Columns (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
