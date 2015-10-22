@@ -25,7 +25,8 @@ public class AnimatorScript : MonoBehaviour {
        	{ 
 			watched = true; 
 			animator.SetBool("Watched", true);
-			UnityAnalyticsIntegration.ObjectWatched++;
+
+			AnalyticsMainMenu.WatchObject(this.name);
 		});
 		trigger.triggers.Add(entry);
 
@@ -37,6 +38,7 @@ public class AnimatorScript : MonoBehaviour {
 			watched = false;
 			animator.SetBool("Watched", false);
 
+			AnalyticsMainMenu.UnWatchObject(this.name);
 		} );
 		trigger.triggers.Add(entry);
 	}

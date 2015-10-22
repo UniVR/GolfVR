@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 public enum Difficulty{
 	Easy,
@@ -94,6 +93,8 @@ public class MainScript : MonoBehaviour {
 		rigidBody.drag = 100f;	
 		rigidBody.angularDrag = 100f;	
 		GetCurrentHole ().Enable (true);
+
+		AnalyticsGame.BeginHole (GetCurrentHole().GetName());
 	}
 
 	/*
@@ -149,18 +150,11 @@ public class MainScript : MonoBehaviour {
 				{
 					Ball.Shoot(Club.LoadingTime * Club.clubForceCoef, Club.clubAngle, Player.transform.eulerAngles.y);
 					Hud.UpdateScore(Score++);
-
-					Analytics.CustomEvent("Shoot", new Dictionary<string, object>
-					{
-						{ "TimeElapsed", Time.timeSinceLevelLoad },
-						{ "Score", Score },
-						{ "ClubUsed", Club.name },
-						{ "LoadingTime", Club.LoadingTime }
-					});
 				}
 				else if (Club.IsFired())
 				{					
 					currentAction = ActionState.Fired;
+					AnalyticsGame.Shoot();
 				}
 			break;
 
@@ -183,12 +177,6 @@ public class MainScript : MonoBehaviour {
 				//BallInfo.ShowInformation(Ball.transform.position, Localization.Hole);
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;
-
-				Analytics.CustomEvent("Won", new Dictionary<string, object>
-                {
-					{ "TimeElapsed", Time.timeSinceLevelLoad },
-					{ "Score", Score }
-				});
 			break;
 
 			case ActionState.OutOfBound:	
@@ -198,11 +186,7 @@ public class MainScript : MonoBehaviour {
 				Hud.FadeOut();	
 				currentAction = ActionState.MoveToTheBall;	
 
-			Analytics.CustomEvent("OutOfBound", new Dictionary<string, object>
-                {
-					{ "TimeElapsed", Time.timeSinceLevelLoad },
-					{ "Score", Score }
-				});
+				AnalyticsGame.OutOfBound();
 			break;
 
 			case ActionState.MoveToTheBall:	
@@ -227,11 +211,7 @@ public class MainScript : MonoBehaviour {
 		Club = club.GetComponent<ClubScript>();
 		Player.SetCurrentClub (club);
 
-		Analytics.CustomEvent("ChangeClub", new Dictionary<string, object>
-        {
-			{ "TimeElapsed", Time.timeSinceLevelLoad },
-			{ "Club", clubScript.name }
-		});
+		AnalyticsGame.ChangeClub (clubScript.GetName ());
 	}
 
 	public GameObject GetCurrentClub(){
@@ -253,13 +233,6 @@ public class MainScript : MonoBehaviour {
 		Wind.SetVelocity(force);
 		Anemometer.SetOrientation (orientation-180); //Invert from wind
 		Anemometer.SetRotationSpeed (force);
-
-		Analytics.CustomEvent("Wind", new Dictionary<string, object>
-        {
-			{ "TimeElapsed", Time.timeSinceLevelLoad },
-			{ "Orientation", orientation },
-			{ "Force", force }
-		});
 	}
 
 	/*
@@ -291,9 +264,13 @@ public class MainScript : MonoBehaviour {
 	{
 		currentAction = ActionState.Won;
 		applause.Play ();
+
+		AnalyticsGame.EndHole ();
+		AnalyticsGame.BeginHole (GetCurrentHole().GetName());
 	}
 
 	public void Win(){
+		AnalyticsGame.Won (Score);
 		// TODO : Adding condition
 		Application.LoadLevel ("Exit");
 	}
