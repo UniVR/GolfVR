@@ -86,14 +86,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.UniVR.GolfVR
-  bundleVersion: 151020.0
+  bundleVersion: 15102200
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: cf97b928b03ef4744a6314aeba387abe
-  AndroidBundleVersionCode: 151020
+  AndroidBundleVersionCode: 15102200
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
