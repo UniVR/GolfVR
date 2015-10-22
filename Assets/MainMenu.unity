@@ -1359,7 +1359,7 @@ GameObject:
   - 95: {fileID: 406984117}
   - 114: {fileID: 406984116}
   m_Layer: 0
-  m_Name: Ball (2)
+  m_Name: BallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5055,8 +5055,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1355263139}
   m_LocalRotation: {x: .275267512, y: .660963655, z: .628119409, w: -.304665327}
-  m_LocalPosition: {x: 2.82999992, y: 1.48000002, z: -.689999998}
-  m_LocalScale: {x: .532466531, y: 1.0083586, z: .448277622}
+  m_LocalPosition: {x: 1.79999995, y: 1.45000005, z: .469999999}
+  m_LocalScale: {x: .701311827, y: 1.0083586, z: .448277622}
   m_Children: []
   m_Father: {fileID: 1492674640}
   m_RootOrder: 0
@@ -5791,7 +5791,7 @@ GameObject:
   - 95: {fileID: 1492674641}
   - 114: {fileID: 1492674642}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: BallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7731,8 +7731,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110454417}
   m_LocalRotation: {x: -.142491996, y: .170927495, z: .668702066, w: -.709448636}
-  m_LocalPosition: {x: .899999499, y: 1.27000058, z: 2.67000127}
-  m_LocalScale: {x: .363915831, y: 3.96259689, z: .425020486}
+  m_LocalPosition: {x: .680000007, y: 1.23000002, z: 1.89999998}
+  m_LocalScale: {x: .363915831, y: 3.96259689, z: .715898991}
   m_Children: []
   m_Father: {fileID: 406984115}
   m_RootOrder: 0

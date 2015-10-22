@@ -47,4 +47,9 @@ public class HoleScript : MonoBehaviour {
 		var flagScript = flag .GetComponentsInChildren<FlagScript>(true);
 		flagScript[0].SetActive (enable);
 	}
+
+	public string GetName(){
+		return this.name;
+	}
+
 }
