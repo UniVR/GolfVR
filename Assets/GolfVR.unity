@@ -4311,7 +4311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainScript: {fileID: 496065655}
-  CurrentHole: {fileID: 296963064}
+  CurrentHole: {fileID: 1080539271}
   Holes:
   - {fileID: 1080539271}
   - {fileID: 1435787994}
@@ -9047,9 +9047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584fce82b6391914d8b8bca1e58abe79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBeforeSlowing: 5
-  AddedDragAfterTime: .0500000007
-  TimeMagnitudeCoef: .200000003
+  TimeBeforeSlowing: 6
+  AddedDragAfterTime: .0250000004
+  TimeMagnitudeCoef: 2
   WidthMagnitudeCoef: .0199999996
   WatchBall: {fileID: 561197152}
   WatchBallLock: {fileID: 1089324908}
