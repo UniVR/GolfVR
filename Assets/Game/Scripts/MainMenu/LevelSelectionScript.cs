@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class LevelSelectionScript : MonoBehaviour {
@@ -8,13 +9,26 @@ public class LevelSelectionScript : MonoBehaviour {
 	public bool AllowEnter;
 
 	private bool watched;
+	private Image loading;
+	private float loadingSpeed = 0.005f;
 
 	// Use this for initialization
 	void Start () {
 
-		var maxLevel = Global.SavedData.UnlockedLevel;
-		if (LevelNumber > maxLevel)
+		var cmt = transform.Find ("Loading");
+		if(cmt)
+			loading = cmt.GetComponent<Image>();
+
+		var levelHidder = transform.Find ("Hidder");
+		var maxUnlockedLevel = Global.SavedData.UnlockedLevel;
+		if (LevelNumber > maxUnlockedLevel) {
 			AllowEnter = false;
+			if(levelHidder)
+				levelHidder.gameObject.SetActive(true);
+		} else {
+			if(levelHidder)
+				levelHidder.gameObject.SetActive(false);
+		}
 
 		if (!AllowEnter)
 			return;
@@ -37,7 +51,10 @@ public class LevelSelectionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (watched)
-			Debug.Log ("ok");
+		if (watched && loading) {
+			loading.fillAmount += loadingSpeed; 
+		} else if(loading && loading.fillAmount>0){
+			loading.fillAmount -= loadingSpeed; 
+		}
 	}
 }
