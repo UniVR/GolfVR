@@ -28,6 +28,8 @@ public class HolesScript : MonoBehaviour {
 		CurrentHole.Enable(false);
 		CurrentHole = GetNext ();
 		if (CurrentHole != null) {
+			Global.SavedData.UnlockedLevel = CurrentHole.HoleNumber;
+			Global.SaveGame ();
 			CurrentHole.Enable(true);
 			MainScript.EnterHole();
 		} else {

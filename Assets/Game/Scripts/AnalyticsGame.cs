@@ -40,7 +40,7 @@ public class AnalyticsGame : MonoBehaviour {
 	}
 
 	public static void Shoot(){
-		if (!clubUsage.ContainsKey (currentClubName))
+		if (currentClubName!=null && !clubUsage.ContainsKey (currentClubName))
 			clubUsage.Add (currentClubName, 1);
 		else
 			clubUsage [currentClubName]++;

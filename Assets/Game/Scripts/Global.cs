@@ -9,8 +9,20 @@ using UnityEngine.EventSystems;
 
 [Serializable]
 public class SavedInformations{
-	public int UnlockedLevel;
+	private int unlockedLevel;
+	public int UnlockedLevel {
+		set{
+			if(value>unlockedLevel)
+				unlockedLevel = value;
+		}
+		get{ return unlockedLevel;}
+	}
 	public List<int> LevelScores;
+
+	public SavedInformations(){
+		unlockedLevel = 0;
+		LevelScores = new List<int>();
+	}
 }
 
 public class Global : MonoBehaviour {
@@ -28,18 +40,16 @@ public class Global : MonoBehaviour {
 
 	void Awake(){
 		DontDestroyOnLoad (transform.gameObject);
-		Debug.Log ("AWAKE");
 	}
 
 	public static void SaveGame(){
-		SavedInformations save = new SavedInformations ();
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (fileName);
-		bf.Serialize (file, save);
+		bf.Serialize (file, savedData);
 		file.Close ();
 	}
 
-	public static SavedInformations LoadGame(){
+	private static SavedInformations LoadGame(){
 		if (!File.Exists (fileName))
 			return new SavedInformations ();
 
