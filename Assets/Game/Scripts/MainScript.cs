@@ -85,6 +85,8 @@ public class MainScript : MonoBehaviour {
 
 	private void InitPlayerPosition(){
 		//Set the player on the first hole
+		if (Global.LoadHoleNumber != -1)
+			Holes.SetHole (Global.LoadHoleNumber);
 		Ball.transform.position = Holes.CurrentHole.BeginPosition.transform.position;
 		Player.transform.position = Ball.transform.position;
 		Bag.MoveToTheBall(Ball.transform.position, Holes.CurrentHole.transform.position);

@@ -36,4 +36,8 @@ public class HolesScript : MonoBehaviour {
 			MainScript.Win();
 		}
 	}
+
+	public void SetHole(int holeNumber){
+		CurrentHole = Holes[holeNumber];
+	}
 }

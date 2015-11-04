@@ -63,6 +63,7 @@ public class BallScript : MonoBehaviour {
 		oldPos = transform.position;
 
 		//trail.time = oldTrailTime;
+		trail.enabled = true;
 		trail.time = magnitude * TimeMagnitudeCoef;
 		trail.startWidth = magnitude * WidthMagnitudeCoef;
 
@@ -81,6 +82,7 @@ public class BallScript : MonoBehaviour {
 		rigidBody.drag = 100f;	
 		rigidBody.angularDrag = 100f;		
 
+		trail.enabled = false;
 		trail.time = 0;
 	}
 

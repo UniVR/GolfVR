@@ -27,6 +27,8 @@ public class SavedInformations{
 
 public class Global : MonoBehaviour {
 
+	public static int LoadHoleNumber = -1;
+
 	private static string fileName = Application.persistentDataPath + "/saveFile.dg";
 
 	private static SavedInformations savedData;
