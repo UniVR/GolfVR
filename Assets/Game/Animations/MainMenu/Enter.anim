@@ -78,6 +78,32 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: DoorMeshs/Right
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -17.5, y: -24.7000008, z: -3.56999993}
+        inSlope: {x: 0, y: 0, z: -.381818324}
+        outSlope: {x: 0, y: 0, z: -.381818324}
+        tangentMode: 0
+      - time: .916666687
+        value: {x: -17.5, y: -24.7000008, z: -3.92000008}
+        inSlope: {x: 0, y: 0, z: -7.69091654}
+        outSlope: {x: 0, y: 0, z: -7.69091654}
+        tangentMode: 0
+      - time: .933333337
+        value: {x: -17.5, y: -24.7000008, z: -4.17000008}
+        inSlope: {x: 0, y: 0, z: -100.800018}
+        outSlope: {x: 0, y: 0, z: -100.800018}
+        tangentMode: 0
+      - time: 1
+        value: {x: -17.5, y: -24.7000008, z: -16.6100006}
+        inSlope: {x: 0, y: 0, z: -186.600021}
+        outSlope: {x: 0, y: 0, z: -186.600021}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: InteractionBloker
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -89,6 +115,12 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - path: 2149533917
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2329921117
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -403,6 +435,93 @@ AnimationClip:
       m_PostInfinity: 2
     attribute: m_LocalRotation.w
     path: DoorMeshs/Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -17.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .916666687
+        value: -17.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .933333337
+        value: -17.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -17.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: InteractionBloker
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -24.7000008
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .916666687
+        value: -24.7000008
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .933333337
+        value: -24.7000008
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -24.7000008
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: InteractionBloker
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -3.56999993
+        inSlope: -.381818324
+        outSlope: -.381818324
+        tangentMode: 10
+      - time: .916666687
+        value: -3.92000008
+        inSlope: -7.69091654
+        outSlope: -7.69091654
+        tangentMode: 10
+      - time: .933333337
+        value: -4.17000008
+        inSlope: -100.800018
+        outSlope: -100.800018
+        tangentMode: 10
+      - time: 1
+        value: -16.6100006
+        inSlope: -186.600021
+        outSlope: -186.600021
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: InteractionBloker
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:

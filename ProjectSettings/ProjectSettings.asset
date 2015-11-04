@@ -10,8 +10,8 @@ PlayerSettings:
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: GolfVR
+  companyName: UniVR
+  productName: GolfVRbeta
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: NaN, y: NaN}
   m_ShowUnitySplashScreen: 1
@@ -85,15 +85,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.UniVR.GolfVR
-  bundleVersion: 15102200
+  bundleIdentifier: com.UniVR.GolfVRbeta
+  bundleVersion: 15110400
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: cf97b928b03ef4744a6314aeba387abe
-  AndroidBundleVersionCode: 15102200
+  AndroidBundleVersionCode: 15110400
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -150,7 +150,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/DEV/PERSO/GolfVR/keystore.keystore
-  AndroidKeyaliasName: golfvr
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0

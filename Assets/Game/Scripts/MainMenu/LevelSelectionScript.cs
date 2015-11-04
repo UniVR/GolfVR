@@ -8,13 +8,15 @@ public class LevelSelectionScript : MonoBehaviour {
 	public int LevelNumber;
 	public bool AllowEnter;
 
+	public static float GlobalLoadingSpeed = 0.4f;
+	private static bool analyticsEnded = false;
+	private static bool levelLoaded = false;
+
 	private bool watched;
 	private Image loading;
-	private float loadingSpeed = 0.005f;
 
 	// Use this for initialization
 	void Start () {
-
 		var cmt = transform.Find ("Loading");
 		if(cmt)
 			loading = cmt.GetComponent<Image>();
@@ -52,9 +54,18 @@ public class LevelSelectionScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (watched && loading) {
-			loading.fillAmount += loadingSpeed; 
+			loading.fillAmount += GlobalLoadingSpeed * Time.deltaTime; 
+			if(loading.fillAmount>=0.5f && !analyticsEnded){
+				analyticsEnded = true;
+				AnalyticsMainMenu.End ();
+			}
+			if(loading.fillAmount>=0.7f && !levelLoaded){
+				levelLoaded = true;
+				Global.LoadHoleNumber = LevelNumber;
+				Application.LoadLevelAsync("GolfVR");
+			}
 		} else if(loading && loading.fillAmount>0){
-			loading.fillAmount -= loadingSpeed; 
+			loading.fillAmount -= GlobalLoadingSpeed; 
 		}
 	}
 }
