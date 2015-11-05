@@ -26,6 +26,8 @@ public class MainScript : MonoBehaviour {
 	public ActionState currentAction;
 		
 	[HideInInspector]
+	public int TotalScore;
+	[HideInInspector]
 	public int Score;
 
 	public Terrain CurrentTerrain{
@@ -71,6 +73,7 @@ public class MainScript : MonoBehaviour {
 	void Start () {
 		instance = this;
 
+		TotalScore = 0;
 		Score = 0;
 		locked = false;
 		watchBall = false;
@@ -220,6 +223,9 @@ public class MainScript : MonoBehaviour {
 		return Player.GetCurrentClub ();
 	}
 
+	public HoleScript GetPreviousHole(){
+		return Holes.PreviousHole;
+	}
 
 	public HoleScript GetCurrentHole(){
 		return Holes.CurrentHole;
@@ -267,12 +273,26 @@ public class MainScript : MonoBehaviour {
 		currentAction = ActionState.Won;
 		applause.Play ();
 
+		var prevHole = GetPreviousHole ();
+		var currHole = GetCurrentHole ();
+
+		Global.SavedData.UnlockedLevel = currHole.HoleNumber;
+		Grade grade = Global.SavedData.SetScore(prevHole.HoleNumber, prevHole.ParScore, Score);
+		Global.SaveGame ();
+
+		Debug.Log("Grade unlocked ! :" + grade);
+		//TODO Show grade to player
+
 		AnalyticsGame.EndHole ();
-		AnalyticsGame.BeginHole (GetCurrentHole().GetName());
+		AnalyticsGame.BeginHole (currHole.GetName());
+
+		TotalScore += Score;
+		Score = 0;
 	}
 
 	public void Win(){
-		AnalyticsGame.Won (Score);
+		TotalScore += Score;
+		AnalyticsGame.Won (TotalScore);
 		// TODO : Adding condition
 		Application.LoadLevel ("Exit");
 	}

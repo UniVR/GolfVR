@@ -7,6 +7,8 @@ public class HoleScript : MonoBehaviour {
 	[HideInInspector]
 	public HolesScript HolesListScript;
 
+	public int ParScore;
+
 	public Terrain Terrain;
 	public int HoleNumber;
 
