@@ -6,9 +6,16 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public enum Grade {
+	None,
+	OneStar,
+	TwoStar,
+	ThreeStar
+}
 
 [Serializable]
 public class SavedInformations{
+
 	private int unlockedLevel;
 	public int UnlockedLevel {
 		set{
@@ -17,11 +24,29 @@ public class SavedInformations{
 		}
 		get{ return unlockedLevel;}
 	}
-	public List<int> LevelScores;
+	public Grade[] LevelScores;
 
 	public SavedInformations(){
 		unlockedLevel = 0;
-		LevelScores = new List<int>();
+		LevelScores = new Grade[18];
+		for (var i=0; i<LevelScores.Length; i++) {
+			LevelScores[i] = Grade.None;
+		}
+	}
+
+	public Grade SetScore(int holeNumber, int parScore, int playerScore){
+		Grade grade = Grade.None;
+		if (playerScore < parScore)
+			grade = Grade.ThreeStar;
+		else if (playerScore == parScore)
+			grade = Grade.TwoStar;
+		else if (playerScore > parScore)
+			grade = Grade.OneStar;
+
+		if(grade > LevelScores[holeNumber])
+			LevelScores[holeNumber] = grade;
+
+		return grade;
 	}
 }
 

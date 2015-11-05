@@ -5,15 +5,9 @@ using System.Collections.Generic;
 public class HolesScript : MonoBehaviour {
 
 	public MainScript MainScript;
-	
-	/// <summary>
-	/// The current played hole
-	/// </summary>
+	[HideInInspector]
+	public HoleScript PreviousHole; 
 	public HoleScript CurrentHole; 
-
-	/// <summary>
-	/// Just to keep the hole list at one place
-	/// </summary>
 	public List<HoleScript> Holes;
 
 	public HoleScript GetNext(){
@@ -25,11 +19,10 @@ public class HolesScript : MonoBehaviour {
 	}
 
 	public void EnterHole(HoleScript enteredHole){
+		PreviousHole = CurrentHole;
 		CurrentHole.Enable(false);
 		CurrentHole = GetNext ();
 		if (CurrentHole != null) {
-			Global.SavedData.UnlockedLevel = CurrentHole.HoleNumber;
-			Global.SaveGame ();
 			CurrentHole.Enable(true);
 			MainScript.EnterHole();
 		} else {

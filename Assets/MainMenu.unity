@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 6
-  AllowEnter: 0
+  Locked: 0
 --- !u!23 &203947000
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1376,6 +1376,7 @@ Transform:
   m_Children:
   - {fileID: 1935175508}
   - {fileID: 290598203}
+  - {fileID: 1779770724}
   m_Father: {fileID: 1404359968}
   m_RootOrder: 0
 --- !u!23 &295583199
@@ -1433,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 0
-  AllowEnter: 1
+  Locked: 0
 --- !u!1001 &306560678
 Prefab:
   m_ObjectHideFlags: 0
@@ -3158,7 +3159,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653616930}
-  m_LocalRotation: {x: .000746789272, y: .707106173, z: -.707106709, w: -.000746803882}
+  m_LocalRotation: {x: .000746788864, y: .707106113, z: -.70710665, w: -.000746803475}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .667870283, y: 1, z: 2.51989579}
   m_Children: []
@@ -5842,7 +5843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 2
-  AllowEnter: 0
+  Locked: 0
 --- !u!1 &1241703872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,6 +6875,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 1404359968}
+  - 114: {fileID: 1404359969}
   m_Layer: 5
   m_Name: LevelSelection
   m_TagString: Untagged
@@ -6905,6 +6907,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 9.53674316e-07}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &1404359969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404359967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fa15e17a770141ade7e881adccc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoldMedal: {fileID: 21300000, guid: 11c95fe431084da419b766c0aa76a0b0, type: 3}
+  SilverMedal: {fileID: 21300000, guid: 9dd4b0bcf541c1e469a727b004c8f8f5, type: 3}
+  BronzeMedal: {fileID: 21300000, guid: 0ec5e8ae8699ac243b0e12e7780f2a39, type: 3}
 --- !u!1 &1419762283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7917,7 +7933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 4
-  AllowEnter: 0
+  Locked: 0
 --- !u!23 &1598573687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8200,7 +8216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 5
-  AllowEnter: 0
+  Locked: 0
 --- !u!23 &1658850917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8585,6 +8601,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1936221577}
   m_RootOrder: 2
+--- !u!1 &1779770723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1779770724}
+  - 222: {fileID: 1779770726}
+  - 114: {fileID: 1779770725}
+  m_Layer: 5
+  m_Name: Medal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1779770724
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779770723}
+  m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 295583198}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -3.1500001, y: .0340000018}
+  m_SizeDelta: {x: 3, y: 3}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1779770725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779770723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 11c95fe431084da419b766c0aa76a0b0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1779770726
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779770723}
 --- !u!4 &1787958212 stripped
 Transform:
   m_PrefabParentObject: {fileID: 489150, guid: d7b705100debac040aad6c052f825f94, type: 2}
@@ -9008,7 +9091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 3
-  AllowEnter: 0
+  Locked: 0
 --- !u!23 &1882040762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9793,7 +9876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelNumber: 1
-  AllowEnter: 1
+  Locked: 0
 --- !u!1 &2107139376
 GameObject:
   m_ObjectHideFlags: 0
