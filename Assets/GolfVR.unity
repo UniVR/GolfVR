@@ -5227,7 +5227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 5
+  ParScore: 3
   Terrain: {fileID: 295359735}
   HoleNumber: 6
   BeginPosition: {fileID: 1775427384}
@@ -5279,7 +5279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 6
+  ParScore: 4
   Terrain: {fileID: 439576638}
   HoleNumber: 9
   BeginPosition: {fileID: 258160934}
@@ -6590,7 +6590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 4
+  ParScore: 3
   Terrain: {fileID: 1802236283}
   HoleNumber: 0
   BeginPosition: {fileID: 1917763223}
@@ -6697,7 +6697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 5
+  ParScore: 3
   Terrain: {fileID: 439576638}
   HoleNumber: 8
   BeginPosition: {fileID: 2094725894}
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 4
+  ParScore: 3
   Terrain: {fileID: 1802236283}
   HoleNumber: 1
   BeginPosition: {fileID: 1651335336}
@@ -9455,7 +9455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 6
+  ParScore: 4
   Terrain: {fileID: 439576638}
   HoleNumber: 10
   BeginPosition: {fileID: 72888604}
@@ -10946,7 +10946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 4
+  ParScore: 3
   Terrain: {fileID: 1802236283}
   HoleNumber: 2
   BeginPosition: {fileID: 1229979209}
@@ -12083,7 +12083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HolesListScript: {fileID: 0}
-  ParScore: 4
+  ParScore: 5
   Terrain: {fileID: 295359735}
   HoleNumber: 4
   BeginPosition: {fileID: 875360654}
