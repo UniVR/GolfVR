@@ -19,6 +19,9 @@ public class LevelSelectionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		analyticsEnded = false;
+		levelLoaded = false;
+
 		var cmt = transform.Find ("Loading");
 		if(cmt)
 			loading = cmt.GetComponent<Image>();
