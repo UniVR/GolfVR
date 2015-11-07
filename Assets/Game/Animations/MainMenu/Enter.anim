@@ -59,28 +59,6 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 1
-        value: {x: -25.4100018, y: -.449454486, z: 16.8799763}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: DoorMeshs/Left
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: {x: -25.4469547, y: -.449367613, z: 22.6129971}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: DoorMeshs/Right
-  - curve:
-      serializedVersion: 2
-      m_Curve:
       - time: 0
         value: {x: -17.5, y: -24.7000008, z: -3.56999993}
         inSlope: {x: 0, y: 0, z: -.381818324}
@@ -121,18 +99,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - path: 2329921117
-      attribute: 1
-      script: {fileID: 0}
-      classID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - path: 2393217783
-      attribute: 1
-      script: {fileID: 0}
-      classID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - path: 3566090684
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -239,90 +205,6 @@ AnimationClip:
       m_PostInfinity: 2
     attribute: m_LocalPosition.z
     path: CardboardMain
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: -25.4100018
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.x
-    path: DoorMeshs/Left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: -.449454486
-        inSlope: .000310719013
-        outSlope: .000310719013
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.y
-    path: DoorMeshs/Left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: 16.8799763
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.z
-    path: DoorMeshs/Left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: -25.4469547
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.x
-    path: DoorMeshs/Right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: -.449367613
-        inSlope: .000460803538
-        outSlope: .000460803538
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.y
-    path: DoorMeshs/Right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 1
-        value: 22.6129971
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.z
-    path: DoorMeshs/Right
     classID: 4
     script: {fileID: 0}
   - curve:
