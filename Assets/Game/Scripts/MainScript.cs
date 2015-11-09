@@ -58,6 +58,7 @@ public class MainScript : MonoBehaviour {
 	private bool locked;
 	private bool watchBallLock;
 	private bool watchBall;
+	private float firingOrientation;
 
 	private AudioSource applause;
 
@@ -141,6 +142,7 @@ public class MainScript : MonoBehaviour {
 			case ActionState.Loading:
 				if(!watchBall && !watchBallLock){
 					currentAction = ActionState.Firing;	
+					firingOrientation = Player.transform.eulerAngles.y;
 					Ball.WatchBall.SetActive(false);
 				}
 
@@ -154,7 +156,7 @@ public class MainScript : MonoBehaviour {
 
 				if(!Ball.IsShooted() && Club.HasShooted())							//Shoot now
 				{
-					Ball.Shoot(Club.LoadingTime * Club.clubForceCoef, Club.clubAngle, Player.transform.eulerAngles.y);
+					Ball.Shoot(Club.LoadingTime * Club.clubForceCoef, Club.clubAngle, firingOrientation);
 					Hud.UpdateScore(Score++);
 				}
 				else if (Club.IsFired())
