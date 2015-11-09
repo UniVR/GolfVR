@@ -98,7 +98,8 @@ public class MainScript : MonoBehaviour {
 		rigidBody.drag = 100f;	
 		rigidBody.angularDrag = 100f;	
 		GetCurrentHole ().Enable (true);
-		SetCurrentClub (Club);
+
+		AnalyticsGame.ChangeClub (Club.GetName ());
 		AnalyticsGame.BeginHole (GetCurrentHole().GetName());
 	}
 
