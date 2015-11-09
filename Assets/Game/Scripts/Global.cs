@@ -65,8 +65,13 @@ public class Global : MonoBehaviour {
 		}
 	}
 
-	void Awake(){
-		DontDestroyOnLoad (transform.gameObject);
+	public void Awake()
+	{
+		DontDestroyOnLoad(this);		
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	public static void SaveGame(){

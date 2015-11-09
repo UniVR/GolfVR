@@ -83,10 +83,10 @@ public class MainScript : MonoBehaviour {
 
 		applause = GetComponent<AudioSource> ();
 
-		InitPlayerPosition ();
+		InitPlayer ();
 	}
 
-	private void InitPlayerPosition(){
+	private void InitPlayer(){
 		//Set the player on the first hole
 		if (Global.LoadHoleNumber != -1)
 			Holes.SetHole (Global.LoadHoleNumber);
@@ -98,7 +98,7 @@ public class MainScript : MonoBehaviour {
 		rigidBody.drag = 100f;	
 		rigidBody.angularDrag = 100f;	
 		GetCurrentHole ().Enable (true);
-
+		SetCurrentClub (Club);
 		AnalyticsGame.BeginHole (GetCurrentHole().GetName());
 	}
 
