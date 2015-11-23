@@ -9,7 +9,7 @@ public class ExitScript : MonoBehaviour {
 		var text = GetComponent<Text> ();
 		var main = MainScript.Get ();
 		if(main!=null)
-			text.text = string.Format(text.text, main.Score);
+			text.text = string.Format(text.text, main.TotalScore);
 	}
 
 

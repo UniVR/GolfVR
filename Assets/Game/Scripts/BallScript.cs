@@ -35,6 +35,7 @@ public class BallScript : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody> ();
 		trail = GetComponent<TrailRenderer> ();
 		oldTrailTime = trail.time;
+		trail.enabled = false;
 		isShooted = false;
 		isOnGround = true;
 		isLocked = true;
@@ -63,6 +64,7 @@ public class BallScript : MonoBehaviour {
 		oldPos = transform.position;
 
 		//trail.time = oldTrailTime;
+		trail.enabled = true;
 		trail.time = magnitude * TimeMagnitudeCoef;
 		trail.startWidth = magnitude * WidthMagnitudeCoef;
 

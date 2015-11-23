@@ -128,7 +128,7 @@ Material:
       data:
         first:
           name: _horizonColor
-        second: {r: .178416952, g: .542918265, b: .735294104, a: 0}
+        second: {r: .407655716, g: .76649487, b: .95588237, a: 0}
       data:
         first:
           name: _ColorControl_ST

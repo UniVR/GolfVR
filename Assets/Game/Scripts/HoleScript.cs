@@ -7,6 +7,8 @@ public class HoleScript : MonoBehaviour {
 	[HideInInspector]
 	public HolesScript HolesListScript;
 
+	public int ParScore;
+
 	public Terrain Terrain;
 	public int HoleNumber;
 
@@ -47,4 +49,9 @@ public class HoleScript : MonoBehaviour {
 		var flagScript = flag .GetComponentsInChildren<FlagScript>(true);
 		flagScript[0].SetActive (enable);
 	}
+
+	public string GetName(){
+		return this.name;
+	}
+
 }

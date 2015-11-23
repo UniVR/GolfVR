@@ -2,15 +2,22 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class ClubsBagScript : MonoBehaviour {
 
 	public MainScript MainScript;
+	public GameObject WatchPlane;
+	public GameObject Leave;
 
 	public Canvas Menu;
 	public GameObject DefaultButton;
 	public List<GameObject> Clubs;
-	
+
+	[HideInInspector]
+	public bool ButtonWatched;
+	private bool BagWatched;
+
 	private List<GameObject> buttons;
 	private Vector2 canvasSize;
 	private bool bagWatched;
@@ -18,8 +25,7 @@ public class ClubsBagScript : MonoBehaviour {
 
 	void Start(){
 		buttons = new List<GameObject> ();
-		bagWatched = false;
-		canvasWatched = false;
+		ButtonWatched = false;
 
 		var canvasRect = Menu.GetComponent<RectTransform>();
 		var canvasSizeX = canvasRect.sizeDelta.x;
@@ -27,9 +33,6 @@ public class ClubsBagScript : MonoBehaviour {
 
 		var buttonRect = DefaultButton.GetComponent<RectTransform>();
 		var buttonSizeX = buttonRect.sizeDelta.x;
-
-		var begin = -canvasSizeX / 3 + buttonSizeX;
-		var buttonSpace = (2*canvasSizeX/3)/Clubs.Count;
 
 		for(var i=0; i<Clubs.Count; i++) {
 			var club = Clubs[i];
@@ -45,7 +48,7 @@ public class ClubsBagScript : MonoBehaviour {
 
 			//Associate the clubScript to the button
 			var buttonScript = clubButton.GetComponent<ClubSelectionButtonScript>();
-			buttonScript.Init(Menu, begin + (i*buttonSpace));
+			buttonScript.Init(Menu, i);
 			buttonScript.ClubScript = clubScript;
 			buttonScript.BagScript = this;
 			if(MainScript.GetCurrentClub().gameObject.name == clubScript.gameObject.name){
@@ -54,6 +57,37 @@ public class ClubsBagScript : MonoBehaviour {
 
 			buttons.Add(clubButton);
 		}
+
+		Menu.enabled = false;
+		WatchPlane.AddComponent(typeof(EventTrigger));
+		EventTrigger trigger = WatchPlane.GetComponent<EventTrigger>();
+		//Pointer enter
+		EventTrigger.Entry entry = new EventTrigger.Entry();
+		entry.eventID = EventTriggerType.PointerEnter;
+		entry.callback.AddListener( (eventData) => { BagWatched = true; });
+		trigger.triggers.Add(entry);
+		
+		//Pointer exit
+		entry = new EventTrigger.Entry();
+		entry.eventID = EventTriggerType.PointerExit;
+		entry.callback.AddListener( (eventData) => { BagWatched = false; } );
+		trigger.triggers.Add(entry);
+
+		Leave.AddComponent(typeof(EventTrigger));
+		trigger = Leave.GetComponent<EventTrigger>();
+		//Pointer enter
+		entry = new EventTrigger.Entry();
+		entry.eventID = EventTriggerType.PointerEnter;
+		entry.callback.AddListener( (eventData) => { Application.LoadLevel("MainMenu"); });
+		trigger.triggers.Add(entry);
+	}
+
+	void FixedUpdate(){
+		if (ButtonWatched || BagWatched) {
+			Menu.enabled = true;
+		} else {
+			Menu.enabled = false;
+		}			
 	}
 
 	public void MoveToTheBall(Vector3 ball, Vector3 direction){
@@ -70,29 +104,5 @@ public class ClubsBagScript : MonoBehaviour {
 
 	public void SelectClub(ClubScript script){
 		MainScript.SetCurrentClub (script);
-	}
-
-	void FixedUpdate(){
-		if (bagWatched || canvasWatched) {
-			Menu.enabled = true;
-		} else {
-			Menu.enabled = false;
-		}			
-	}
-
-	public void WatchBag(){
-		bagWatched = true;
-	}
-
-	public void UnWatchBag(){
-		bagWatched = false;
-	}
-
-	public void WatchCanvas(){
-		canvasWatched = true;
-	}
-	
-	public void UnWatchCanvas(){
-		canvasWatched = false;
 	}
 }
