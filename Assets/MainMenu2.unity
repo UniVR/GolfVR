@@ -2396,11 +2396,11 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482538444}
-  - 33: {fileID: 482538448}
+  - 224: {fileID: 482538444}
   - 64: {fileID: 482538447}
   - 23: {fileID: 482538446}
   - 114: {fileID: 482538445}
+  - 33: {fileID: 482538448}
   m_Layer: 5
   m_Name: Level1
   m_TagString: Untagged
@@ -2408,20 +2408,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482538444
-Transform:
+--- !u!224 &482538444
+RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 409088, guid: a292e13150fddf1458399076a4ed2a0f, type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 482538443}
   m_LocalRotation: {x: .388502657, y: .590817928, z: -.590817928, w: .388502598}
-  m_LocalPosition: {x: 14.6405401, y: -15.9499969, z: 38.8666725}
-  m_LocalScale: {x: .359999865, y: 1, z: .199999958}
+  m_LocalPosition: {x: 0, y: 0, z: 38.8666725}
+  m_LocalScale: {x: .360000014, y: 1, z: .200000003}
   m_Children:
   - {fileID: 661387206}
   - {fileID: 838434734}
   m_Father: {fileID: 842745387}
   m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 14.6405401, y: -15.9499969}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &482538445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +5731,7 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1229382029}
-  m_LocalRotation: {x: .000746785197, y: .707106113, z: -.70710665, w: -.000746799808}
+  m_LocalRotation: {x: .000746784906, y: .707106113, z: -.70710665, w: -.000746799516}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .75, y: 1, z: 2.51989579}
   m_Children: []
@@ -7413,6 +7418,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
+      propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
