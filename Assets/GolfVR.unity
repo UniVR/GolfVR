@@ -129,8 +129,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -705,8 +705,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -1446,8 +1446,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -1620,8 +1620,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -2564,8 +2564,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -7820,8 +7820,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -8865,8 +8865,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -9918,7 +9918,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .951318443, b: .889705896, a: 1}
-  m_Intensity: 1.14999998
+  m_Intensity: .800000012
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -10514,8 +10514,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
-  m_SplatMapDistance: 64
+  m_HeightmapPixelError: 150
+  m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -10710,7 +10710,7 @@ Terrain:
   m_TreeMaximumFullLODCount: 20
   m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 140
+  m_HeightmapPixelError: 150
   m_SplatMapDistance: 24
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
