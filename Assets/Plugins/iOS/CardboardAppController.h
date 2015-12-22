@@ -30,13 +30,15 @@
 
 @interface CardboardAppController : UnityAppController
 
-- (void)preStartUnity;
-
 - (UnityView *)createUnityView;
+
+- (void)launchSettingsDialog;
 
 - (void)startSettingsDialog:(UIViewController *)dialog;
 
 - (void)stopSettingsDialog;
+
+- (void)vrBackButtonPressed;
 
 - (void)pause:(bool)paused;
 
