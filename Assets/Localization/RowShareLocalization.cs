@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+﻿/*#if UNITY_EDITOR
 
 using UnityEngine;
 using UnityEditor;
@@ -62,7 +62,7 @@ public class RowShareLocalization : EditorWindow
 			var url = rowShareApiUrl + tableId;
 			Debug.Log("Download from : " + url);
 
-			ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
+			//ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
 			WebClient client = new WebClient();
 			string JsonTable = client.DownloadString(url);
 			Debug.Log("Download success");
@@ -79,7 +79,7 @@ public class RowShareLocalization : EditorWindow
 
 
 
-	private bool MyRemoteCertificateValidationCallback(System.Object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) {
+	/*private bool MyRemoteCertificateValidationCallback(System.Object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) {
 		bool isOk = true;
 		// If there are errors in the certificate chain, look at each error to determine the cause.
 		if (sslPolicyErrors != SslPolicyErrors.None) {
@@ -97,11 +97,13 @@ public class RowShareLocalization : EditorWindow
 			}
 		}
 		return isOk;
-	}
+	}*/
+/*
 }
 
-#endif
 
+#endif
+*/
 
 
 
