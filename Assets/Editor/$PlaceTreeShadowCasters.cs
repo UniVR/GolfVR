@@ -24,8 +24,9 @@ public class PlaceTreeShadowCasters
 		//	bool meshRendererDetected = false;
 			TreePrototype treeProt = td.treePrototypes[tree.prototypeIndex];
 			GameObject prefab = treeProt.prefab;
-			
-			GameObject obj = GameObject.Instantiate(prefab, pos, Quaternion.AngleAxis(tree.rotation, Vector3.up)) as GameObject;
+
+			Debug.Log ("tree : " + tree.rotation);
+			GameObject obj = GameObject.Instantiate(prefab, pos, Quaternion.AngleAxis(tree.rotation * Mathf.Rad2Deg, Vector3.up)) as GameObject;
 			MeshRenderer renderer = obj.GetComponentInChildren<MeshRenderer>();
 			renderer.receiveShadows = false;
 			renderer.shadowCastingMode = ShadowCastingMode.On;
@@ -33,6 +34,7 @@ public class PlaceTreeShadowCasters
 			
 			Transform t = obj.transform;
 			t.localScale = new Vector3(tree.widthScale, tree.heightScale, tree.widthScale);
+			t.rotation = Quaternion.AngleAxis (tree.rotation * Mathf.Rad2Deg, Vector3.up);
 			t.parent = parent.transform;
 		}
 	}  
