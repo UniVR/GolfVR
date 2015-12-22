@@ -20,8 +20,6 @@ public class PlaceTreeShadowCasters
 		foreach (TreeInstance tree in td.treeInstances) 
 		{
 			Vector3 pos = Vector3.Scale(tree.position, td.size) + terrain.transform.position;
-		//	int rot = Vector3.RotateTowards(Vector3.forward);
-		//	bool meshRendererDetected = false;
 			TreePrototype treeProt = td.treePrototypes[tree.prototypeIndex];
 			GameObject prefab = treeProt.prefab;
 
