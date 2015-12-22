@@ -2,13 +2,13 @@
 
 **The first Golf Game for Virtual Reality Headsets !**
 
->*With this game, we want to provide an immersive and interactive experience to the largest amount of people, using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and shot !*
+>*With this game, we want to provide an immersive and interactive experience to the largest amount of people, using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and stroke!*
 
 We now are on the [Google Play store !](https://play.google.com/store/apps/details?id=com.UniVR.GolfVR)
 
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/GolfVR.jpg)
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/Loading.jpg)
-![alt tag](https://raw.githubusercontent.com/UniVR/GolfVR/master/Images/Shoot.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/ClubSelect1730.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/Loading1730.jpg)
+![alt tag](http://univr.github.io/GolfVR/Pictures/Shoot1730.jpg)
 
 This game uses the **CardBoard SDK**, it is designed to be played with a **VR headset** and a **Wii Controller** (Wii controller support is still in development).
 
@@ -29,3 +29,5 @@ If you are using the new Wiimote Controller on windows (with wii motion included
 Configure Unity projects for GitHub Thanks to this post: http://www.strichnet.com/using-git-with-3d-games/
 
 Remove file from commit (file > 100 Mb): http://stackoverflow.com/questions/12481639/remove-files-from-git-commit
+
+Test the site on [github.io](http://univr.github.io/GolfVR/)

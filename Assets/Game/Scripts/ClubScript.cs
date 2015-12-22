@@ -92,4 +92,8 @@ public class ClubScript : MonoBehaviour {
 	public GameObject InstantiateNewClub(GameObject newClubPrefb){
 		return (GameObject)GameObject.Instantiate(newClubPrefb, clubDefaultPosition, clubDefaultRotation);
 	}
+
+	public string GetName(){
+		return this.name;
+	}
 }

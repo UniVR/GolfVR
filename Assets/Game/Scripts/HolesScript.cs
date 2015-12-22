@@ -5,15 +5,9 @@ using System.Collections.Generic;
 public class HolesScript : MonoBehaviour {
 
 	public MainScript MainScript;
-	
-	/// <summary>
-	/// The current played hole
-	/// </summary>
+	[HideInInspector]
+	public HoleScript PreviousHole; 
 	public HoleScript CurrentHole; 
-
-	/// <summary>
-	/// Just to keep the hole list at one place
-	/// </summary>
 	public List<HoleScript> Holes;
 
 	public HoleScript GetNext(){
@@ -25,13 +19,18 @@ public class HolesScript : MonoBehaviour {
 	}
 
 	public void EnterHole(HoleScript enteredHole){
+		PreviousHole = CurrentHole;
 		CurrentHole.Enable(false);
 		CurrentHole = GetNext ();
-		CurrentHole.Enable(true);
 		if (CurrentHole != null) {
+			CurrentHole.Enable(true);
 			MainScript.EnterHole();
 		} else {
 			MainScript.Win();
 		}
+	}
+
+	public void SetHole(int holeNumber){
+		CurrentHole = Holes[holeNumber];
 	}
 }
