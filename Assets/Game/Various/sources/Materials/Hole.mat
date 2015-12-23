@@ -55,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: .125, y: .125}
+          m_Scale: {x: 0.125, y: 0.125}
           m_Offset: {x: 448, y: 448}
       data:
         first:
@@ -69,7 +69,7 @@ Material:
           name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: .100000001, y: .100000001}
+          m_Scale: {x: 0.1, y: 0.1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -97,11 +97,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -109,7 +109,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .479999989
+        second: 0.48
       data:
         first:
           name: _BumpScale
@@ -150,7 +150,7 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
       data:
         first:
           name: _EmissionColorUI

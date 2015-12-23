@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 1
-  m_FogColor: {r: 0.23053633, g: 0.41802296, b: 0.60294116, a: 1}
+  m_FogColor: {r: 0.5429823, g: 0.5768703, b: 0.6102941, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.003
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.44377166, g: 0.4711036, b: 0.5294118, a: 1}
+  m_AmbientSkyColor: {r: 0.625, g: 0.625, b: 0.625, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -2193,6 +2193,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 58770545}
   m_Mesh: {fileID: 4300002, guid: 1adbf8e8b5cfb134c93acd0dc22a74a4, type: 3}
+--- !u!1 &64334984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 64334985}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64334985
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64334984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.083176, y: -30.01015, z: 408.02576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 804225127}
+  m_RootOrder: 4
 --- !u!1 &69408206
 GameObject:
   m_ObjectHideFlags: 0
@@ -36317,6 +36344,7 @@ Transform:
   - {fileID: 400427941}
   - {fileID: 1650330685}
   - {fileID: 23694409}
+  - {fileID: 64334985}
   m_Father: {fileID: 0}
   m_RootOrder: 7
 --- !u!114 &804225128
@@ -49362,7 +49390,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -49373,7 +49401,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -49384,7 +49412,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1085637224
 GameObject:
   m_ObjectHideFlags: 0
@@ -79983,7 +80011,7 @@ Terrain:
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
-  m_DrawTreesAndFoliage: 0
+  m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
   m_MaterialType: 1
   m_LegacySpecular:
@@ -94017,7 +94045,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109757628}
   m_LocalRotation: {x: -0.7071069, y: 0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.068, y: -0.02, z: -0.288}
+  m_LocalPosition: {x: 0.068, y: -0.003, z: -0.288}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1080539270}
