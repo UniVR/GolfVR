@@ -42,7 +42,10 @@ public class VrScript : MonoBehaviour {
 		else
 		{
 			var factor = (forwardAngle - ForwardRotationThresholdMin) / (ForwardRotationThresholdMax - ForwardRotationThresholdMin);
-			forwardVector = Vector3.Lerp (faceForward, neckForward, 0);
+			forwardVector = Vector3.Lerp (neckForward, faceForward, 0);
+
+			//Debug.Log ("Factor: " + factor);
+			//Debug.Log ("Factor: " + forwardVector);
 		}
 			
 		var forwardRotation = Quaternion.LookRotation (forwardVector).eulerAngles;

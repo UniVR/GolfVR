@@ -95,7 +95,7 @@ PlayerSettings:
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
-  virtualRealitySupported: 0
+  virtualRealitySupported: 1
   productGUID: cf97b928b03ef4744a6314aeba387abe
   AndroidBundleVersionCode: 16010700
   AndroidMinSdkVersion: 15
@@ -363,7 +363,7 @@ PlayerSettings:
     1: CROSS_PLATFORM_INPUT
     2: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;VR_SUPPORTED
     14: MOBILE_INPUT
     15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
