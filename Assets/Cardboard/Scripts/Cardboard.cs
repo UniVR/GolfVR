@@ -33,6 +33,10 @@ public class Cardboard : MonoBehaviour {
   /// Not null: the instance is created automatically on demand if not already present.
   public static Cardboard SDK {
     get {
+#if VR_SUPPORTED
+	return null;
+#endif
+
       if (sdk == null) {
         sdk = UnityEngine.Object.FindObjectOfType<Cardboard>();
       }
@@ -465,6 +469,10 @@ public class Cardboard : MonoBehaviour {
   /// code to hiccup.  Exception: developer may call Application.DontDestroyOnLoad
   /// on the SDK if they want it to survive across scene loads.
   void Awake() {
+#if VR_SUPPORTED
+	return;
+#endif
+
     if (sdk == null) {
       sdk = this;
     }

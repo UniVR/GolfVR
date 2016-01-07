@@ -244,6 +244,13 @@ public class StereoController : MonoBehaviour {
 #endif
 
   void Awake() {
+#if VR_SUPPORTED
+	this.enabled = false;
+	return;
+#else
+	this.enabled = true;
+#endif
+
     AddStereoRig();
 #if UNITY_5
     camera = GetComponent<Camera>();
@@ -341,6 +348,10 @@ public class StereoController : MonoBehaviour {
   }
 
   void OnPreCull() {
+#if VR_SUPPORTED
+	return;
+#endif
+
     if (Cardboard.SDK.VRModeEnabled) {
       // Activate the eyes under our control.
       CardboardEye[] eyes = Eyes;

@@ -42,7 +42,7 @@ public class MainScript : MonoBehaviour {
 	/*
 	 * 	Public Properties
 	 */
-	public CardboardScript Cardboard;
+	public VrScript PlayerHead;
 	public PlayerScript Player;
 	public ClubScript Club;
 	public BallScript Ball;
@@ -212,6 +212,11 @@ public class MainScript : MonoBehaviour {
 	}
 
 
+	public Vector3 GetHeadPosition(){
+		if(PlayerHead!=null) //TODO : Remove
+			return PlayerHead.transform.position;
+		return new Vector3 (0, 0, 0);
+	}
 
 	public void SetCurrentClub(ClubScript clubScript){
 		//Instantiate the new Club with the properties of the old one

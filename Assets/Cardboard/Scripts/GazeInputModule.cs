@@ -73,7 +73,14 @@ public class GazeInputModule : BaseInputModule {
 
   /// @cond HIDDEN
   public override bool ShouldActivateModule() {
-    if (!base.ShouldActivateModule()) {
+#if VR_SUPPORTED
+	this.enabled = false;
+	return false;
+#else
+	this.enabled = true;
+#endif
+
+	if (!base.ShouldActivateModule()) {
       return false;
     }
     return Cardboard.SDK.VRModeEnabled || !vrModeOnly;
