@@ -43,14 +43,11 @@ public class VrScript : MonoBehaviour {
 		{
 			var factor = (forwardAngle - ForwardRotationThresholdMin) / (ForwardRotationThresholdMax - ForwardRotationThresholdMin);
 			forwardVector = Vector3.Lerp (neckForward, faceForward, 0);
-
-			//Debug.Log ("Factor: " + factor);
-			//Debug.Log ("Factor: " + forwardVector);
 		}
 			
 		var forwardRotation = Quaternion.LookRotation (forwardVector).eulerAngles;
 		var rotatedBy = forwardRotation.y - player.transform.eulerAngles.y;
-		parent.transform.Rotate(0, - rotatedBy, 0);
 		player.transform.Rotate(0, rotatedBy, 0);
+		parent.transform.Rotate(0, - rotatedBy, 0);
 	}
 }
