@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class VrScript : MonoBehaviour {
 
-	public float ForwardRotationThresholdMin;
-	public float ForwardRotationThresholdMax; 
+	//public float ForwardRotationThresholdMin;
+	//public float ForwardRotationThresholdMax; 
 
 	private PlayerScript player;
 	private GameObject parent;
 
-	private GameObject DebugLog;
+	public Text DebugLog;
 
 	void Start () {
 		player = MainScript.Get ().Player;
 		parent = gameObject.transform.parent.gameObject;
-		DebugLog = GameObject.Find ("DebugLog");
 	}
 	
 	/*
@@ -23,7 +23,7 @@ public class VrScript : MonoBehaviour {
 	void Update () {
 
 		// Neck vector
-		var neckVector = gameObject.transform.rotation * Vector3.up;	
+		var neckVector = gameObject.transform.rotation * Vector3.up;
 		var neckForward = new Vector3 (neckVector.x, 0, neckVector.z);
 
 		// Look direction
@@ -33,23 +33,24 @@ public class VrScript : MonoBehaviour {
 		//Angle forward (between 0 and 180)
 		var forwardAngle = (gameObject.transform.rotation.eulerAngles.x + 90) % 360; 
 
+		var headForward = gameObject.transform.rotation * Vector3.forward;
+		var size = Mathf.Abs(neckForward.x) + Mathf.Abs(neckForward.z);
 		Vector3 forwardVector;
-		if (forwardAngle < ForwardRotationThresholdMin) 
-		{
+
+		if (size > 1) {
+			forwardVector = neckForward;
+		}
+		else if (size > 0 && headForward.y < 0.35) {
+			forwardVector = Vector3.Lerp (neckForward, faceForward, 1-size);
+		} 
+		else {
 			forwardVector = faceForward;
 		}
-		else if (forwardAngle > ForwardRotationThresholdMax) 
-		{
-			forwardVector = neckForward;
-		} 
-		else
-		{
-			var factor = (forwardAngle - ForwardRotationThresholdMin) / (ForwardRotationThresholdMax - ForwardRotationThresholdMin);
-			forwardVector = Vector3.Lerp (faceForward, neckForward, 0);
-			//Debug.Log ("factor: " + factor);
-			Debug.Log ("forward: " + forwardVector);
-		}
-			
+
+		var text = 	"\t\tsize: " + size + "\n\r";
+		text += 	"\t\theadForward: " + headForward.y;
+		DebugLog.text = text;
+
 		var forwardRotation = Quaternion.LookRotation (forwardVector).eulerAngles;
 		var rotatedBy = forwardRotation.y - player.transform.eulerAngles.y;
 		player.transform.Rotate(0, rotatedBy, 0);
