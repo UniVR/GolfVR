@@ -4,13 +4,8 @@ using System.Collections;
 
 public class VrScript : MonoBehaviour {
 
-	//public float ForwardRotationThresholdMin;
-	//public float ForwardRotationThresholdMax; 
-
 	private PlayerScript player;
 	private GameObject parent;
-
-	public Text DebugLog;
 
 	void Start () {
 		player = MainScript.Get ().Player;
@@ -46,10 +41,6 @@ public class VrScript : MonoBehaviour {
 		else {
 			forwardVector = faceForward;
 		}
-
-		var text = 	"\t\tsize: " + size + "\n\r";
-		text += 	"\t\theadForward: " + headForward.y;
-		DebugLog.text = text;
 
 		var forwardRotation = Quaternion.LookRotation (forwardVector).eulerAngles;
 		var rotatedBy = forwardRotation.y - player.transform.eulerAngles.y;
