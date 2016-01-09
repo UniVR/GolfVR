@@ -9,9 +9,12 @@ public class VrScript : MonoBehaviour {
 	private PlayerScript player;
 	private GameObject parent;
 
+	private GameObject DebugLog;
+
 	void Start () {
 		player = MainScript.Get ().Player;
 		parent = gameObject.transform.parent.gameObject;
+		DebugLog = GameObject.Find ("DebugLog");
 	}
 	
 	/*
@@ -42,7 +45,9 @@ public class VrScript : MonoBehaviour {
 		else
 		{
 			var factor = (forwardAngle - ForwardRotationThresholdMin) / (ForwardRotationThresholdMax - ForwardRotationThresholdMin);
-			forwardVector = Vector3.Lerp (neckForward, faceForward, 0);
+			forwardVector = Vector3.Lerp (faceForward, neckForward, 0);
+			//Debug.Log ("factor: " + factor);
+			Debug.Log ("forward: " + forwardVector);
 		}
 			
 		var forwardRotation = Quaternion.LookRotation (forwardVector).eulerAngles;

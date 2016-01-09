@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: UniVR
-  productName: GolfVR
+  productName: TestScene
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: NaN, y: NaN}
   m_ShowUnitySplashScreen: 1
@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.UniVR.GolfVR
-  bundleVersion: 16010700
+  bundleIdentifier: com.MyCompany.MyProductName
+  bundleVersion: 2016190
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 1
   productGUID: cf97b928b03ef4744a6314aeba387abe
-  AndroidBundleVersionCode: 16010700
+  AndroidBundleVersionCode: 2016190
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -363,7 +363,7 @@ PlayerSettings:
     1: CROSS_PLATFORM_INPUT
     2: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;VR_SUPPORTED
+    7: NATIVE_VR_SUPPORTED
     14: MOBILE_INPUT
     15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
