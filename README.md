@@ -1,5 +1,9 @@
 #[GolfVR](http://www.golf-vr.com)#
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licence Creative Commons Attribution - Pas d&#39;Utilisation Commerciale - Pas de Modification 4.0 International</a>.
+
+© 2016 - All Right Reserved - [Ludovic Feltz](https://github.com/ludo6577) & [Mathieu Genoud](https://github.com/MattGen)
+
 **The first Golf Game for Virtual Reality Headsets !**
 
 >*With this game, we want to provide an immersive and interactive experience to the largest amount of people, using the most affordable technologies availlable on the market. We're setting the player on an original golf game terrain designed for challenge and relaxation. With an intuitive interaction system, users can easily choose the club they want to use and then aim and stroke!*
